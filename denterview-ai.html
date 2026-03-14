@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Denterview AI – AI-Powered Dental School Mock Interviews</title>
+  <meta name="description" content="Practice your dental school interview with AI that gives real-time feedback on your delivery, eye contact, pacing, and filler words. 5 packages from $9.99 to $54.99."/>
+  <meta name="keywords" content="dental school AI mock interview, dental interview practice, dental school interview feedback, MMI AI practice, dental interview simulator, pre-dental interview prep AI"/>
+  <link rel="canonical" href="https://denterview.com/denterview-ai"/>
+  <meta property="og:title" content="Denterview AI – AI-Powered Dental School Mock Interviews"/>
+  <meta property="og:description" content="Real-time feedback on your delivery, eye contact, and pacing. Practice dental school interviews with AI from $9.99."/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Product","name":"Denterview AI Mock Interview","description":"AI-powered dental school mock interview practice with real-time verbal and visual feedback","brand":{"@type":"Brand","name":"Denterview"},"offers":[{"@type":"Offer","name":"Starter Pack","price":"9.99","priceCurrency":"USD"},{"@type":"Offer","name":"Confidence Pack","price":"14.99","priceCurrency":"USD"},{"@type":"Offer","name":"Mastery Pack","price":"24.00","priceCurrency":"USD"},{"@type":"Offer","name":"Expert Pack","price":"37.99","priceCurrency":"USD"},{"@type":"Offer","name":"Acceptance Pack","price":"54.99","priceCurrency":"USD"}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    /* PAGE HERO */
+    .ai-hero { padding:140px 48px 80px; position:relative; overflow:hidden; text-align:center; }
+    .ai-hero::before { content:''; position:absolute; top:0; left:50%; transform:translateX(-50%); width:800px; height:600px; background:radial-gradient(ellipse,rgba(155,109,255,0.12) 0%,rgba(45,126,247,0.08) 40%,transparent 70%); }
+    .ai-hero-inner { max-width:740px; margin:0 auto; position:relative; z-index:1; }
+    .ai-badge { display:inline-flex; align-items:center; gap:8px; background:rgba(155,109,255,0.12); border:1px solid rgba(155,109,255,0.3); border-radius:100px; padding:6px 18px; font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#c69fff; margin-bottom:24px; }
+    .ai-hero h1 { font-family:'Instrument Serif',serif; font-size:clamp(36px,5.5vw,68px); font-weight:400; line-height:1.08; letter-spacing:-0.5px; margin-bottom:20px; }
+    .ai-hero h1 em { font-style:italic; background:linear-gradient(135deg,#9b6dff,var(--blue-bright),var(--teal)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .ai-hero p { font-size:18px; color:var(--text-muted); line-height:1.68; font-weight:300; max-width:580px; margin:0 auto 40px; }
+    .ai-hero-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+    .btn-purple { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,#9b6dff,var(--blue-bright)); color:white; text-decoration:none; padding:15px 32px; border-radius:12px; font-size:16px; font-weight:600; transition:opacity 0.2s,transform 0.2s; box-shadow:0 8px 28px rgba(155,109,255,0.3); }
+    .btn-purple:hover { opacity:0.9; transform:translateY(-2px); }
+    .btn-ghost-sm { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.14); color:white; text-decoration:none; padding:15px 32px; border-radius:12px; font-size:16px; font-weight:500; transition:background 0.2s; }
+    .btn-ghost-sm:hover { background:rgba(255,255,255,0.11); }
+
+    /* TRUST ROW */
+    .trust-row { display:flex; justify-content:center; gap:32px; flex-wrap:wrap; padding:28px 48px; border-bottom:1px solid var(--border); background:rgba(255,255,255,0.02); }
+    .trust-item { display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-muted); }
+    .trust-item svg { width:16px; height:16px; color:var(--teal); flex-shrink:0; }
+
+    /* WHAT IT DOES */
+    .features-section { padding:90px 48px; background:var(--navy-mid); }
+    .features-inner { max-width:1000px; margin:0 auto; }
+    .features-header { max-width:560px; margin-bottom:56px; }
+    .features-header h2 { font-family:'Instrument Serif',serif; font-size:clamp(28px,3.5vw,46px); font-weight:400; line-height:1.15; margin-bottom:12px; }
+    .features-header p { font-size:16px; color:var(--text-muted); line-height:1.65; }
+    .features-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+    .feature-card { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:16px; padding:28px; transition:border-color 0.3s,transform 0.3s; }
+    .feature-card:hover { border-color:rgba(155,109,255,0.35); transform:translateY(-4px); }
+    .feature-icon { width:48px; height:48px; border-radius:14px; background:rgba(155,109,255,0.12); display:flex; align-items:center; justify-content:center; margin-bottom:16px; }
+    .feature-icon svg { width:22px; height:22px; color:#c69fff; }
+    .feature-card h4 { font-size:16px; font-weight:600; margin-bottom:8px; }
+    .feature-card p { font-size:14px; color:var(--text-muted); line-height:1.65; margin:0; }
+
+    /* PACKAGES */
+    .packages-section { padding:90px 48px; background:var(--navy); }
+    .packages-inner { max-width:1100px; margin:0 auto; }
+    .packages-header { text-align:center; max-width:600px; margin:0 auto 64px; }
+    .packages-header h2 { font-family:'Instrument Serif',serif; font-size:clamp(28px,3.5vw,46px); font-weight:400; margin-bottom:12px; }
+    .packages-header p { font-size:16px; color:var(--text-muted); }
+
+    .packages-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; align-items:start; }
+
+    .pkg-card { background:rgba(255,255,255,0.03); border:1px solid var(--border); border-radius:20px; padding:28px 22px; position:relative; overflow:hidden; transition:transform 0.3s,border-color 0.3s,box-shadow 0.3s; display:flex; flex-direction:column; }
+    .pkg-card:hover { transform:translateY(-5px); border-color:rgba(155,109,255,0.4); box-shadow:0 20px 50px rgba(0,0,0,0.3); }
+    .pkg-card-featured { border-color:rgba(155,109,255,0.5); background:linear-gradient(160deg,rgba(155,109,255,0.09) 0%,rgba(45,126,247,0.06) 100%); transform:scale(1.04); }
+    .pkg-card-featured:hover { transform:scale(1.04) translateY(-5px); }
+    .pkg-best { display:inline-block; background:linear-gradient(135deg,#9b6dff,var(--blue-bright)); color:white; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:16px; }
+    .pkg-sessions { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:#c69fff; margin-bottom:6px; }
+    .pkg-name { font-family:'Instrument Serif',serif; font-size:22px; font-weight:400; margin-bottom:4px; }
+    .pkg-tagline { font-size:12px; color:var(--text-muted); margin-bottom:20px; line-height:1.4; }
+    .pkg-price { font-family:'Instrument Serif',serif; font-size:40px; font-weight:400; line-height:1; margin-bottom:6px; }
+    .pkg-price sup { font-size:18px; vertical-align:top; margin-top:8px; font-family:'DM Sans',sans-serif; }
+    .pkg-per { font-size:12px; color:var(--text-muted); margin-bottom:20px; }
+    .pkg-divider { height:1px; background:var(--border); margin-bottom:18px; }
+    .pkg-desc { font-size:13px; color:var(--text-muted); line-height:1.65; margin-bottom:24px; flex:1; }
+    .pkg-sessions-count { display:flex; align-items:center; gap:8px; font-size:13px; color:#b0c4de; margin-bottom:16px; font-weight:500; }
+    .pkg-sessions-count svg { width:14px; height:14px; color:var(--teal); flex-shrink:0; }
+    .btn-pkg { display:block; width:100%; text-align:center; padding:13px 16px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; border:none; cursor:pointer; font-family:'DM Sans',sans-serif; transition:opacity 0.2s,transform 0.2s; }
+    .btn-pkg-primary { background:linear-gradient(135deg,#9b6dff,var(--blue-bright)); color:white; box-shadow:0 4px 20px rgba(155,109,255,0.3); }
+    .btn-pkg-primary:hover { opacity:0.9; transform:translateY(-1px); }
+    .btn-pkg-outline { background:transparent; color:white; border:1px solid rgba(255,255,255,0.15); }
+    .btn-pkg-outline:hover { border-color:rgba(155,109,255,0.5); background:rgba(155,109,255,0.08); }
+
+    /* HOW AI WORKS */
+    .how-ai-section { padding:90px 48px; background:var(--navy-mid); }
+    .how-ai-inner { max-width:900px; margin:0 auto; }
+    .how-ai-header { text-align:center; max-width:520px; margin:0 auto 56px; }
+    .how-ai-header h2 { font-family:'Instrument Serif',serif; font-size:clamp(28px,3.5vw,44px); font-weight:400; margin-bottom:12px; }
+    .ai-steps { display:flex; flex-direction:column; gap:0; }
+    .ai-step { display:grid; grid-template-columns:64px 1fr; gap:24px; position:relative; }
+    .ai-step:not(:last-child)::before { content:''; position:absolute; left:31px; top:64px; bottom:-16px; width:2px; background:linear-gradient(180deg,rgba(155,109,255,0.4),rgba(45,126,247,0.15)); }
+    .ai-step-num { width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,rgba(155,109,255,0.2),rgba(45,126,247,0.15)); border:1px solid rgba(155,109,255,0.3); display:flex; align-items:center; justify-content:center; font-family:'Instrument Serif',serif; font-size:24px; position:relative; z-index:1; flex-shrink:0; }
+    .ai-step-content { padding:14px 0 48px; }
+    .ai-step-content h4 { font-size:18px; font-weight:600; margin-bottom:8px; }
+    .ai-step-content p { font-size:14px; color:var(--text-muted); line-height:1.7; max-width:520px; }
+
+    /* CTA */
+    .ai-cta { background:linear-gradient(135deg,rgba(155,109,255,0.18) 0%,rgba(45,126,247,0.12) 100%); border-top:1px solid rgba(155,109,255,0.2); border-bottom:1px solid rgba(155,109,255,0.2); padding:90px 48px; text-align:center; position:relative; overflow:hidden; }
+    .ai-cta::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 0%,rgba(155,109,255,0.15) 0%,transparent 60%); }
+    .ai-cta-inner { position:relative; z-index:1; max-width:620px; margin:0 auto; }
+    .ai-cta h2 { font-family:'Instrument Serif',serif; font-size:clamp(28px,4vw,48px); font-weight:400; line-height:1.15; margin-bottom:14px; }
+    .ai-cta p { font-size:17px; color:var(--text-muted); margin-bottom:36px; font-weight:300; }
+    .ai-cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+    @media(max-width:1000px){ .packages-grid{grid-template-columns:repeat(2,1fr);} .pkg-card-featured{transform:none;} .pkg-card-featured:hover{transform:translateY(-5px);} }
+    @media(max-width:700px){ .packages-grid{grid-template-columns:1fr;max-width:400px;margin:0 auto;} .features-grid{grid-template-columns:1fr;} .ai-hero{padding:120px 24px 60px;} .features-section,.packages-section,.how-ai-section,.ai-cta{padding:70px 24px;} .trust-row{padding:24px;gap:20px;} }
+
+    /* SCREENSHOTS */
+    .screenshots-section { padding:90px 48px; background:var(--navy); }
+    .screenshots-inner { max-width:1100px; margin:0 auto; }
+    .screenshots-header { text-align:center; max-width:560px; margin:0 auto 56px; }
+    .screenshots-header h2 { font-family:'Instrument Serif',serif; font-size:clamp(28px,3.5vw,44px); font-weight:400; margin-bottom:12px; }
+    .screenshots-header p { font-size:16px; color:var(--text-muted); }
+    .screenshots-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .screenshot-item { display:flex; flex-direction:column; gap:12px; }
+    .screenshot-label { font-size:13px; color:var(--text-muted); line-height:1.5; text-align:center; padding:0 8px; }
+    .screenshot-frame { border-radius:14px; overflow:hidden; border:1px solid var(--border); box-shadow:0 12px 40px rgba(0,0,0,0.4); transition:transform 0.3s,box-shadow 0.3s; }
+    .screenshot-frame:hover { transform:translateY(-4px); box-shadow:0 20px 56px rgba(0,0,0,0.5); }
+    .screenshot-frame img { width:100%; height:auto; display:block; }
+    @media(max-width:900px){ .screenshots-grid{grid-template-columns:1fr;max-width:520px;margin:0 auto;} .screenshots-section{padding:70px 24px;} }
+  </style>
+  <!-- Google Analytics: Replace GA_MEASUREMENT_ID with your ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="interview-guides.html">Interview Guides</a></li>
+    <li><a href="personal-statement.html">Statement Review</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#packages" class="nav-cta">See Packages →</a></li>
+  </ul>
+  <button class="nav-mobile-btn" onclick="openMobileNav()">☰</button>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+  <a href="index.html" onclick="closeMobileNav()">Home</a>
+  <a href="interview-guides.html" onclick="closeMobileNav()">Interview Guides</a>
+  <a href="personal-statement.html" onclick="closeMobileNav()">Statement Review</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+</nav>
+
+<!-- HERO -->
+<div class="ai-hero">
+  <div class="ai-hero-inner">
+    <div class="ai-badge">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      AI-Powered Mock Interviews
+    </div>
+    <h1>Practice until<br><em>you're unshakeable.</em></h1>
+    <p>Denterview AI gives you a real interview experience with an AI that watches, listens, and gives you immediate feedback on every aspect of your performance — so you improve with every single session.</p>
+    <div class="ai-hero-btns">
+      <a href="#packages" class="btn-purple">See All Packages →</a>
+      <a href="https://denterviewai.com" target="_blank" rel="noopener" class="btn-ghost-sm">Launch Platform ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- TRUST ROW -->
+<div class="trust-row">
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Real-time verbal feedback</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Eye contact analysis</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Filler word detection</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Session progress tracking</div>
+  <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>From $9.99</div>
+</div>
+
+<!-- FEATURES -->
+<section class="features-section">
+  <div class="features-inner">
+    <div class="features-header reveal">
+      <p class="section-eyebrow">What You Get</p>
+      <h2>Feedback that actually<br>makes you better</h2>
+      <p>Most people practice by talking to a mirror. Denterview AI gives you data-driven insights that turn practice into measurable improvement.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 00-3 3v8a3 3 0 006 0V4a3 3 0 00-3-3z"/><path d="M19 10v2a7 7 0 01-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+        <h4>Verbal Delivery Analysis</h4>
+        <p>Get scored on pacing, tone, clarity, and depth of reflection. Know exactly where your delivery breaks down and how to fix it.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/></svg></div>
+        <h4>Eye Contact Tracking</h4>
+        <p>The AI monitors where you look throughout your response. Consistent eye contact signals confidence — and now you can measure it.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 010 14.14M15.54 8.46a5 5 0 010 7.07"/></svg></div>
+        <h4>Filler Word Detection</h4>
+        <p>"Um," "like," "you know" — the AI catches every one. See exactly how many filler words you use and watch that number drop each session.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h4>Progress Tracking</h4>
+        <p>Every session is scored and saved. See your improvement across every metric over time — not just gut feeling, actual data.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h4>Realistic Interview Simulation</h4>
+        <p>Full-length mock interviews that simulate real dental school formats — so when the real thing happens, it already feels familiar.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <h4>Immediate Post-Session Report</h4>
+        <p>No waiting. Right after each session you get a full performance breakdown with specific areas to focus on before your next attempt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLATFORM SCREENSHOTS -->
+<section class="screenshots-section">
+  <div class="screenshots-inner">
+    <div class="screenshots-header reveal">
+      <p class="section-eyebrow">See It In Action</p>
+      <h2>What the platform actually looks like</h2>
+      <p>No mystery — here's exactly what you get when you log in and start practicing.</p>
+    </div>
+    <div class="screenshots-grid">
+      <div class="screenshot-item reveal">
+        <div class="screenshot-label">Your dashboard — track sessions, progress & remaining interviews</div>
+        <div class="screenshot-frame">
+          <img src="ai-screenshot-1.jpg" alt="Denterview AI dashboard showing total purchased sessions, completed interviews, and remaining sessions" loading="lazy"/>
+        </div>
+      </div>
+      <div class="screenshot-item reveal">
+        <div class="screenshot-label">Live interview — real question, timed response, recording active</div>
+        <div class="screenshot-frame">
+          <img src="ai-screenshot-3.jpg" alt="Denterview AI live mock interview with recording active and timed response" loading="lazy"/>
+        </div>
+      </div>
+      <div class="screenshot-item reveal">
+        <div class="screenshot-label">Detailed feedback — scored on content, delivery, eye contact & professionalism</div>
+        <div class="screenshot-frame">
+          <img src="ai-screenshot-2.jpg" alt="Denterview AI post-interview feedback showing content analysis, visual presence, delivery and professionalism scores" loading="lazy"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+  <div class="packages-inner">
+    <div class="packages-header reveal">
+      <p class="section-eyebrow">Choose Your Package</p>
+      <h2 class="section-title" style="text-align:center;">Five packages.<br>One for every stage of prep.</h2>
+      <p>Whether you want to test the waters or go all-in before interview day — there's a package built for exactly where you are.</p>
+    </div>
+    <div class="packages-grid">
+
+      <!-- STARTER -->
+      <div class="pkg-card reveal">
+        <div class="pkg-sessions">2 Sessions</div>
+        <div class="pkg-name">Starter Pack</div>
+        <div class="pkg-tagline">Zero commitment. Maximum insight.</div>
+        <div class="pkg-price"><sup>$</sup>9.99</div>
+        <div class="pkg-per">one-time purchase</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-sessions-count">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          2 full mock interview sessions
+        </div>
+        <p class="pkg-desc">A simple, zero-commitment package to test drive the platform. Get immediate AI analysis on two high-impact questions. Perfect for a final review or to understand your baseline score before committing to full prep.</p>
+        <a href="https://shop.denterview.com/b/starter-pack" class="btn-pkg btn-pkg-outline">Get Starter Pack – $9.99</a>
+      </div>
+
+      <!-- CONFIDENCE -->
+      <div class="pkg-card reveal">
+        <div class="pkg-sessions">3 Sessions</div>
+        <div class="pkg-name">Confidence Pack</div>
+        <div class="pkg-tagline">Turn anxiety into assurance.</div>
+        <div class="pkg-price"><sup>$</sup>14.99</div>
+        <div class="pkg-per">one-time purchase</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-sessions-count">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          3 full mock interview sessions
+        </div>
+        <p class="pkg-desc">Move past memorizing answers and start feeling truly confident in your delivery. Three critical practice sessions to refine your delivery and eliminate weaknesses. Powerful, immediate AI feedback to transform interview anxiety into genuine self-assurance.</p>
+        <a href="https://shop.denterview.com/b/confidence-pack" class="btn-pkg btn-pkg-outline">Get Confidence Pack – $14.99</a>
+      </div>
+
+      <!-- MASTERY (featured) -->
+      <div class="pkg-card pkg-card-featured reveal">
+        <div class="pkg-best">Most Popular</div>
+        <div class="pkg-sessions">5 Sessions</div>
+        <div class="pkg-name">Mastery Pack</div>
+        <div class="pkg-tagline">Fine-tune everything.</div>
+        <div class="pkg-price"><sup>$</sup>24</div>
+        <div class="pkg-per">one-time purchase</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-sessions-count">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          5 full mock interview sessions
+        </div>
+        <p class="pkg-desc">Go beyond confidence and start mastering your interviews. Five complete AI sessions to fine-tune every aspect of your performance — from pacing and tone to depth of reflection. Data-driven feedback to identify patterns and level up with each attempt.</p>
+        <a href="https://shop.denterview.com/b/mastery-pack" class="btn-pkg btn-pkg-primary">Get Mastery Pack – $24</a>
+      </div>
+
+      <!-- EXPERT -->
+      <div class="pkg-card reveal">
+        <div class="pkg-sessions">8 Sessions</div>
+        <div class="pkg-name">Expert Pack</div>
+        <div class="pkg-tagline">Precision under any condition.</div>
+        <div class="pkg-price"><sup>$</sup>37.99</div>
+        <div class="pkg-per">one-time purchase</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-sessions-count">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          8 full mock interview sessions
+        </div>
+        <p class="pkg-desc">For applicants determined to stand out. Eight full-length AI mock interviews — enough to simulate multiple school-specific formats and polish your responses under any condition. Advanced performance insights and targeted improvement tracking.</p>
+        <a href="https://shop.denterview.com/b/expertpack" class="btn-pkg btn-pkg-outline">Get Expert Pack – $37.99</a>
+      </div>
+
+      <!-- ACCEPTANCE -->
+      <div class="pkg-card reveal">
+        <div class="pkg-sessions">12 Sessions</div>
+        <div class="pkg-name">Acceptance Pack</div>
+        <div class="pkg-tagline">For those who won't settle.</div>
+        <div class="pkg-price"><sup>$</sup>54.99</div>
+        <div class="pkg-per">one-time purchase</div>
+        <div class="pkg-divider"></div>
+        <div class="pkg-sessions-count">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          12 full mock interview sessions
+        </div>
+        <p class="pkg-desc">The pinnacle of interview preparation. Twelve AI-guided mock interviews designed to sharpen every detail — from depth of reflection to how you carry yourself. Consistent feedback and measurable growth across sessions, built for applicants who won't settle for anything less than acceptance.</p>
+        <a href="https://shop.denterview.com/b/acceptance-pack" class="btn-pkg btn-pkg-outline">Get Acceptance Pack – $54.99</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- HOW AI WORKS -->
+<section class="how-ai-section">
+  <div class="how-ai-inner">
+    <div class="how-ai-header reveal">
+      <p class="section-eyebrow">How It Works</p>
+      <h2>From purchase to performance in minutes</h2>
+    </div>
+    <div class="ai-steps">
+      <div class="ai-step reveal">
+        <div class="ai-step-num">1</div>
+        <div class="ai-step-content">
+          <h4>Purchase your package</h4>
+          <p>Select the number of sessions that matches your timeline and budget. One-time purchase, instant access — no subscriptions, no hidden fees.</p>
+        </div>
+      </div>
+      <div class="ai-step reveal">
+        <div class="ai-step-num">2</div>
+        <div class="ai-step-content">
+          <h4>Launch the platform</h4>
+          <p>Access Denterview AI at denterviewai.com. The platform runs in your browser — no downloads required. Your camera and mic are used to analyze your performance in real time.</p>
+        </div>
+      </div>
+      <div class="ai-step reveal">
+        <div class="ai-step-num">3</div>
+        <div class="ai-step-content">
+          <h4>Complete your mock interview</h4>
+          <p>Answer real dental school interview questions while the AI monitors your delivery, eye contact, pacing, and verbal habits. It feels like the real thing — because it's designed to.</p>
+        </div>
+      </div>
+      <div class="ai-step reveal">
+        <div class="ai-step-num">4</div>
+        <div class="ai-step-content">
+          <h4>Get your detailed report</h4>
+          <p>Immediately after each session, receive a full performance breakdown. See what you improved, what still needs work, and what to focus on in your next session.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="ai-cta">
+  <div class="ai-cta-inner">
+    <h2>The interview is coming.<br><em style="font-style:italic;">Are you ready?</em></h2>
+    <p>Every session makes you sharper. Start with the Starter Pack and see the difference one practice run makes.</p>
+    <div class="ai-cta-btns">
+      <a href="https://shop.denterview.com/b/starter-pack" class="btn-purple">Start with the Starter Pack – $9.99</a>
+      <a href="#packages" class="btn-ghost-sm">Compare all packages</a>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a><p>Affordable, high-quality dental school prep — built by dental students, for dental students.</p></div>
+      <div class="footer-col"><h5>Products</h5><a href="personal-statement.html">Personal Statement Review</a><a href="interview-guides.html">Interview Prep Guides</a><a href="denterview-ai.html">Denterview AI</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="index.html#testimonials">Success Stories</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Return Policy</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Denterview™. All rights reserved.</p><div class="footer-bottom-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a></div></div>
+  </div>
+</footer>
+
+<script>
+  const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);obs.unobserve(e.target);}});},{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+  function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.getElementById('mobileOverlay').classList.add('open');document.body.style.overflow='hidden';}
+  function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('open');document.body.style.overflow='';}
+  window.addEventListener('scroll',()=>{document.getElementById('navbar').style.padding=window.scrollY>60?'10px 48px':'16px 48px';});
+</script>
+</body>
+</html>
