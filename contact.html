@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Contact – Denterview™</title>
+  <meta name="description" content="Have a question about Denterview products or your order? Reach out to us at denterviews@gmail.com — we respond to every message."/>
+  <link rel="canonical" href="https://denterview.com/contact"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    .contact-wrap{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:140px 24px 80px;position:relative;overflow:hidden;}
+    .contact-wrap::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:500px;background:radial-gradient(ellipse,rgba(45,126,247,0.1) 0%,transparent 70%);}
+    .contact-inner{position:relative;z-index:1;max-width:680px;width:100%;text-align:center;}
+    .contact-inner h1{font-family:'Instrument Serif',serif;font-size:clamp(36px,5vw,60px);font-weight:400;line-height:1.1;margin-bottom:16px;}
+    .contact-inner h1 em{font-style:italic;background:linear-gradient(135deg,var(--blue-bright),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+    .contact-inner > p{font-size:17px;color:var(--text-muted);line-height:1.65;margin-bottom:48px;font-weight:300;}
+    .contact-card{background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:20px;padding:48px;margin-bottom:32px;transition:border-color 0.3s;}
+    .contact-card:hover{border-color:rgba(45,126,247,0.3);}
+    .contact-email-icon{font-size:40px;margin-bottom:16px;display:block;}
+    .contact-card h3{font-family:'Instrument Serif',serif;font-size:26px;font-weight:400;margin-bottom:12px;}
+    .contact-card p{font-size:15px;color:var(--text-muted);line-height:1.65;margin-bottom:24px;}
+    .email-link{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,var(--blue-bright),var(--teal));color:white;text-decoration:none;padding:16px 36px;border-radius:12px;font-size:16px;font-weight:600;transition:opacity 0.2s,transform 0.2s;box-shadow:0 8px 32px rgba(45,126,247,0.3);}
+    .email-link:hover{opacity:0.9;transform:translateY(-2px);}
+    .contact-info-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:32px;text-align:left;}
+    .contact-info-item{background:var(--card-bg);border:1px solid var(--border);border-radius:14px;padding:20px 24px;}
+    .contact-info-item .ci-icon{font-size:20px;margin-bottom:8px;display:block;}
+    .contact-info-item h4{font-size:14px;font-weight:600;margin-bottom:4px;}
+    .contact-info-item p{font-size:13px;color:var(--text-muted);line-height:1.5;margin:0;}
+    @media(max-width:600px){.contact-info-grid{grid-template-columns:1fr;}.contact-card{padding:32px 24px;}}
+  </style>
+  <!-- Google Analytics: Replace GA_MEASUREMENT_ID with your ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html#products" class="nav-cta">Get Started →</a></li>
+  </ul>
+  <button class="nav-mobile-btn" onclick="openMobileNav()">☰</button>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+  <a href="index.html#products" onclick="closeMobileNav()">Products</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+</nav>
+
+<div class="contact-wrap">
+  <div class="contact-inner">
+    <div class="contact-inner">
+      <p class="section-eyebrow" style="margin-bottom:16px;">Get In Touch</p>
+      <h1>We'd love to<br><em>hear from you.</em></h1>
+      <p>Questions about a product, issues with your order, or just want to say hello — we respond to every message personally.</p>
+    </div>
+    <div class="contact-card">
+      <span class="contact-email-icon">✉️</span>
+      <h3>Email us directly</h3>
+      <p>Reach out any time and we'll get back to you as soon as possible — usually within 24 hours on business days.</p>
+      <a href="mailto:denterviews@gmail.com" class="email-link">✉ denterviews@gmail.com</a>
+    </div>
+    <div class="contact-info-grid">
+      <div class="contact-info-item">
+        <span class="ci-icon">📝</span>
+        <h4>Personal Statement Questions</h4>
+        <p>Questions about the review process, turnaround time, or submitting your statement after purchase.</p>
+      </div>
+      <div class="contact-info-item">
+        <span class="ci-icon">📦</span>
+        <h4>Order Issues</h4>
+        <p>Trouble accessing your purchase or a technical issue with your digital download? We'll fix it fast.</p>
+      </div>
+      <div class="contact-info-item">
+        <span class="ci-icon">🤖</span>
+        <h4>Denterview AI Support</h4>
+        <p>Questions about the AI mock interview platform at denterviewai.com — reach out and we'll help.</p>
+      </div>
+      <div class="contact-info-item">
+        <span class="ci-icon">💬</span>
+        <h4>General Questions</h4>
+        <p>Not sure which product is right for where you are in the process? We're happy to help you decide.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a><p>Affordable, high-quality dental school prep — built by dental students, for dental students.</p></div>
+      <div class="footer-col"><h5>Products</h5><a href="personal-statement.html">Personal Statement Review</a><a href="interview-guides.html">Interview Prep Guides</a><a href="https://denterviewai.com" target="_blank" rel="noopener">Denterview AI</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Return Policy</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Denterview™. All rights reserved.</p><div class="footer-bottom-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a></div></div>
+  </div>
+</footer>
+<script>
+  function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.getElementById('mobileOverlay').classList.add('open');document.body.style.overflow='hidden';}
+  function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('open');document.body.style.overflow='';}
+  window.addEventListener('scroll',()=>{document.getElementById('navbar') && (document.getElementById('navbar').style.padding=window.scrollY>60?'10px 48px':'16px 48px');
+  });
+</script>
+</body>
+</html>
