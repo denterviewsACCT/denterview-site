@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Disclaimer – Denterview™</title>
+  <meta name="description" content="Denterview Disclaimer. Our materials are intended as preparation tools and do not guarantee admission to any dental school."/>
+  <link rel="canonical" href="https://denterview.com/disclaimer"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Google Analytics: Replace GA_MEASUREMENT_ID with your ID from analytics.google.com -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+</head>
+<body>
+<nav id="navbar">
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a>
+  <ul class="nav-links">
+    <li><a href="index.html#products">Products</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="index.html#products" class="nav-cta">Get Started →</a></li>
+  </ul>
+  <button class="nav-mobile-btn" onclick="openMobileNav()">☰</button>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+  <a href="index.html#products" onclick="closeMobileNav()">Products</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+</nav>
+
+<div class="legal-hero">
+  <h1>Disclaimer</h1>
+  <p>Please read this disclaimer carefully before using Denterview™.</p>
+</div>
+
+<div class="legal-body">
+  <p>Denterview™ provides digital products designed to help applicants prepare for dental school interviews. These materials include questions, sample answers, and general tips based on common interview practices.</p>
+
+  <h2>No Guarantee of Admission</h2>
+  <p>We do not guarantee acceptance into any dental school or specific interview outcomes. Success in admissions depends on a variety of individual factors including personal performance, academic record, and school-specific evaluation criteria.</p>
+
+  <h2>Content Accuracy</h2>
+  <p>While our content is based on trends and real applicant experiences, Denterview does not guarantee that any specific question will appear in any individual interview. Interview formats, styles, and content vary widely between schools, cycles, and even interviewers. Our resources are intended to support preparation — not to predict or mirror any exact interview experience.</p>
+
+  <h2>No Professional Advice</h2>
+  <p>All materials are provided "as-is" for informational and educational purposes only. Nothing on this site constitutes professional admissions consulting, legal advice, or personalized educational guidance.</p>
+
+  <h2>Limitation of Liability</h2>
+  <p>In no event shall Denterview be liable for any indirect, incidental, special, or consequential damages arising from the use or inability to use the materials provided. By using this site, you acknowledge that preparation alone does not ensure admission and that Denterview is not responsible for any admissions decisions or related outcomes.</p>
+
+  <h2>No Affiliation</h2>
+  <p>Denterview™ is not affiliated with any dental school, dental school organization, ADEA, AADSAS, or any admissions body. All trademarks and institutional names referenced are property of their respective owners.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this disclaimer? Reach us at <a href="mailto:denterviews@gmail.com">denterviews@gmail.com</a>.</p>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a><p>Affordable, high-quality dental school prep — built by dental students, for dental students.</p></div>
+      <div class="footer-col"><h5>Products</h5><a href="personal-statement.html">Personal Statement Review</a><a href="interview-guides.html">Interview Prep Guides</a><a href="https://denterviewai.com" target="_blank" rel="noopener">Denterview AI</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">About Us</a><a href="contact.html">Contact</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Return Policy</a></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Denterview™. All rights reserved.</p><div class="footer-bottom-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a></div></div>
+  </div>
+</footer>
+<script>
+  function openMobileNav(){document.getElementById('mobileNav').classList.add('open');document.getElementById('mobileOverlay').classList.add('open');document.body.style.overflow='hidden';}
+  function closeMobileNav(){document.getElementById('mobileNav').classList.remove('open');document.getElementById('mobileOverlay').classList.remove('open');document.body.style.overflow='';}
+  window.addEventListener('scroll',()=>{document.getElementById('navbar') && (document.getElementById('navbar').style.padding=window.scrollY>60?'10px 48px':'16px 48px');
+  });
+</script>
+</body>
+</html>
