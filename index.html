@@ -4,23 +4,21 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
   <title>Denterview™ – Dental School Interview Prep & Application Help</title>
-  <meta name="description" content="Ace your dental school interview with Denterview. 73 real interview questions, behavioral prep guides from $8.99, AI mock interviews, and personal statement review by dental students. 96+ student acceptances."  />
+  <meta name="description" content="Denterview helps pre-dental students get accepted. Personal statement review by real dental students, expert interview prep guides, and AI-powered mock interviews. Starting at $8.99."/>
   <meta name="keywords" content="dental school interview prep, dental school personal statement review, dental interview questions, pre-dental resources, behavioral interview prep, dental school mock interview, AADSAS application help, dental school acceptance"/>
   <meta name="author" content="Denterview"/>
   <meta property="og:title" content="Denterview™ – Dental School Interview Prep & Application Help"/>
   <meta property="og:description" content="Personal statement review, expert interview prep guides, and AI mock interviews for dental school applicants. Built by dental students who got in."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://denterview.com"/>
-  <meta property="og:image" content="https://denterview.com/logo.png"/>
+  <meta property="og:image" content="https://denterview.com/logo.jpg"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="Denterview™ – Dental School Interview Prep"/>
   <meta name="twitter:description" content="Personal statement review, interview prep guides & AI mock interviews for dental school applicants."/>
   <link rel="canonical" href="https://denterview.com"/>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Denterview","url":"https://denterview.com","logo":"https://denterview.com/logo.png","description":"Dental school application and interview preparation — personal statement review, prep guides, and AI mock interviews","contactPoint":{"@type":"ContactPoint","email":"denterviews@gmail.com","contactType":"customer support"},"offers":[{"@type":"Offer","name":"Personal Statement Review","price":"40.00","priceCurrency":"USD","description":"Full personal statement review by a current dental student"},{"@type":"Offer","name":"Essential Interview Guide","price":"8.99","priceCurrency":"USD"},{"@type":"Offer","name":"AI Starter Pack","price":"9.99","priceCurrency":"USD"}]}
+  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Denterview","url":"https://denterview.com","logo":"https://denterview.com/logo.jpg","description":"Dental school application and interview preparation — personal statement review, prep guides, and AI mock interviews","contactPoint":{"@type":"ContactPoint","email":"denterviews@gmail.com","contactType":"customer support"},"offers":[{"@type":"Offer","name":"Personal Statement Review","price":"40.00","priceCurrency":"USD","description":"Full personal statement review by a current dental student"},{"@type":"Offer","name":"Essential Interview Guide","price":"8.99","priceCurrency":"USD"},{"@type":"Offer","name":"AI Starter Pack","price":"9.99","priceCurrency":"USD"}]}
   </script>
-    <link rel="icon" type="image/jpeg" href="favicon.png">
-  <link rel="shortcut icon" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -31,9 +29,9 @@
     /* ── OVERLAY MODAL ── */
     .modal-backdrop {
       position: fixed; inset: 0; z-index: 500;
-      background: rgba(8, 16, 32, 0.55);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(8, 16, 32, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
       display: flex; align-items: center; justify-content: center;
       padding: 24px;
       animation: backdropIn 0.5s ease both;
@@ -52,14 +50,6 @@
     }
     @keyframes modalIn { from{opacity:0;transform:translateY(32px) scale(0.96)} to{opacity:1;transform:translateY(0) scale(1)} }
 
-    .modal-close-btn {
-      position:absolute; top:16px; right:20px;
-      background:none; border:none; color:rgba(255,255,255,0.5);
-      font-size:22px; cursor:pointer; line-height:1;
-      transition:color 0.2s; font-family:'DM Sans',sans-serif;
-      z-index:10;
-    }
-    .modal-close-btn:hover { color:white; }
     .modal-logo { display:flex; justify-content:center; margin-bottom:28px; }
     .modal-logo img { height:52px; width:auto; }
 
@@ -287,17 +277,16 @@
       .modal-box{padding:36px 24px 28px}
     }
   </style>
-  <!-- Google Analytics: Replace G-L9LH6YTLQJ with your ID from analytics.google.com -->
+  <!-- Google Analytics + Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9LH6YTLQJ"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L9LH6YTLQJ');</script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L9LH6YTLQJ');gtag('config','AW-17341313917');</script>
 </head>
 <body>
 
 <!-- GLASS OVERLAY MODAL -->
 <div class="modal-backdrop" id="modalBackdrop">
   <div class="modal-box">
-    <button class="modal-close-btn" onclick="closeModal()" aria-label="Close">✕</button>
-    <div class="modal-logo"><img src="logo.png" alt="Denterview" style="height:80px;width:auto;border-radius:12px;"/></div>
+    <div class="modal-logo"><img src="logo.jpg" alt="Denterview"/></div>
     <h2>How can <em>Denterview</em> help you?</h2>
     <p class="modal-subtitle">Select everything that applies — we'll point you to the right resources.</p>
     <p class="modal-hint">Select all that apply</p>
@@ -340,29 +329,26 @@
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="index.html" class="nav-logo"><img src="logo.png" alt="Denterview – Ace Your Dental School Interview"/></a>
-    <ul class="nav-links">
-    <li><a href="index.html#products">Products</a></li>
-    <li><a href="interview-guides.html">Interview Guides</a></li>
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview – Ace Your Dental School Interview"/></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
     <li><a href="denterview-ai.html">AI Interviews</a></li>
-    <li><a href="personal-statement.html">Statement Review</a></li>
+    <li><a href="#testimonials">Success Stories</a></li>
     <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
-    <li><a href="index.html#products" class="nav-cta">Get Started →</a></li>
+    <li><a href="#products" class="nav-cta">Get Started →</a></li>
   </ul>
   <button class="nav-mobile-btn" onclick="openMobileNav()">☰</button>
 </nav>
 <div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
 <nav class="mobile-nav" id="mobileNav">
   <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
-  
-  <a href="index.html#products" onclick="closeMobileNav()">Products</a>
-  <a href="interview-guides.html" onclick="closeMobileNav()">Interview Guides</a>
+  <a href="#products" onclick="closeMobileNav()">Products</a>
   <a href="denterview-ai.html" onclick="closeMobileNav()">AI Interviews</a>
-  <a href="personal-statement.html" onclick="closeMobileNav()">Statement Review</a>
+  <a href="#testimonials" onclick="closeMobileNav()">Success Stories</a>
   <a href="about.html" onclick="closeMobileNav()">About</a>
   <a href="contact.html" onclick="closeMobileNav()">Contact</a>
-
+  <a href="#products" onclick="closeMobileNav()" style="color:var(--teal);margin-top:16px;">Get Started →</a>
 </nav>
 
 <!-- HERO -->
@@ -371,7 +357,7 @@
   <div class="hero-content">
     <div class="hero-badge"><span class="hero-badge-dot"></span>Trusted by students accepted to top dental schools</div>
     <h1>Your path to<br><em>dental school</em><br>starts here.</h1>
-    <p class="hero-sub">From a standout personal statement to crushing your interview — including traditional panels, behavioral interviews, and <strong style="color:var(--teal);">Kira Talent</strong> video platforms. Everything pre-dental students need, without the price tag.</p>
+    <p class="hero-sub">From a standout personal statement to crushing interview day — Denterview gives every pre-dental student the tools to compete at the highest level, without the price tag.</p>
     <div class="hero-actions">
       <button class="hero-btn-main" onclick="openModal()">Find My Resources →</button>
       <a href="#products" class="hero-btn-ghost">Browse Everything</a>
@@ -382,8 +368,9 @@
 <!-- STATS -->
 <div class="stats-band">
   <div class="stat-item"><span class="stat-num">64+</span><span class="stat-label">Schools Our Students Got Into</span></div>
+  <div class="stat-item"><span class="stat-num">$8.99</span><span class="stat-label">Starting Price</span></div>
   <div class="stat-item"><span class="stat-num">73</span><span class="stat-label">Real Interview Questions</span></div>
-  <div class="stat-item"><span class="stat-num">$8.99</span><span class="stat-label">Interview Guide Starting Price</span></div>
+  <div class="stat-item"><span class="stat-num">3–5</span><span class="stat-label">Day Feedback Turnaround</span></div>
 </div>
 
 <!-- PRODUCTS -->
@@ -444,7 +431,7 @@
           AI-Powered
         </span>
         <h3>Denterview AI Mock Interviews</h3>
-        <p>Practice live with AI that gives real-time feedback on your verbal responses, eye contact, pacing, and filler words. Perfect for traditional interviews and <strong style="color:#c69fff;">Kira Talent</strong> video prep. Five packages from a quick test drive to full mastery.</p>
+        <p>Practice live with AI that gives real-time feedback on your verbal responses, eye contact, pacing, and filler words. Five packages available — from a quick test drive to full mastery.</p>
         <ul class="product-features">
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Real-time verbal & visual feedback</li>
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Eye contact & body language analysis</li>
@@ -480,7 +467,7 @@
         <div class="bundle-card-right">
           <div class="bundle-price"><sup>$</sup>25.99</div>
           <div class="bundle-save">vs $33.98 separately</div>
-          <a href="https://shop.denterview.com/order?link=6Eg9p&pricing_plan=18B13mPMWZ" class="btn-bundle">Get This Bundle →</a>
+          <a href="https://denterview.com/order?link=6Eg9p&pricing_plan=18B13mPMWZ" class="btn-bundle">Get This Bundle →</a>
         </div>
       </div>
       <div class="bundle-card bundle-card-featured">
@@ -500,7 +487,7 @@
         <div class="bundle-card-right">
           <div class="bundle-price"><sup>$</sup>60.99</div>
           <div class="bundle-save">vs $73.98 separately</div>
-          <a href="https://shop.denterview.com/order?link=TMzOU" class="btn-bundle btn-bundle-gold">Get This Bundle →</a>
+          <a href="https://denterview.com/order?link=TMzOU" class="btn-bundle btn-bundle-gold">Get This Bundle →</a>
         </div>
       </div>
     </div>
@@ -524,64 +511,6 @@
   </div>
 </section>
 
-<!-- ACCEPTED SCHOOLS -->
-<section id="schools" style="background:var(--navy);padding:80px 48px;">
-  <div class="section-inner">
-    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 48px;">
-      <p class="section-eyebrow">Real Results</p>
-      <h2 class="section-title">Students accepted into<br>64+ dental schools.</h2>
-      <p class="section-sub" style="margin:0 auto;">Our customers have been accepted into over 64 dental schools across the country — here are many of them. New schools are reported to us every cycle.</p>
-    </div>
-            <div class="schools-grid reveal">
-      <div class="school-pill">A.T. Still University ASDOH</div>
-      <div class="school-pill">Case Western Reserve</div>
-      <div class="school-pill">Columbia University CDM</div>
-      <div class="school-pill">Creighton University</div>
-      <div class="school-pill">East Carolina University</div>
-      <div class="school-pill">Harvard School of Dental Medicine</div>
-      <div class="school-pill">Howard University CDM</div>
-      <div class="school-pill">Indiana University School of Dentistry</div>
-      <div class="school-pill">Kansas City University</div>
-      <div class="school-pill">LECOM School of Dental Medicine</div>
-      <div class="school-pill">Loma Linda University</div>
-      <div class="school-pill">Marquette University</div>
-      <div class="school-pill">Midwestern University</div>
-      <div class="school-pill">Midwestern University Arizona</div>
-      <div class="school-pill">NYU College of Dentistry</div>
-      <div class="school-pill">Nova Southeastern University</div>
-      <div class="school-pill">Roseman University</div>
-      <div class="school-pill">Rutgers School of Dental Medicine</div>
-      <div class="school-pill">Stony Brook University</div>
-      <div class="school-pill">Temple University Kornberg</div>
-      <div class="school-pill">Texas A&amp;M College of Dentistry</div>
-      <div class="school-pill">Texas Tech El Paso</div>
-      <div class="school-pill">Touro College of Dental Medicine</div>
-      <div class="school-pill">Tufts University School of Dental Medicine</div>
-      <div class="school-pill">UCSF School of Dentistry</div>
-      <div class="school-pill">UMKC School of Dentistry</div>
-      <div class="school-pill">UNC Adams School of Dentistry</div>
-      <div class="school-pill">UT San Antonio</div>
-      <div class="school-pill">UTHealth Houston</div>
-      <div class="school-pill">University at Buffalo</div>
-      <div class="school-pill">University of Detroit Mercy</div>
-      <div class="school-pill">University of Florida</div>
-      <div class="school-pill">University of Illinois Chicago</div>
-      <div class="school-pill">University of Iowa</div>
-      <div class="school-pill">University of Kentucky</div>
-      <div class="school-pill">University of Louisville</div>
-      <div class="school-pill">University of Maryland</div>
-      <div class="school-pill">University of Michigan</div>
-      <div class="school-pill">University of New England</div>
-      <div class="school-pill">University of Pennsylvania</div>
-      <div class="school-pill">University of Pittsburgh</div>
-      <div class="school-pill">University of Sydney</div>
-      <div class="school-pill">VCU School of Dentistry</div>
-      <div class="school-pill">Western University of Health Sciences</div>
-      <div class="school-pill school-pill-more">+ more added every cycle</div>
-    </div>
-  </div>
-</section>
-
 <!-- TESTIMONIALS -->
 <section id="testimonials">
   <div class="section-inner">
@@ -596,7 +525,7 @@
         <p class="testimonial-text">"I went 5/5 on my interviews. Denterview was a huge part of my prep and I couldn't recommend it more."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">K</div>
-          <div><div class="testimonial-name">Kyle J.</div><div class="testimonial-school">2025 Application Cycle</div></div>
+          <div><div class="testimonial-name">Kylejosephhhh</div><div class="testimonial-school">2025 Application Cycle</div></div>
         </div>
       </div>
       <div class="testimonial-card reveal">
@@ -604,7 +533,7 @@
         <p class="testimonial-text">"Used it after my first interview and it made a crazy difference. I did a lot better after using Denterview."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">V</div>
-          <div><div class="testimonial-name">Verified Purchaser</div><div class="testimonial-school">2025 Application Cycle</div></div>
+          <div><div class="testimonial-name">Verified Customer</div><div class="testimonial-school">2025 Application Cycle</div></div>
         </div>
       </div>
       <div class="testimonial-card reveal">
@@ -612,7 +541,7 @@
         <p class="testimonial-text">"Denterview saved me for both interviews. Couldn't have done it without this resource."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">P</div>
-          <div><div class="testimonial-name">Verified Purchaser</div><div class="testimonial-school">2025 Application Cycle</div></div>
+          <div><div class="testimonial-name">Professionalask22</div><div class="testimonial-school">2025 Application Cycle</div></div>
         </div>
       </div>
       <div class="testimonial-card reveal">
@@ -639,14 +568,52 @@
           <div><div class="testimonial-name">Virginia S.</div><div class="testimonial-school">2025 Application Cycle</div></div>
         </div>
       </div>
-      <div class="testimonial-card reveal">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">"Super responsive and helpful team. Great resource for anyone preparing for dental school interviews."</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">A</div>
-          <div><div class="testimonial-name">Amelia F.</div><div class="testimonial-school">2025 Application Cycle</div></div>
-        </div>
-      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCEPTED SCHOOLS -->
+<section id="schools" style="background:var(--navy);padding:80px 48px;">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 48px;">
+      <p class="section-eyebrow">Real Results</p>
+      <h2 class="section-title">Students accepted into<br>64+ dental schools.</h2>
+      <p class="section-sub" style="margin:0 auto;">Our customers have been accepted into over 64 dental schools across the country — here are many of them. New schools are reported to us every cycle.</p>
+    </div>
+    <div class="schools-grid reveal">
+      <div class="school-pill">A.T. Still University ASDOH</div>
+      <div class="school-pill">ATSU MOSDOH</div>
+      <div class="school-pill">Case Western Reserve</div>
+      <div class="school-pill">Creighton University</div>
+      <div class="school-pill">East Carolina University</div>
+      <div class="school-pill">Howard University CDM</div>
+      <div class="school-pill">Indiana University School of Dentistry</div>
+      <div class="school-pill">Kansas City University</div>
+      <div class="school-pill">LECOM School of Dental Medicine</div>
+      <div class="school-pill">Loma Linda University</div>
+      <div class="school-pill">Marquette University</div>
+      <div class="school-pill">Midwestern University</div>
+      <div class="school-pill">Midwestern University Arizona</div>
+      <div class="school-pill">NYU College of Dentistry</div>
+      <div class="school-pill">Nova Southeastern University</div>
+      <div class="school-pill">Roseman University</div>
+      <div class="school-pill">Temple University Kornberg</div>
+      <div class="school-pill">Texas Tech El Paso</div>
+      <div class="school-pill">Touro College of Dental Medicine</div>
+      <div class="school-pill">UCSF School of Dentistry</div>
+      <div class="school-pill">UMKC School of Dentistry</div>
+      <div class="school-pill">UNC Adams School of Dentistry</div>
+      <div class="school-pill">UT San Antonio</div>
+      <div class="school-pill">UTHealth Houston</div>
+      <div class="school-pill">University of Detroit Mercy</div>
+      <div class="school-pill">University of Illinois Chicago</div>
+      <div class="school-pill">University of Iowa</div>
+      <div class="school-pill">University of Louisville</div>
+      <div class="school-pill">University of Michigan</div>
+      <div class="school-pill">University of Pennsylvania</div>
+      <div class="school-pill">University of Sydney</div>
+      <div class="school-pill">Western University of Health Sciences</div>
+      <div class="school-pill school-pill-more">+ many more schools reported every cycle</div>
     </div>
   </div>
 </section>
@@ -682,7 +649,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="logo.png" alt="Denterview"/></a><p>Affordable, high-quality dental school prep — built by dental students, for dental students.</p></div>
+      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a><p>Affordable, high-quality dental school prep — built by dental students, for dental students.</p></div>
       <div class="footer-col"><h5>Products</h5><a href="personal-statement.html">Personal Statement Review</a><a href="interview-guides.html">Interview Prep Guides</a><a href="denterview-ai.html">Denterview AI</a></div>
       <div class="footer-col"><h5>Company</h5><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="#testimonials">Success Stories</a></div>
       <div class="footer-col"><h5>Legal</h5><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Return Policy</a></div>
