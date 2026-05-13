@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — Denterview™</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #0d1b2a;
+      --navy-mid: #1a2e45;
+      --navy-light: #22395a;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #ffffff;
+      --off-white: #f8f6f2;
+      --text-muted: #8a9ab5;
+      --alert-bg: #fff8e6;
+      --alert-border: #c9a84c;
+      --success: #3aaf85;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--off-white);
+      color: var(--navy);
+      min-height: 100vh;
+    }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--navy);
+      padding: 16px 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    nav img { height: 38px; }
+
+    /* ── HERO BAND ── */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 60%, var(--navy-light) 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 70% 30%, rgba(201,168,76,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .checkmark-ring {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: rgba(201,168,76,0.15);
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      animation: popIn 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+    }
+    .checkmark-ring svg { width: 34px; height: 34px; }
+    @keyframes popIn {
+      from { transform: scale(0.4); opacity: 0; }
+      to   { transform: scale(1);   opacity: 1; }
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 42px);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      animation: fadeUp 0.5s 0.15s ease both;
+    }
+    .hero h1 em { color: var(--gold-light); font-style: italic; }
+    .hero p.sub {
+      color: var(--text-muted);
+      font-size: 16px;
+      animation: fadeUp 0.5s 0.25s ease both;
+    }
+    @keyframes fadeUp {
+      from { transform: translateY(14px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    /* ── MAIN CONTAINER ── */
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px 64px;
+    }
+
+    /* ── JUNK FOLDER ALERT — THE STAR ── */
+    .junk-alert {
+      background: #fffbef;
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 28px 28px 24px;
+      margin: -24px auto 0;
+      position: relative;
+      z-index: 2;
+      box-shadow: 0 8px 32px rgba(201,168,76,0.18), 0 2px 8px rgba(0,0,0,0.07);
+      animation: fadeUp 0.55s 0.35s ease both;
+    }
+    .junk-alert-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .junk-icon {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: var(--gold);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .junk-alert-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      color: var(--navy);
+      line-height: 1.2;
+    }
+    .junk-alert-header h2 span {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+    .junk-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .junk-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: white;
+      border-radius: 10px;
+      padding: 13px 16px;
+      border: 1px solid rgba(201,168,76,0.25);
+    }
+    .junk-step-num {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .junk-step p { font-size: 14px; color: var(--navy); line-height: 1.5; }
+    .junk-step strong { color: var(--navy); }
+    .junk-step .tag {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid rgba(201,168,76,0.4);
+      color: #7a5c0a;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin: 0 2px;
+    }
+    .junk-footer {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(201,168,76,0.25);
+      font-size: 13px;
+      color: #6b7a99;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .junk-footer a { color: var(--navy); font-weight: 600; text-decoration: none; border-bottom: 1px solid var(--gold); }
+
+    /* ── MOCK INTERVIEW CARD ── */
+    .mock-card {
+      background: var(--navy);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      animation: fadeUp 0.55s 0.45s ease both;
+    }
+    .mock-card-icon {
+      font-size: 36px;
+      flex-shrink: 0;
+    }
+    .mock-card-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      color: var(--white);
+      margin-bottom: 5px;
+    }
+    .mock-card-body p {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .btn-gold {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+    /* ── WHAT'S NEXT ── */
+    .whats-next {
+      margin-top: 28px;
+      animation: fadeUp 0.55s 0.55s ease both;
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .steps-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .step-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      border: 1px solid #e8e4db;
+      transition: box-shadow 0.2s;
+    }
+    .step-card:hover { box-shadow: 0 4px 16px rgba(13,27,42,0.08); }
+    .step-emoji { font-size: 22px; margin-top: 1px; }
+    .step-card h4 { font-size: 14px; font-weight: 600; color: var(--navy); margin-bottom: 3px; }
+    .step-card p { font-size: 13px; color: #5c6a7e; line-height: 1.5; }
+
+    /* ── CLOSING ── */
+    .closing {
+      margin-top: 28px;
+      background: white;
+      border-radius: 14px;
+      padding: 24px 28px;
+      text-align: center;
+      border: 1px solid #e8e4db;
+      animation: fadeUp 0.55s 0.65s ease both;
+    }
+    .closing p {
+      font-size: 15px;
+      color: #4a5568;
+      line-height: 1.65;
+    }
+    .closing strong { color: var(--navy); }
+    .tooth-row { font-size: 22px; margin-top: 12px; letter-spacing: 4px; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    footer img { height: 30px; margin-bottom: 10px; opacity: 0.85; }
+    footer p { font-size: 12px; color: var(--text-muted); }
+    footer a { color: var(--text-muted); text-decoration: none; border-bottom: 1px solid rgba(138,154,181,0.4); }
+
+    @media (max-width: 520px) {
+      .mock-card { flex-direction: column; text-align: center; }
+      nav { padding: 14px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="https://denterview.com">
+      <img src="https://denterview.com/logo.jpg" alt="Denterview" />
+    </a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="checkmark-ring">
+      <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="17" cy="17" r="16" stroke="#c9a84c" stroke-width="1.5"/>
+        <polyline points="10,17 15,23 24,12" stroke="#c9a84c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1>You're in. <em>Let's get to work.</em></h1>
+    <p class="sub">Thank you for choosing Denterview — your dental school interview starts here.</p>
+  </div>
+
+  <!-- MAIN -->
+  <div class="container">
+
+    <!-- ★ JUNK ALERT ★ -->
+    <div class="junk-alert">
+      <div class="junk-alert-header">
+        <div class="junk-icon">📬</div>
+        <h2>
+          <span>Action required</span>
+          Check Your Email — Including Junk &amp; Spam
+        </h2>
+      </div>
+      <div class="junk-steps">
+        <div class="junk-step">
+          <div class="junk-step-num">1</div>
+          <p>Open your inbox and look for an email from <strong>Payhip</strong> sent via <strong>admin@denterview.com</strong>. Your download link or login credentials are inside.</p>
+        </div>
+        <div class="junk-step">
+          <div class="junk-step-num">2</div>
+          <p><strong>Don't see it?</strong> Check your <span class="tag">Spam</span> <span class="tag">Junk</span> and <span class="tag">Promotions</span> folders — this is the most common reason people miss it. Look for <strong>admin@denterview.com</strong> or <strong>denterviews@gmail.com</strong>.</p>
+        </div>
+        <div class="junk-step">
+          <div class="junk-step-num">3</div>
+          <p>Still nothing after a few minutes? Reach out and we'll get you sorted right away — see the contact info below.</p>
+        </div>
+      </div>
+      <div class="junk-footer">
+        <svg width="16" height="16" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="9" stroke="#c9a84c" stroke-width="1.5"/><path d="M10 9v5M10 6.5v.5" stroke="#c9a84c" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Need help? Email <a href="mailto:admin@denterview.com">admin@denterview.com</a> or <a href="mailto:denterviews@gmail.com">denterviews@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- MOCK INTERVIEW CARD (conditional) -->
+    <div class="mock-card">
+      <div class="mock-card-icon">🎙️</div>
+      <div class="mock-card-body">
+        <h3>Purchased a Mock Interview?</h3>
+        <p>Your login credentials were sent to your email. Use them to access your AI-powered practice sessions on Denterview AI.</p>
+        <a href="https://www.denterviewai.com/" class="btn-gold">Log In to Denterview AI →</a>
+      </div>
+    </div>
+
+    <!-- WHAT'S NEXT -->
+    <div class="whats-next">
+      <div class="section-label">What's Next</div>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-emoji">📥</div>
+          <div>
+            <h4>Access your purchase</h4>
+            <p>Download your guide, log in to your AI mock interview sessions, or look out for your personal statement feedback — depending on what you ordered.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-emoji">📅</div>
+          <div>
+            <h4>Work through it at your own pace</h4>
+            <p>Every Denterview product is self-guided and built to fit your schedule. Start now or save it for when your interview invite lands.</p>
+          </div>
+        </div>
+        <div class="step-card">
+          <div class="step-emoji">🏆</div>
+          <div>
+            <h4>Remember: you've already done the hard part</h4>
+            <p>Getting an interview invite means they want to meet you. Preparation turns that opportunity into an acceptance.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="closing">
+      <p>Thanks again for trusting Denterview with your prep.<br/><strong>You've taken a real step — now let's make it count.</strong></p>
+      <div class="tooth-row">🦷🦷🦷</div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <a href="https://denterview.com">
+      <img src="https://denterview.com/logo.jpg" alt="Denterview" />
+    </a>
+    <p>© 2026 Denterview™ · <a href="https://denterview.com/terms.html">Terms</a> · <a href="https://denterview.com/privacy.html">Privacy</a> · <a href="mailto:admin@denterview.com">Contact</a></p>
+  </footer>
+
+</body>
+</html>
