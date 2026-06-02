@@ -63,7 +63,7 @@
 
     .modal-box h2 {
       font-family: 'Instrument Serif', serif;
-      font-size: clamp(22px, 3.5vw, 32px); font-weight:400;
+      font-size: clamp(22px, 3.5vw, 30px); font-weight:400;
       text-align:center; margin-bottom:8px; line-height:1.2;
     }
     .modal-box h2 em {
@@ -75,52 +75,96 @@
       text-align:center; font-size:14px; color:#9ab0cc;
       margin-bottom:32px; font-weight:300;
     }
-    .modal-hint { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#7db8ff; text-align:center; margin-bottom:16px; }
-
-    .modal-options { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin-bottom:28px; }
+    /* Two-card modal layout */
+    .modal-options { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:20px; }
 
     .modal-option {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 14px; padding: 18px 16px;
-      cursor: pointer; transition: all 0.2s;
-      text-align: center; position: relative;
-      user-select: none;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 18px; padding: 28px 22px 24px;
+      cursor: pointer; transition: all 0.22s;
+      text-align: left; position: relative;
+      user-select: none; text-decoration: none;
+      display: block;
     }
-    .modal-option:hover { border-color: rgba(45,126,247,0.45); background: rgba(45,126,247,0.07); transform: translateY(-2px); }
-    .modal-option.selected { border-color: var(--blue-bright); background: rgba(45,126,247,0.12); }
-    .modal-option.selected .mo-check { opacity:1; transform:scale(1); }
-    .mo-check {
-      position:absolute; top:10px; right:10px;
-      width:18px; height:18px; border-radius:50%;
-      background: linear-gradient(135deg, var(--blue-bright), var(--teal));
-      display:flex; align-items:center; justify-content:center;
-      font-size:10px; opacity:0; transform:scale(0.4);
-      transition: all 0.2s;
+    .modal-option-interview {
+      border-color: rgba(0,194,168,0.2);
+      background: linear-gradient(150deg, rgba(0,194,168,0.06) 0%, rgba(45,126,247,0.04) 100%);
     }
-    .mo-icon { margin-bottom:10px; display:flex; justify-content:center; }
-    .mo-icon svg { width:28px; height:28px; }
-    .mo-title { font-size:13px; font-weight:600; margin-bottom:4px; line-height:1.3; color:#ffffff; }
-    .mo-sub { font-size:11px; color:#8fb3d4; line-height:1.4; }
+    .modal-option-interview:hover {
+      border-color: rgba(0,194,168,0.5);
+      background: linear-gradient(150deg, rgba(0,194,168,0.11) 0%, rgba(45,126,247,0.07) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,194,168,0.12);
+    }
+    .modal-option-ps {
+      border-color: rgba(155,109,255,0.2);
+      background: linear-gradient(150deg, rgba(155,109,255,0.07) 0%, rgba(45,126,247,0.04) 100%);
+    }
+    .modal-option-ps:hover {
+      border-color: rgba(155,109,255,0.5);
+      background: linear-gradient(150deg, rgba(155,109,255,0.12) 0%, rgba(45,126,247,0.07) 100%);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(155,109,255,0.12);
+    }
 
-    .modal-cta {
-      width:100%; padding:16px 24px; border-radius:12px;
-      background: linear-gradient(135deg, var(--blue-bright), var(--teal));
-      color:white; font-size:16px; font-weight:600;
-      font-family: 'DM Sans', sans-serif; border:none; cursor:pointer;
-      transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 8px 28px rgba(45,126,247,0.35);
-      display:flex; align-items:center; justify-content:center; gap:10px;
+    .mo-icon {
+      width: 46px; height: 46px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
     }
-    .modal-cta:hover { opacity:0.92; transform:translateY(-2px); box-shadow:0 12px 36px rgba(45,126,247,0.45); }
-    .modal-cta.disabled { opacity:0.3; cursor:default; pointer-events:none; background:rgba(255,255,255,0.1); box-shadow:none; }
-    .modal-skip {
-      display:block; text-align:center; margin-top:14px;
-      font-size:13px; color:var(--text-muted); cursor:pointer;
-      transition:color 0.2s; background:none; border:none; width:100%;
+    .mo-icon-teal { background: rgba(0,194,168,0.14); }
+    .mo-icon-purple { background: rgba(155,109,255,0.14); }
+    .mo-icon svg { width: 22px; height: 22px; }
+
+    .mo-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 100px;
+      display: inline-block; margin-bottom: 10px;
+    }
+    .mo-tag-teal { background: rgba(0,194,168,0.12); color: #00c2a8; }
+    .mo-tag-purple { background: rgba(155,109,255,0.12); color: #c69fff; }
+
+    .mo-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 20px; font-weight: 400; line-height: 1.2;
+      margin-bottom: 8px; color: #ffffff;
+    }
+    .mo-body {
+      font-size: 13px; color: #8fb3d4; line-height: 1.6;
+      margin-bottom: 18px;
+    }
+    .mo-bullets { list-style: none; margin-bottom: 20px; }
+    .mo-bullets li {
+      font-size: 12px; color: #a8c4d8;
+      display: flex; align-items: flex-start; gap: 7px;
+      padding: 4px 0;
+    }
+    .mo-bullets li::before {
+      content: '→'; font-size: 11px; flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .mo-bullets-teal li::before { color: var(--teal); }
+    .mo-bullets-purple li::before { color: #c69fff; }
+
+    .mo-cta {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 13px; font-weight: 700;
       font-family: 'DM Sans', sans-serif;
+      padding: 10px 18px; border-radius: 9px;
+      transition: opacity 0.2s;
     }
-    .modal-skip:hover { color:white; }
+    .mo-cta-teal { background: linear-gradient(135deg, var(--teal), var(--blue-bright)); color: white; }
+    .mo-cta-purple { background: linear-gradient(135deg, #9b6dff, var(--blue-bright)); color: white; }
+    .mo-cta svg { width: 13px; height: 13px; }
+
+    .modal-skip {
+      display: block; text-align: center; margin-top: 4px;
+      font-size: 12px; color: var(--text-muted); cursor: pointer;
+      transition: color 0.2s; background: none; border: none; width: 100%;
+      font-family: 'DM Sans', sans-serif; padding: 8px;
+    }
+    .modal-skip:hover { color: rgba(255,255,255,0.7); }
 
     .modal-backdrop.hidden { display:none; }
 
@@ -282,7 +326,7 @@
       .cta-band{padding:70px 24px}
       .products-header{flex-direction:column}
       .modal-options{grid-template-columns:1fr}
-      .modal-box{padding:36px 24px 28px}
+      .modal-box{padding:32px 20px 24px}
     }
   </style>
   <!-- Google Analytics + Google Ads -->
@@ -304,43 +348,55 @@
 <div class="modal-backdrop" id="modalBackdrop">
   <div class="modal-box">
     <div class="modal-logo"><img src="logo.jpg" alt="Denterview"/></div>
-    <h2>How can <em>Denterview</em> help you?</h2>
-    <p class="modal-subtitle">Select everything that applies — we'll point you to the right resources.</p>
-    <p class="modal-hint">Select all that apply</p>
+    <h2>Where are you in<br><em>your application?</em></h2>
+    <p class="modal-subtitle">Pick what you're working on — we'll take you straight there.</p>
+
     <div class="modal-options">
-      <div class="modal-option" data-target="card-personal" onclick="selectOption(this)" tabindex="0">
-        <span class="mo-check">✓</span>
-        <div class="mo-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:#7db8ff">
-            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/>
+
+      <!-- INTERVIEW PREP CARD -->
+      <a class="modal-option modal-option-interview" href="interview-prep.html">
+        <div class="mo-icon mo-icon-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#00c2a8">
+            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="9" r="2.5"/>
           </svg>
         </div>
-        <div class="mo-title">Perfect My Personal Statement</div>
-        <div class="mo-sub">Human review & editing by dental students</div>
-      </div>
-      <div class="modal-option" data-target="card-guides" onclick="selectOption(this)" tabindex="0">
-        <span class="mo-check">✓</span>
-        <div class="mo-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:#00c2a8">
-            <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+        <span class="mo-tag mo-tag-teal">Interview Season</span>
+        <div class="mo-title">I have interviews<br>coming up</div>
+        <div class="mo-body">Get the questions, the frameworks, and the reps you need to walk in confident.</div>
+        <ul class="mo-bullets mo-bullets-teal">
+          <li>73 real dental school interview questions</li>
+          <li>AI mock interviews with live feedback</li>
+          <li>Eye contact, pacing &amp; filler word scores</li>
+        </ul>
+        <span class="mo-cta mo-cta-teal">
+          Show me Interview Prep
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </span>
+      </a>
+
+      <!-- PERSONAL STATEMENT CARD -->
+      <a class="modal-option modal-option-ps" href="personal-statement.html">
+        <div class="mo-icon mo-icon-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="color:#c69fff">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
           </svg>
         </div>
-        <div class="mo-title">Master the Interview</div>
-        <div class="mo-sub">Expert prep guides & question banks</div>
-      </div>
-      <div class="modal-option" data-target="card-ai" onclick="selectOption(this)" tabindex="0">
-        <span class="mo-check">✓</span>
-        <div class="mo-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="color:#c69fff">
-            <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="3"/><path d="M8.5 7.5A4 4 0 0115 10"/>
-          </svg>
-        </div>
-        <div class="mo-title">Practice with AI</div>
-        <div class="mo-sub">Live mock interviews & real-time feedback</div>
-      </div>
+        <span class="mo-tag mo-tag-purple">Application Stage</span>
+        <div class="mo-title">I'm working on<br>my personal statement</div>
+        <div class="mo-body">Get honest, detailed feedback from dental students who know what committees actually want to read.</div>
+        <ul class="mo-bullets mo-bullets-purple">
+          <li>Full read-through by a real dental student</li>
+          <li>Line-by-line written feedback</li>
+          <li>Returned in 3–5 business days</li>
+        </ul>
+        <span class="mo-cta mo-cta-purple">
+          Show me PS Review
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+        </span>
+      </a>
+
     </div>
-    <button class="modal-cta disabled" id="modalCta" onclick="modalGo()">Show me what I need →</button>
-    <button class="modal-skip" onclick="closeModal()">Explore everything →</button>
+    <button class="modal-skip" onclick="closeModal()">I'll explore everything myself →</button>
   </div>
 </div>
 
@@ -676,27 +732,7 @@
 </footer>
 
 <script>
-  // Modal
-  function selectOption(el){el.classList.toggle('selected');updateModalCta();}
-  function updateModalCta(){
-    const sel=[...document.querySelectorAll('.modal-option.selected')];
-    const btn=document.getElementById('modalCta');
-    if(!sel.length){btn.classList.add('disabled');btn.textContent='Show me what I need →';}
-    else if(sel.length===1){btn.classList.remove('disabled');const titles={0:'Take me to Statement Review',1:'Show me Interview Prep',2:'Show me AI Packages'};const idx=[...document.querySelectorAll('.modal-option')].indexOf(sel[0]);btn.textContent=(titles[idx]||'Show me what I need')+' →';}
-    else{btn.classList.remove('disabled');btn.textContent='Show me everything →';}
-  }
-  function modalGo(){
-    const allOpts=[...document.querySelectorAll('.modal-option')];
-    const sel=[...document.querySelectorAll('.modal-option.selected')];
-    if(!sel.length)return;
-    const pages=['personal-statement.html','interview-prep.html','denterview-ai.html'];
-    const combos={'01':'bundle-app-prep.html','02':'bundle-app-ai.html','12':'interview-prep.html','012':'bundle-prep-ai.html'};
-    const key=sel.map(s=>allOpts.indexOf(s)).sort().join('');
-    closeModal();
-    setTimeout(()=>{
-      window.location.href=(sel.length===1)?pages[allOpts.indexOf(sel[0])]:(combos[key]||'index.html#products');
-    },200);
-  }
+  // Modal — cards are plain <a> links, just need open/close
   function closeModal(){
     document.getElementById('modalBackdrop').classList.add('hidden');
     document.body.style.overflow='';
@@ -709,7 +745,6 @@
   document.getElementById('modalBackdrop').addEventListener('click',function(e){
     if(e.target===this) closeModal();
   });
-  document.querySelectorAll('.modal-option').forEach(o=>{o.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();selectOption(o);}});});
 
   // FAQ
   function toggleFaq(btn){const item=btn.closest('.faq-item');const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));if(!open)item.classList.add('open');}
