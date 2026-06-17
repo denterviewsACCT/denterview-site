@@ -24,377 +24,358 @@
   <meta name="twitter:description" content="Personal statement review, interview prep guides & mock interviews for dental school applicants."/>
   <link rel="canonical" href="https://denterview.com"/>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Denterview","url":"https://denterview.com","logo":"https://denterview.com/logo.jpg","description":"Dental school application and interview preparation — personal statement review, prep guides, and mock interviews","contactPoint":{"@type":"ContactPoint","email":"denterviews@gmail.com","contactType":"customer support"},"offers":[{"@type":"Offer","name":"Personal Statement Review","price":"40.00","priceCurrency":"USD","description":"Full personal statement review by a current dental student"},{"@type":"Offer","name":"Essential Interview Guide","price":"8.99","priceCurrency":"USD"},{"@type":"Offer","name":"Mock Interview Starter Pack","price":"9.99","priceCurrency":"USD"}]}
+  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Denterview","url":"https://denterview.com","logo":"https://denterview.com/logo.jpg","description":"Dental school application and interview preparation — personal statement review, prep guides, and mock interviews","contactPoint":{"@type":"ContactPoint","email":"denterviews@gmail.com","contactType":"customer support"},"offers":[{"@type":"Offer","name":"Personal Statement Review","price":"40.00","priceCurrency":"USD"},{"@type":"Offer","name":"Essential Interview Guide","price":"8.99","priceCurrency":"USD"},{"@type":"Offer","name":"Mock Interview Starter Pack","price":"9.99","priceCurrency":"USD"}]}
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="style.css"/>
   <link rel="icon" type="image/png" href="favicon.png"/>
-  <style>
-    html, body { background: #0a1628 !important; color: #ffffff; }
-
-    /* ── ANNOUNCEMENT BAR ── */
-    .announce-bar {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 600;
-      background: linear-gradient(90deg, #1a3a6e, #0f2a55);
-      border-bottom: 1px solid rgba(45,126,247,0.3);
-      padding: 9px 48px;
-      display: flex; align-items: center; justify-content: center; gap: 14px;
-      font-size: 13px; font-weight: 500; color: #c8d8ee;
-    }
-    .announce-bar strong { color: #fff; }
-    .announce-bar a {
-      color: var(--teal); text-decoration: none; font-weight: 600;
-      border-bottom: 1px solid rgba(0,194,168,0.35);
-      transition: border-color 0.2s;
-    }
-    .announce-bar a:hover { border-color: var(--teal); }
-    .announce-bar-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; flex-shrink: 0; }
-    .announce-close {
-      position: absolute; right: 16px; background: none; border: none;
-      color: rgba(255,255,255,0.4); cursor: pointer; font-size: 16px; padding: 0 8px;
-      line-height: 1; transition: color 0.2s;
-    }
-    .announce-close:hover { color: white; }
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
-
-    /* ── HERO ── */
-    .hero {
-      min-height: 100vh; display: flex; flex-direction: column;
-      justify-content: center; align-items: center; text-align: center;
-      padding: 160px 24px 120px; position: relative; overflow: hidden;
-    }
-
-    /* ── SCROLLING SCHOOL PILLS ── */
-    .hero-schools-bg { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
-    .pill-row {
-      display: flex; gap: 10px; position: absolute;
-      white-space: nowrap; animation: scrollLeft 28s linear infinite;
-    }
-    .pill-row.r2 { animation-direction: reverse; animation-duration: 34s; top: 22%; }
-    .pill-row.r3 { animation-duration: 22s; top: 40%; }
-    .pill-row.r4 { animation-direction: reverse; animation-duration: 30s; top: 58%; }
-    .pill-row.r5 { animation-duration: 26s; top: 76%; }
-    @keyframes scrollLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-    .school-pill-scroll {
-      font-size: 11px; padding: 4px 13px; border-radius: 100px; flex-shrink: 0;
-      border: 1px solid rgba(255,255,255,0.07);
-      color: rgba(255,255,255,0.17); background: rgba(255,255,255,0.025);
-    }
-
-    /* ── HERO VIGNETTES ── */
-    .hero-vignette {
-      position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: radial-gradient(ellipse 60% 60% at 50% 50%, transparent 20%, #0a1628 75%);
-    }
-    .hero-vignette-sides {
-      position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: linear-gradient(90deg, #0a1628 0%, transparent 16%, transparent 84%, #0a1628 100%);
-    }
-    .hero-vignette-top {
-      position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: linear-gradient(180deg, #0a1628 0%, transparent 18%, transparent 82%, #0a1628 100%);
-    }
-
-    /* ── FLOATING CARDS ── */
-    .hero-float-card {
-      position: absolute; z-index: 2; pointer-events: none;
-      background: rgba(8,18,42,0.85);
-      border-radius: 14px; padding: 12px 15px;
-      backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-      animation: fadeUp 0.8s ease both;
-    }
-    .hfc-review-1 { left: 4%; top: 28%; max-width: 190px; border: 1px solid rgba(45,126,247,0.2); animation-delay: 0.4s; }
-    .hfc-review-2 { left: 3%; bottom: 22%; max-width: 182px; border: 1px solid rgba(0,194,168,0.18); animation-delay: 0.55s; }
-    .hfc-stat-1   { right: 4%; top: 26%; border: 1px solid rgba(155,109,255,0.2); text-align: center; min-width: 130px; animation-delay: 0.45s; }
-    .hfc-stat-2   { right: 3%; bottom: 24%; border: 1px solid rgba(0,194,168,0.2); text-align: center; min-width: 140px; animation-delay: 0.6s; }
-    .hfc-stars  { color: #ffd966; font-size: 10px; letter-spacing: 2px; margin-bottom: 5px; }
-    .hfc-quote  { font-size: 11px; color: #c8d8ee; line-height: 1.55; font-style: italic; margin: 0; }
-    .hfc-author { font-size: 10px; color: #7db8ff; margin-top: 6px; font-weight: 600; }
-    .hfc-num    { font-family: 'Instrument Serif', serif; font-size: 32px; font-weight: 400; line-height: 1; }
-    .hfc-label  { font-size: 10px; color: #9ab0cc; margin-top: 3px; line-height: 1.45; }
-
-    /* ── HERO CONTENT ── */
-    .hero-content { position: relative; z-index: 3; max-width: 700px; width: 100%; }
-    .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(45,126,247,0.12); border: 1px solid rgba(45,126,247,0.25); border-radius: 100px; padding: 6px 18px; font-size: 13px; font-weight: 500; color: #7db8ff; margin-bottom: 28px; animation: fadeUp 0.7s ease both; }
-    .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: pulse 2s infinite; }
-    @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
-    .hero h1 { font-family: 'Instrument Serif', serif; font-size: clamp(44px,7vw,82px); font-weight: 400; line-height: 1.04; letter-spacing: -1.5px; margin-bottom: 22px; animation: fadeUp 0.7s ease 0.1s both; }
-    .hero h1 em { font-style: italic; background: linear-gradient(135deg,var(--blue-bright),var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-    .hero-sub { font-size: clamp(16px,2vw,19px); color: var(--text-muted); line-height: 1.7; max-width: 540px; margin: 0 auto 36px; font-weight: 300; animation: fadeUp 0.7s ease 0.2s both; }
-
-    /* ── HERO SCHOOL HIGHLIGHTS ── */
-    .hero-school-highlights {
-      position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-      z-index: 3; display: flex; gap: 8px; flex-wrap: wrap;
-      justify-content: center; max-width: 480px; pointer-events: none;
-      animation: fadeUp 0.8s ease 0.7s both;
-    }
-    .hsh-pill { font-size: 11px; padding: 4px 12px; border-radius: 100px; white-space: nowrap; border: 1px solid rgba(45,126,247,0.28); color: #7db8ff; background: rgba(45,126,247,0.09); }
-    .hsh-more  { border-color: rgba(0,194,168,0.28); color: #00c2a8; background: rgba(0,194,168,0.07); }
-
-    /* ── HERO SKIP ── */
-    .hero-skip { font-size: 13px; color: var(--text-muted); animation: fadeUp 0.7s ease 0.3s both; }
-    .hero-skip a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
-    .hero-skip a:hover { color: white; }
-
-    @media(max-width:900px){
-      .hfc-review-1, .hfc-review-2, .hfc-stat-1, .hfc-stat-2 { display: none; }
-      .hero-school-highlights { bottom: 18px; max-width: 320px; }
-    }
-
-    /* ── STATS ── */
-    .stats-band { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 40px 48px; display: flex; justify-content: center; gap: 80px; flex-wrap: wrap; background: rgba(255,255,255,0.02); }
-    .stat-item { text-align: center; }
-    .stat-num { font-family: 'Instrument Serif', serif; font-size: 40px; font-weight: 400; background: linear-gradient(135deg,var(--blue-bright),var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; display: block; }
-    .stat-label { font-size: 13px; color: var(--text-muted); margin-top: 4px; }
-
-    /* ── SECTIONS ── */
-    section { padding: 100px 48px; }
-    .section-inner { max-width: 1100px; margin: 0 auto; }
-    .section-title { font-family: 'Instrument Serif', serif; font-size: clamp(32px,4vw,52px); font-weight: 400; line-height: 1.12; letter-spacing: -0.5px; margin-bottom: 16px; }
-    .section-sub { font-size: 17px; color: var(--text-muted); line-height: 1.65; max-width: 520px; font-weight: 300; }
-
-    /* ── PRODUCT CARDS ── */
-    #products { background: var(--navy-mid); }
-    .products-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; flex-wrap: wrap; gap: 24px; }
-    .product-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-    .product-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 22px; padding: 36px 32px; position: relative; overflow: hidden; transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; display: flex; flex-direction: column; }
-    .product-card:hover { transform: translateY(-6px); border-color: rgba(45,126,247,0.35); box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
-    .product-card-featured { border-color: rgba(45,126,247,0.4); background: linear-gradient(160deg,rgba(45,126,247,0.08) 0%,rgba(0,194,168,0.05) 100%); }
-    .product-card-featured::after { content: 'Most Popular'; position: absolute; top: 22px; right: -30px; background: linear-gradient(135deg,var(--blue-bright),var(--teal)); color: white; font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 5px 48px; transform: rotate(35deg); pointer-events: none; }
-    .product-accent { width: 40px; height: 3px; border-radius: 2px; margin-bottom: 24px; }
-    .accent-blue { background: linear-gradient(90deg,var(--blue-bright),#5b9fff); }
-    .accent-teal { background: linear-gradient(90deg,var(--teal),#5be8d8); }
-    .accent-purple { background: linear-gradient(90deg,#9b6dff,#c96dff); }
-    .product-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 16px; }
-    .tag-blue { background: rgba(45,126,247,0.15); color: #7db8ff; }
-    .tag-teal { background: rgba(0,194,168,0.15); color: #00c2a8; }
-    .tag-purple { background: rgba(155,109,255,0.15); color: #c69fff; }
-    .tag-gold { background: rgba(255,183,0,0.15); color: #ffd966; }
-    .product-tag svg { width: 13px; height: 13px; }
-    .product-card h3 { font-family: 'Instrument Serif', serif; font-size: 26px; font-weight: 400; margin-bottom: 12px; line-height: 1.2; }
-    .product-card > p { font-size: 15px; color: var(--text-muted); line-height: 1.65; margin-bottom: 24px; flex: 1; }
-    .product-features { list-style: none; margin-bottom: 28px; }
-    .product-features li { font-size: 14px; color: #b0c4de; padding: 8px 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 10px; }
-    .product-features li:last-child { border-bottom: none; }
-    .feat-check { color: var(--teal); flex-shrink: 0; }
-    .feat-check svg { width: 14px; height: 14px; }
-    .product-price { font-family: 'Instrument Serif', serif; font-size: 36px; margin-bottom: 20px; }
-    .product-price span { font-size: 15px; font-family: 'DM Sans', sans-serif; color: var(--text-muted); font-weight: 300; }
-
-    /* ── KIRA SECTION ── */
-    .kira-section {
-      background: var(--navy);
-      padding: 90px 48px;
-    }
-    .kira-inner { max-width: 1100px; margin: 0 auto; }
-    .kira-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
-      align-items: center;
-    }
-    .kira-tag {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
-      text-transform: uppercase; padding: 5px 14px; border-radius: 100px;
-      background: rgba(0,194,168,0.12); color: #00c2a8;
-      margin-bottom: 20px;
-    }
-    .kira-tag svg { width: 12px; height: 12px; }
-    .kira-left h2 {
-      font-family: 'Instrument Serif', serif;
-      font-size: clamp(28px,3.5vw,46px);
-      font-weight: 400; line-height: 1.12; margin-bottom: 16px;
-    }
-    .kira-left h2 em {
-      font-style: italic;
-      background: linear-gradient(135deg,var(--blue-bright),var(--teal));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-    }
-    .kira-left > p {
-      font-size: 16px; color: var(--text-muted); line-height: 1.7;
-      margin-bottom: 28px; font-weight: 300;
-    }
-    .kira-points { list-style: none; margin-bottom: 32px; }
-    .kira-points li {
-      font-size: 14px; color: #b0c4de; padding: 10px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.05);
-      display: flex; align-items: flex-start; gap: 10px;
-    }
-    .kira-points li:last-child { border-bottom: none; }
-    .kira-check { color: var(--teal); flex-shrink: 0; margin-top: 1px; }
-    .kira-check svg { width: 14px; height: 14px; }
-    .kira-cta {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, var(--blue-bright), var(--teal));
-      color: white; text-decoration: none; padding: 14px 28px;
-      border-radius: 11px; font-size: 15px; font-weight: 600;
-      transition: opacity 0.2s, transform 0.2s;
-      box-shadow: 0 6px 20px rgba(45,126,247,0.3);
-    }
-    .kira-cta:hover { opacity: 0.9; transform: translateY(-2px); }
-    .kira-right {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(0,194,168,0.2);
-      border-radius: 24px; padding: 40px 36px;
-      background: linear-gradient(160deg, rgba(0,194,168,0.06) 0%, rgba(45,126,247,0.04) 100%);
-    }
-    .kira-right-title {
-      font-family: 'Instrument Serif', serif;
-      font-size: 20px; font-weight: 400; margin-bottom: 20px;
-      color: #c8d8ee;
-    }
-    .kira-format-list { list-style: none; }
-    .kira-format-item {
-      display: flex; gap: 16px; align-items: flex-start;
-      padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
-    }
-    .kira-format-item:last-child { border-bottom: none; }
-    .kira-format-icon {
-      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .kfi-teal { background: rgba(0,194,168,0.15); color: #00c2a8; }
-    .kfi-blue { background: rgba(45,126,247,0.15); color: #7db8ff; }
-    .kfi-purple { background: rgba(155,109,255,0.15); color: #c69fff; }
-    .kira-format-icon svg { width: 16px; height: 16px; }
-    .kira-format-text strong { font-size: 14px; font-weight: 600; display: block; margin-bottom: 3px; }
-    .kira-format-text span { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-
-    /* ── MOCK INTERVIEW SOCIAL PROOF SECTION ── */
-    .proof-band {
-      background: rgba(255,255,255,0.02);
-      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-      padding: 32px 48px;
-      display: flex; align-items: center; justify-content: center;
-      gap: 48px; flex-wrap: wrap;
-    }
-    .proof-item {
-      display: flex; align-items: center; gap: 10px;
-      font-size: 14px; color: #b0c4de;
-    }
-    .proof-item svg { width: 18px; height: 18px; color: var(--teal); flex-shrink: 0; }
-    .proof-item strong { color: white; }
-
-    /* ── HOW IT WORKS ── */
-    #how-it-works { background: var(--navy); }
-    .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 40px; margin-top: 64px; position: relative; }
-    .steps-grid::before { content: ''; position: absolute; top: 28px; left: calc(16.66% + 20px); right: calc(16.66% + 20px); height: 1px; background: linear-gradient(90deg,transparent,var(--blue-bright),var(--teal),transparent); }
-    .step { text-align: center; }
-    .step-num { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg,var(--blue-bright),var(--teal)); display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 22px; margin: 0 auto 24px; position: relative; z-index: 1; box-shadow: 0 0 0 8px rgba(45,126,247,0.1); }
-    .step h4 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
-    .step p { font-size: 14px; color: var(--text-muted); line-height: 1.65; }
-
-    /* ── TESTIMONIALS ── */
-    #testimonials { background: var(--navy-mid); }
-    .testimonials-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; margin-top: 56px; }
-    .testimonial-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 18px; padding: 28px; transition: border-color 0.3s,transform 0.3s; }
-    .testimonial-card:hover { border-color: rgba(45,126,247,0.3); transform: translateY(-4px); }
-    .testimonial-stars { color: #ffd966; font-size: 13px; margin-bottom: 16px; letter-spacing: 3px; }
-    .testimonial-text { font-size: 15px; line-height: 1.72; color: #c8d8ee; margin-bottom: 20px; font-style: italic; }
-    .testimonial-author { display: flex; align-items: center; gap: 12px; }
-    .testimonial-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg,var(--blue-bright),var(--teal)); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; flex-shrink: 0; }
-    .testimonial-name { font-weight: 600; font-size: 14px; }
-    .testimonial-school { font-size: 12px; color: var(--teal); margin-top: 2px; }
-
-    /* ── FAQ ── */
-    #faq { background: var(--navy); }
-    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 56px; }
-    .faq-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-    .faq-q { width: 100%; background: none; border: none; color: white; text-align: left; padding: 22px 24px; font-size: 15px; font-weight: 500; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 16px; font-family: 'DM Sans', sans-serif; }
-    .faq-q:hover { background: rgba(255,255,255,0.03); }
-    .faq-icon { color: var(--teal); font-size: 20px; flex-shrink: 0; transition: transform 0.3s; }
-    .faq-item.open .faq-icon { transform: rotate(45deg); }
-    .faq-a { font-size: 14px; color: var(--text-muted); line-height: 1.7; max-height: 0; overflow: hidden; padding: 0 24px; transition: max-height 0.35s ease,padding 0.35s ease; }
-    .faq-item.open .faq-a { max-height: 220px; padding: 0 24px 22px; }
-
-    /* ── CTA BAND ── */
-    .cta-band { background: linear-gradient(135deg,rgba(30,95,194,0.22) 0%,rgba(0,194,168,0.1) 100%); border-top: 1px solid rgba(45,126,247,0.18); border-bottom: 1px solid rgba(45,126,247,0.18); padding: 100px 48px; text-align: center; position: relative; overflow: hidden; }
-    .cta-band::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%,rgba(45,126,247,0.16) 0%,transparent 60%); }
-    .cta-band-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
-    .cta-band h2 { font-family: 'Instrument Serif', serif; font-size: clamp(32px,4vw,54px); font-weight: 400; line-height: 1.12; margin-bottom: 16px; }
-    .cta-band p { font-size: 17px; color: var(--text-muted); margin-bottom: 40px; font-weight: 300; }
-    .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-    .cta-btn-main { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg,var(--blue-bright),var(--teal)); color: white; text-decoration: none; padding: 16px 36px; border-radius: 12px; font-size: 16px; font-weight: 600; transition: opacity 0.2s,transform 0.2s; box-shadow: 0 8px 28px rgba(45,126,247,0.35); }
-    .cta-btn-main:hover { opacity: 0.9; transform: translateY(-2px); }
-    .cta-btn-ghost { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: white; text-decoration: none; padding: 16px 36px; border-radius: 12px; font-size: 16px; font-weight: 500; transition: background 0.2s; }
-    .cta-btn-ghost:hover { background: rgba(255,255,255,0.12); }
-
-    /* ── BUNDLE CARDS ── */
-    .bundle-cards { display: flex; flex-direction: column; gap: 16px; }
-    .bundle-card { background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 20px; padding: 32px 36px; display: grid; grid-template-columns: 1fr auto; gap: 32px; align-items: center; transition: border-color 0.3s,transform 0.3s; }
-    .bundle-card:hover { border-color: rgba(45,126,247,0.35); transform: translateY(-2px); }
-    .bundle-card-featured { border-color: rgba(255,183,0,0.3); background: linear-gradient(135deg,rgba(255,183,0,0.05) 0%,rgba(45,126,247,0.04) 100%); }
-    .bundle-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; padding: 4px 12px; border-radius: 100px; margin-bottom: 12px; background: rgba(45,126,247,0.15); color: #7db8ff; }
-    .bundle-tag-gold { background: rgba(255,183,0,0.15); color: #ffd966; }
-    .bundle-card h4 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin-bottom: 8px; }
-    .bundle-card-left > p { font-size: 14px; color: var(--text-muted); line-height: 1.65; margin-bottom: 14px; }
-    .bundle-includes { display: flex; flex-wrap: wrap; gap: 8px; }
-    .bi { font-size: 12px; color: #b0c4de; background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 4px 10px; border-radius: 100px; }
-    .bundle-card-right { flex-shrink: 0; text-align: center; min-width: 180px; }
-    .bundle-price { font-family: 'Instrument Serif', serif; font-size: 44px; font-weight: 400; line-height: 1; margin-bottom: 4px; }
-    .bundle-price sup { font-size: 20px; vertical-align: top; margin-top: 8px; font-family: 'DM Sans', sans-serif; }
-    .bundle-save { font-size: 12px; color: var(--teal); margin-bottom: 16px; font-weight: 500; }
-    .btn-bundle { display: block; width: 100%; text-align: center; padding: 13px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; font-family: 'DM Sans', sans-serif; transition: opacity 0.2s,transform 0.2s; background: linear-gradient(135deg,var(--blue-bright),var(--teal)); color: white; box-shadow: 0 5px 18px rgba(45,126,247,0.25); }
-    .btn-bundle:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn-bundle-gold { background: linear-gradient(135deg,#f5a623,#ffd966); color: #1a1000; box-shadow: 0 5px 18px rgba(245,166,35,0.25); }
-    @media(max-width:768px){ .bundle-card { grid-template-columns: 1fr; } .bundle-card-right { min-width: unset; } }
-
-    /* ── SCHOOLS GRID ── */
-    .schools-grid { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
-    .school-pill { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 100px; padding: 8px 18px; font-size: 13px; color: #b0c4de; transition: all 0.2s; }
-    .school-pill:hover { background: rgba(45,126,247,0.1); border-color: rgba(45,126,247,0.3); color: white; }
-    .school-pill-more { background: rgba(0,194,168,0.08); border-color: rgba(0,194,168,0.2); color: var(--teal); font-style: italic; }
-
-    /* ── STICKY MOBILE CTA ── */
-    .sticky-cta { display: none; }
-    @media(max-width:600px){
-      .sticky-cta { display: flex; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: rgba(10,22,40,0.97); border-top: 1px solid var(--border); padding: 12px 16px; gap: 10px; }
-      .sticky-cta a { flex: 1; text-align: center; padding: 13px 16px; border-radius: 10px; font-size: 14px; font-weight: 600; text-decoration: none; font-family: 'DM Sans', sans-serif; }
-      .sticky-cta-main { background: linear-gradient(135deg,var(--blue-bright),var(--teal)); color: white; }
-      .sticky-cta-ghost { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); color: white; }
-    }
-
-    @media(max-width:900px){
-      .testimonials-grid { grid-template-columns: 1fr; }
-      section { padding: 70px 24px; }
-      .product-grid { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
-      .steps-grid { grid-template-columns: 1fr; gap: 32px; }
-      .steps-grid::before { display: none; }
-      .testimonials-grid { grid-template-columns: 1fr; }
-      .faq-grid { grid-template-columns: 1fr; }
-      .stats-band { gap: 40px; padding: 40px 24px; }
-      .cta-band { padding: 70px 24px; }
-      .products-header { flex-direction: column; }
-      .kira-grid { grid-template-columns: 1fr; gap: 40px; }
-      .proof-band { gap: 24px; padding: 24px; }
-      .announce-bar { padding: 9px 40px 9px 16px; font-size: 12px; }
-      .hero { padding: 140px 24px 70px; }
-    }
-  </style>
-  <!-- Google Analytics + Google Ads -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9LH6YTLQJ"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L9LH6YTLQJ');gtag('config','AW-17341313917');</script>
+
+  <style>
+    html, body { background: #0a1628 !important; color: #fff; }
+
+    /* ─── SHARED VARIABLES ─── */
+    :root {
+      --blue-bright: #2d7ef7;
+      --teal: #00c2a8;
+      --navy: #0a1628;
+      --navy-mid: #0d1e35;
+      --border: rgba(255,255,255,0.08);
+      --text-muted: #8aa0bc;
+      --card-bg: rgba(255,255,255,0.03);
+    }
+
+    /* ─── KEYFRAMES ─── */
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes pulse    { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.5; transform:scale(.8); } }
+    @keyframes scrollLeft { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+    /* ─── EYEBROW LABEL ─── */
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+    }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .announce-bar {
+      position: fixed; top:0; left:0; right:0; z-index:600;
+      background: linear-gradient(90deg,#1a3a6e,#0f2a55);
+      border-bottom: 1px solid rgba(45,126,247,.3);
+      padding: 9px 48px;
+      display:flex; align-items:center; justify-content:center; gap:14px;
+      font-size:13px; font-weight:500; color:#c8d8ee;
+    }
+    .announce-bar strong { color:#fff; }
+    .announce-bar a {
+      color:var(--teal); text-decoration:none; font-weight:600;
+      border-bottom:1px solid rgba(0,194,168,.35); transition:border-color .2s;
+    }
+    .announce-bar a:hover { border-color:var(--teal); }
+    .announce-bar-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:pulse 2s infinite; flex-shrink:0; }
+    .announce-close {
+      position:absolute; right:16px; background:none; border:none;
+      color:rgba(255,255,255,.4); cursor:pointer; font-size:18px; padding:0 8px;
+      line-height:1; transition:color .2s;
+    }
+    .announce-close:hover { color:#fff; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      padding: 160px 24px 100px;
+      position: relative; overflow: hidden;
+    }
+
+    /* scrolling school rows */
+    .hero-schools-bg { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+    .pill-row {
+      display:flex; gap:12px; position:absolute; white-space:nowrap;
+      animation: scrollLeft 30s linear infinite;
+    }
+    .pill-row.r2 { animation-direction:reverse; animation-duration:36s; top:22%; }
+    .pill-row.r3 { animation-duration:24s; top:40%; }
+    .pill-row.r4 { animation-direction:reverse; animation-duration:32s; top:58%; }
+    .pill-row.r5 { animation-duration:28s; top:76%; }
+    .school-pill-scroll {
+      font-size:11px; padding:5px 14px; border-radius:100px; flex-shrink:0;
+      border:1px solid rgba(255,255,255,.16);
+      color:rgba(255,255,255,.35); background:rgba(255,255,255,.05);
+    }
+
+    /* vignettes — clear center for headline */
+    .hero-vignette       { position:absolute; inset:0; z-index:1; pointer-events:none; background:radial-gradient(ellipse 58% 62% at 50% 50%, transparent 18%, #0a1628 72%); }
+    .hero-vignette-sides { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg,#0a1628 0%,transparent 15%,transparent 85%,#0a1628 100%); }
+    .hero-vignette-top   { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg,#0a1628 0%,transparent 16%,transparent 84%,#0a1628 100%); }
+
+    /* floating cards */
+    .hero-float-card {
+      position:absolute; z-index:2; pointer-events:none;
+      background:rgba(6,16,38,.92);
+      border-radius:18px; padding:20px 24px;
+      backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+      animation:fadeUp .8s ease both;
+    }
+    .hfc-review-1 { left:4%; top:26%; max-width:230px; border:1px solid rgba(45,126,247,.28); animation-delay:.35s; }
+    .hfc-review-2 { left:4%; bottom:22%; max-width:222px; border:1px solid rgba(0,194,168,.24); animation-delay:.5s; }
+    .hfc-stat-1   { right:4%; top:24%; border:1px solid rgba(155,109,255,.28); text-align:center; min-width:160px; animation-delay:.4s; }
+    .hfc-stat-2   { right:4%; bottom:22%; border:1px solid rgba(0,194,168,.26); text-align:center; min-width:168px; animation-delay:.55s; }
+    .hfc-stars  { color:#ffd966; font-size:12px; letter-spacing:2px; margin-bottom:8px; }
+    .hfc-quote  { font-size:13px; color:#cfe0f0; line-height:1.6; font-style:italic; margin:0; }
+    .hfc-author { font-size:11px; color:#7db8ff; margin-top:8px; font-weight:600; }
+    .hfc-num    { font-family:'Instrument Serif',serif; font-size:46px; font-weight:400; line-height:1; }
+    .hfc-label  { font-size:12px; color:#8aa0bc; margin-top:6px; line-height:1.5; }
+
+    /* hero text content */
+    .hero-content { position:relative; z-index:3; max-width:680px; width:100%; display:flex; flex-direction:column; align-items:center; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(45,126,247,.12); border:1px solid rgba(45,126,247,.25);
+      border-radius:100px; padding:6px 18px; font-size:13px; font-weight:500; color:#7db8ff;
+      margin-bottom:28px; animation:fadeUp .7s ease both;
+    }
+    .hero-badge-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:pulse 2s infinite; }
+    .hero h1 {
+      font-family:'Instrument Serif',serif;
+      font-size:clamp(46px,7.5vw,86px);
+      font-weight:400; line-height:1.04; letter-spacing:-1.5px;
+      margin-bottom:22px; animation:fadeUp .7s ease .1s both;
+    }
+    .hero h1 em {
+      font-style:italic;
+      background:linear-gradient(135deg,var(--blue-bright),var(--teal));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .hero-sub {
+      font-size:clamp(16px,2vw,19px); color:var(--text-muted); line-height:1.72;
+      max-width:520px; margin:0 auto 28px; font-weight:300;
+      animation:fadeUp .7s ease .2s both;
+    }
+    .hero-skip { font-size:13px; color:var(--text-muted); animation:fadeUp .7s ease .3s both; margin-bottom:0; }
+    .hero-skip a { color:var(--text-muted); text-decoration:underline; text-underline-offset:3px; transition:color .2s; }
+    .hero-skip a:hover { color:#fff; }
+
+    /* school highlight pills below headline */
+    .hero-school-highlights {
+      display:flex; gap:8px; flex-wrap:wrap; justify-content:center;
+      max-width:540px; margin-top:32px;
+      animation:fadeUp .7s ease .45s both;
+    }
+    .hsh-pill { font-size:12px; padding:5px 14px; border-radius:100px; white-space:nowrap; border:1px solid rgba(45,126,247,.32); color:#7db8ff; background:rgba(45,126,247,.09); }
+    .hsh-more { border-color:rgba(0,194,168,.32); color:var(--teal); background:rgba(0,194,168,.07); }
+
+    /* ─── PROOF BAND ─── */
+    .proof-band {
+      background:rgba(255,255,255,.02);
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+      padding:30px 48px;
+      display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap;
+    }
+    .proof-item { display:flex; align-items:center; gap:10px; font-size:14px; color:#b0c4de; }
+    .proof-item svg { width:18px; height:18px; color:var(--teal); flex-shrink:0; }
+    .proof-item strong { color:#fff; }
+
+    /* ─── SECTIONS ─── */
+    section { padding:100px 48px; }
+    .section-inner { max-width:1100px; margin:0 auto; }
+    .section-title { font-family:'Instrument Serif',serif; font-size:clamp(32px,4vw,52px); font-weight:400; line-height:1.12; letter-spacing:-.5px; margin-bottom:16px; }
+    .section-sub { font-size:17px; color:var(--text-muted); line-height:1.65; max-width:520px; font-weight:300; }
+
+    /* reveal animation */
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* ─── PRODUCTS ─── */
+    #products { background:var(--navy-mid); }
+    .products-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; flex-wrap:wrap; gap:24px; }
+    .product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .product-card {
+      background:var(--card-bg); border:1px solid var(--border); border-radius:22px;
+      padding:36px 32px; position:relative; overflow:hidden;
+      transition:transform .3s, border-color .3s, box-shadow .3s;
+      display:flex; flex-direction:column;
+    }
+    .product-card:hover { transform:translateY(-6px); border-color:rgba(45,126,247,.35); box-shadow:0 20px 60px rgba(0,0,0,.3); }
+    .product-card-featured { border-color:rgba(45,126,247,.4); background:linear-gradient(160deg,rgba(45,126,247,.08) 0%,rgba(0,194,168,.05) 100%); }
+    .product-card-featured::after {
+      content:'Most Popular'; position:absolute; top:24px; right:-32px;
+      background:linear-gradient(135deg,var(--blue-bright),var(--teal));
+      color:#fff; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+      padding:5px 52px; transform:rotate(35deg); pointer-events:none;
+    }
+    .product-accent { width:40px; height:3px; border-radius:2px; margin-bottom:24px; }
+    .accent-blue   { background:linear-gradient(90deg,var(--blue-bright),#5b9fff); }
+    .accent-teal   { background:linear-gradient(90deg,var(--teal),#5be8d8); }
+    .accent-purple { background:linear-gradient(90deg,#9b6dff,#c96dff); }
+    .product-tag { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:16px; }
+    .tag-blue   { background:rgba(45,126,247,.15); color:#7db8ff; }
+    .tag-teal   { background:rgba(0,194,168,.15); color:#00c2a8; }
+    .tag-purple { background:rgba(155,109,255,.15); color:#c69fff; }
+    .tag-gold   { background:rgba(255,183,0,.15); color:#ffd966; }
+    .product-tag svg { width:13px; height:13px; }
+    .product-card h3 { font-family:'Instrument Serif',serif; font-size:26px; font-weight:400; margin-bottom:12px; line-height:1.2; }
+    .product-card > p { font-size:15px; color:var(--text-muted); line-height:1.65; margin-bottom:24px; flex:1; }
+    .product-features { list-style:none; margin-bottom:28px; }
+    .product-features li { font-size:14px; color:#b0c4de; padding:8px 0; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+    .product-features li:last-child { border-bottom:none; }
+    .feat-check { color:var(--teal); flex-shrink:0; }
+    .feat-check svg { width:14px; height:14px; }
+    .product-price { font-family:'Instrument Serif',serif; font-size:36px; margin-bottom:20px; }
+    .product-price span { font-size:15px; font-family:'DM Sans',sans-serif; color:var(--text-muted); font-weight:300; }
+
+    /* ─── BUNDLES ─── */
+    .bundle-cards { display:flex; flex-direction:column; gap:16px; }
+    .bundle-card {
+      background:var(--card-bg); border:1px solid var(--border); border-radius:20px;
+      padding:32px 36px; display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center;
+      transition:border-color .3s, transform .3s;
+    }
+    .bundle-card:hover { border-color:rgba(45,126,247,.35); transform:translateY(-2px); }
+    .bundle-card-featured { border-color:rgba(255,183,0,.3); background:linear-gradient(135deg,rgba(255,183,0,.05) 0%,rgba(45,126,247,.04) 100%); }
+    .bundle-tag { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:12px; background:rgba(45,126,247,.15); color:#7db8ff; }
+    .bundle-tag-gold { background:rgba(255,183,0,.15); color:#ffd966; }
+    .bundle-card h4 { font-family:'Instrument Serif',serif; font-size:22px; font-weight:400; margin-bottom:8px; }
+    .bundle-card-left > p { font-size:14px; color:var(--text-muted); line-height:1.65; margin-bottom:14px; }
+    .bundle-includes { display:flex; flex-wrap:wrap; gap:8px; }
+    .bi { font-size:12px; color:#b0c4de; background:rgba(255,255,255,.04); border:1px solid var(--border); padding:4px 10px; border-radius:100px; }
+    .bundle-card-right { flex-shrink:0; text-align:center; min-width:180px; }
+    .bundle-price { font-family:'Instrument Serif',serif; font-size:44px; font-weight:400; line-height:1; margin-bottom:4px; }
+    .bundle-price sup { font-size:20px; vertical-align:top; margin-top:8px; font-family:'DM Sans',sans-serif; }
+    .bundle-save { font-size:12px; color:var(--teal); margin-bottom:16px; font-weight:500; }
+    .btn-bundle { display:block; width:100%; text-align:center; padding:13px 20px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; font-family:'DM Sans',sans-serif; transition:opacity .2s,transform .2s; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; box-shadow:0 5px 18px rgba(45,126,247,.25); }
+    .btn-bundle:hover { opacity:.9; transform:translateY(-1px); }
+    .btn-bundle-gold { background:linear-gradient(135deg,#f5a623,#ffd966); color:#1a1000; box-shadow:0 5px 18px rgba(245,166,35,.25); }
+
+    /* ─── KIRA ─── */
+    #kira { background:var(--navy); padding:100px 48px; }
+    .kira-inner { max-width:1100px; margin:0 auto; }
+    .kira-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .kira-tag { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:5px 14px; border-radius:100px; background:rgba(0,194,168,.12); color:#00c2a8; margin-bottom:20px; }
+    .kira-tag svg { width:12px; height:12px; }
+    .kira-left h2 { font-family:'Instrument Serif',serif; font-size:clamp(28px,3.5vw,46px); font-weight:400; line-height:1.12; margin-bottom:16px; }
+    .kira-left h2 em { font-style:italic; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .kira-left > p { font-size:16px; color:var(--text-muted); line-height:1.72; margin-bottom:28px; font-weight:300; }
+    .kira-points { list-style:none; margin-bottom:32px; }
+    .kira-points li { font-size:14px; color:#b0c4de; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.05); display:flex; align-items:flex-start; gap:10px; }
+    .kira-points li:last-child { border-bottom:none; }
+    .kira-check { color:var(--teal); flex-shrink:0; margin-top:1px; }
+    .kira-check svg { width:14px; height:14px; }
+    .kira-cta { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; text-decoration:none; padding:14px 28px; border-radius:11px; font-size:15px; font-weight:600; transition:opacity .2s,transform .2s; box-shadow:0 6px 20px rgba(45,126,247,.3); }
+    .kira-cta:hover { opacity:.9; transform:translateY(-2px); }
+    .kira-right { border:1px solid rgba(0,194,168,.2); border-radius:24px; padding:40px 36px; background:linear-gradient(160deg,rgba(0,194,168,.06) 0%,rgba(45,126,247,.04) 100%); }
+    .kira-right-title { font-family:'Instrument Serif',serif; font-size:20px; font-weight:400; margin-bottom:20px; color:#c8d8ee; }
+    .kira-format-list { list-style:none; }
+    .kira-format-item { display:flex; gap:16px; align-items:flex-start; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.05); }
+    .kira-format-item:last-child { border-bottom:none; }
+    .kira-format-icon { width:36px; height:36px; border-radius:10px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .kfi-teal   { background:rgba(0,194,168,.15); color:#00c2a8; }
+    .kfi-blue   { background:rgba(45,126,247,.15); color:#7db8ff; }
+    .kfi-purple { background:rgba(155,109,255,.15); color:#c69fff; }
+    .kira-format-icon svg { width:16px; height:16px; }
+    .kira-format-text strong { font-size:14px; font-weight:600; display:block; margin-bottom:3px; }
+    .kira-format-text span { font-size:13px; color:var(--text-muted); line-height:1.55; }
+
+    /* ─── HOW IT WORKS ─── */
+    #how-it-works { background:var(--navy-mid); }
+    .steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:64px; position:relative; }
+    .steps-grid::before { content:''; position:absolute; top:28px; left:calc(16.66% + 20px); right:calc(16.66% + 20px); height:1px; background:linear-gradient(90deg,transparent,var(--blue-bright),var(--teal),transparent); }
+    .step { text-align:center; }
+    .step-num { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); display:flex; align-items:center; justify-content:center; font-family:'Instrument Serif',serif; font-size:22px; margin:0 auto 24px; position:relative; z-index:1; box-shadow:0 0 0 8px rgba(45,126,247,.1); }
+    .step h4 { font-size:18px; font-weight:600; margin-bottom:10px; }
+    .step p { font-size:14px; color:var(--text-muted); line-height:1.65; }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials { background:var(--navy); }
+    .testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px; }
+    .testimonial-card { background:var(--card-bg); border:1px solid var(--border); border-radius:18px; padding:28px; transition:border-color .3s,transform .3s; }
+    .testimonial-card:hover { border-color:rgba(45,126,247,.3); transform:translateY(-4px); }
+    .testimonial-stars { color:#ffd966; font-size:13px; margin-bottom:16px; letter-spacing:3px; }
+    .testimonial-text { font-size:15px; line-height:1.72; color:#c8d8ee; margin-bottom:20px; font-style:italic; }
+    .testimonial-author { display:flex; align-items:center; gap:12px; }
+    .testimonial-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+    .testimonial-name { font-weight:600; font-size:14px; }
+    .testimonial-school { font-size:12px; color:var(--teal); margin-top:2px; }
+
+    /* ─── SCHOOLS ─── */
+    #schools { background:var(--navy-mid); padding:90px 48px; }
+    .schools-grid { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    .school-pill { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:100px; padding:8px 18px; font-size:13px; color:#b0c4de; transition:all .2s; }
+    .school-pill:hover { background:rgba(45,126,247,.1); border-color:rgba(45,126,247,.3); color:#fff; }
+    .school-pill-more { background:rgba(0,194,168,.08); border-color:rgba(0,194,168,.2); color:var(--teal); font-style:italic; }
+
+    /* ─── FAQ ─── */
+    #faq { background:var(--navy); }
+    .faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:56px; }
+    .faq-item { background:var(--card-bg); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+    .faq-q { width:100%; background:none; border:none; color:#fff; text-align:left; padding:22px 24px; font-size:15px; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; font-family:'DM Sans',sans-serif; }
+    .faq-q:hover { background:rgba(255,255,255,.03); }
+    .faq-icon { color:var(--teal); font-size:20px; flex-shrink:0; transition:transform .3s; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+    .faq-a { font-size:14px; color:var(--text-muted); line-height:1.7; max-height:0; overflow:hidden; padding:0 24px; transition:max-height .35s ease,padding .35s ease; }
+    .faq-item.open .faq-a { max-height:240px; padding:0 24px 22px; }
+
+    /* ─── BOTTOM CTA ─── */
+    .cta-band { background:linear-gradient(135deg,rgba(30,95,194,.22) 0%,rgba(0,194,168,.1) 100%); border-top:1px solid rgba(45,126,247,.18); border-bottom:1px solid rgba(45,126,247,.18); padding:100px 48px; text-align:center; position:relative; overflow:hidden; }
+    .cta-band::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 0%,rgba(45,126,247,.16) 0%,transparent 60%); }
+    .cta-band-inner { position:relative; z-index:1; max-width:680px; margin:0 auto; }
+    .cta-band h2 { font-family:'Instrument Serif',serif; font-size:clamp(32px,4vw,54px); font-weight:400; line-height:1.12; margin-bottom:16px; }
+    .cta-band p { font-size:17px; color:var(--text-muted); margin-bottom:40px; font-weight:300; }
+    .cta-buttons { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+    .cta-btn-main { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; text-decoration:none; padding:16px 36px; border-radius:12px; font-size:16px; font-weight:600; transition:opacity .2s,transform .2s; box-shadow:0 8px 28px rgba(45,126,247,.35); }
+    .cta-btn-main:hover { opacity:.9; transform:translateY(-2px); }
+    .cta-btn-ghost { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; text-decoration:none; padding:16px 36px; border-radius:12px; font-size:16px; font-weight:500; transition:background .2s; }
+    .cta-btn-ghost:hover { background:rgba(255,255,255,.12); }
+
+    /* ─── STICKY MOBILE CTA ─── */
+    .sticky-cta { display:none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:900px) {
+      section { padding:70px 24px; }
+      #kira { padding:70px 24px; }
+      #schools { padding:70px 24px; }
+      .cta-band { padding:70px 24px; }
+      .hero { padding:130px 24px 90px; }
+      .product-grid { grid-template-columns:1fr; max-width:440px; margin:0 auto; }
+      .products-header { flex-direction:column; }
+      .kira-grid { grid-template-columns:1fr; gap:40px; }
+      .steps-grid { grid-template-columns:1fr; gap:32px; }
+      .steps-grid::before { display:none; }
+      .testimonials-grid { grid-template-columns:1fr; }
+      .faq-grid { grid-template-columns:1fr; }
+      .proof-band { gap:24px; padding:24px; }
+      .announce-bar { padding:9px 40px 9px 16px; font-size:12px; }
+      .hfc-review-1, .hfc-review-2, .hfc-stat-1, .hfc-stat-2 { display:none; }
+      .hero-school-highlights { max-width:340px; }
+    }
+    @media(max-width:600px) {
+      .sticky-cta { display:flex; position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(10,22,40,.97); border-top:1px solid var(--border); padding:12px 16px; gap:10px; }
+      .sticky-cta a { flex:1; text-align:center; padding:13px 16px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; font-family:'DM Sans',sans-serif; }
+      .sticky-cta-main { background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; }
+      .sticky-cta-ghost { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; }
+      .bundle-card { grid-template-columns:1fr; }
+      .bundle-card-right { min-width:unset; }
+    }
+  </style>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJR4FSH8"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJR4FSH8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ANNOUNCEMENT BAR -->
 <div class="announce-bar" id="announceBar">
   <span class="announce-bar-dot"></span>
   <span>Interview season is here — <strong>students who prep score more offers.</strong> <a href="#products">See what's included →</a></span>
-  <button class="announce-close" onclick="document.getElementById('announceBar').style.display='none'" aria-label="Close">×</button>
+  <button class="announce-close" onclick="document.getElementById('announceBar').style.display='none';updateNavTop();" aria-label="Close">×</button>
 </div>
 
 <!-- NAV -->
 <nav id="navbar" style="top:38px;">
-  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview – Ace Your Dental School Interview"/></a>
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview – Dental School Interview Prep"/></a>
   <ul class="nav-links">
     <li><a href="#products">Products</a></li>
     <li><a href="#kira">Kira Prep</a></li>
@@ -416,94 +397,86 @@
   <a href="interview-prep.html" onclick="closeMobileNav()" style="color:var(--teal);margin-top:16px;">Get Started →</a>
 </nav>
 
-<!-- HERO -->
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
 <section class="hero">
 
-  <!-- SCROLLING SCHOOL PILLS BACKGROUND -->
+  <!-- scrolling school pill rows -->
   <div class="hero-schools-bg">
-    <div class="pill-row" style="top:6%;">
+    <div class="pill-row" style="top:5%;">
       <span class="school-pill-scroll">NYU College of Dentistry</span><span class="school-pill-scroll">University of Michigan</span><span class="school-pill-scroll">UCSF School of Dentistry</span><span class="school-pill-scroll">University of Pennsylvania</span><span class="school-pill-scroll">Case Western Reserve</span><span class="school-pill-scroll">Creighton University</span><span class="school-pill-scroll">Marquette University</span><span class="school-pill-scroll">Loma Linda University</span><span class="school-pill-scroll">Temple University Kornberg</span>
       <span class="school-pill-scroll">NYU College of Dentistry</span><span class="school-pill-scroll">University of Michigan</span><span class="school-pill-scroll">UCSF School of Dentistry</span><span class="school-pill-scroll">University of Pennsylvania</span><span class="school-pill-scroll">Case Western Reserve</span><span class="school-pill-scroll">Creighton University</span><span class="school-pill-scroll">Marquette University</span><span class="school-pill-scroll">Loma Linda University</span><span class="school-pill-scroll">Temple University Kornberg</span>
     </div>
     <div class="pill-row r2">
-      <span class="school-pill-scroll">UNC Adams School of Dentistry</span><span class="school-pill-scroll">Howard University CDM</span><span class="school-pill-scroll">Indiana University</span><span class="school-pill-scroll">Nova Southeastern</span><span class="school-pill-scroll">Midwestern University</span><span class="school-pill-scroll">Touro College of Dental Medicine</span><span class="school-pill-scroll">University of Iowa</span><span class="school-pill-scroll">University of Louisville</span>
-      <span class="school-pill-scroll">UNC Adams School of Dentistry</span><span class="school-pill-scroll">Howard University CDM</span><span class="school-pill-scroll">Indiana University</span><span class="school-pill-scroll">Nova Southeastern</span><span class="school-pill-scroll">Midwestern University</span><span class="school-pill-scroll">Touro College of Dental Medicine</span><span class="school-pill-scroll">University of Iowa</span><span class="school-pill-scroll">University of Louisville</span>
+      <span class="school-pill-scroll">UNC Adams School of Dentistry</span><span class="school-pill-scroll">Howard University CDM</span><span class="school-pill-scroll">Indiana University</span><span class="school-pill-scroll">Nova Southeastern</span><span class="school-pill-scroll">Midwestern University</span><span class="school-pill-scroll">Touro College of Dental Medicine</span><span class="school-pill-scroll">University of Iowa</span><span class="school-pill-scroll">University of Louisville</span><span class="school-pill-scroll">Roseman University</span>
+      <span class="school-pill-scroll">UNC Adams School of Dentistry</span><span class="school-pill-scroll">Howard University CDM</span><span class="school-pill-scroll">Indiana University</span><span class="school-pill-scroll">Nova Southeastern</span><span class="school-pill-scroll">Midwestern University</span><span class="school-pill-scroll">Touro College of Dental Medicine</span><span class="school-pill-scroll">University of Iowa</span><span class="school-pill-scroll">University of Louisville</span><span class="school-pill-scroll">Roseman University</span>
     </div>
     <div class="pill-row r3">
-      <span class="school-pill-scroll">LECOM School of Dental Medicine</span><span class="school-pill-scroll">Roseman University</span><span class="school-pill-scroll">UTHealth Houston</span><span class="school-pill-scroll">Kansas City University</span><span class="school-pill-scroll">UMKC School of Dentistry</span><span class="school-pill-scroll">East Carolina University</span><span class="school-pill-scroll">A.T. Still University</span><span class="school-pill-scroll">University of Illinois Chicago</span>
-      <span class="school-pill-scroll">LECOM School of Dental Medicine</span><span class="school-pill-scroll">Roseman University</span><span class="school-pill-scroll">UTHealth Houston</span><span class="school-pill-scroll">Kansas City University</span><span class="school-pill-scroll">UMKC School of Dentistry</span><span class="school-pill-scroll">East Carolina University</span><span class="school-pill-scroll">A.T. Still University</span><span class="school-pill-scroll">University of Illinois Chicago</span>
+      <span class="school-pill-scroll">LECOM School of Dental Medicine</span><span class="school-pill-scroll">UTHealth Houston</span><span class="school-pill-scroll">Kansas City University</span><span class="school-pill-scroll">UMKC School of Dentistry</span><span class="school-pill-scroll">East Carolina University</span><span class="school-pill-scroll">A.T. Still University</span><span class="school-pill-scroll">University of Illinois Chicago</span><span class="school-pill-scroll">Stony Brook University</span>
+      <span class="school-pill-scroll">LECOM School of Dental Medicine</span><span class="school-pill-scroll">UTHealth Houston</span><span class="school-pill-scroll">Kansas City University</span><span class="school-pill-scroll">UMKC School of Dentistry</span><span class="school-pill-scroll">East Carolina University</span><span class="school-pill-scroll">A.T. Still University</span><span class="school-pill-scroll">University of Illinois Chicago</span><span class="school-pill-scroll">Stony Brook University</span>
     </div>
     <div class="pill-row r4">
-      <span class="school-pill-scroll">Texas Tech El Paso</span><span class="school-pill-scroll">UT San Antonio</span><span class="school-pill-scroll">Western University of Health Sciences</span><span class="school-pill-scroll">Midwestern University Arizona</span><span class="school-pill-scroll">University of Detroit Mercy</span><span class="school-pill-scroll">ATSU MOSDOH</span><span class="school-pill-scroll">University of Sydney</span><span class="school-pill-scroll">Stony Brook University</span>
-      <span class="school-pill-scroll">Texas Tech El Paso</span><span class="school-pill-scroll">UT San Antonio</span><span class="school-pill-scroll">Western University of Health Sciences</span><span class="school-pill-scroll">Midwestern University Arizona</span><span class="school-pill-scroll">University of Detroit Mercy</span><span class="school-pill-scroll">ATSU MOSDOH</span><span class="school-pill-scroll">University of Sydney</span><span class="school-pill-scroll">Stony Brook University</span>
+      <span class="school-pill-scroll">Texas Tech El Paso</span><span class="school-pill-scroll">UT San Antonio</span><span class="school-pill-scroll">Western University of Health Sciences</span><span class="school-pill-scroll">Midwestern University Arizona</span><span class="school-pill-scroll">University of Detroit Mercy</span><span class="school-pill-scroll">ATSU MOSDOH</span><span class="school-pill-scroll">University of Sydney</span><span class="school-pill-scroll">University of Minnesota</span>
+      <span class="school-pill-scroll">Texas Tech El Paso</span><span class="school-pill-scroll">UT San Antonio</span><span class="school-pill-scroll">Western University of Health Sciences</span><span class="school-pill-scroll">Midwestern University Arizona</span><span class="school-pill-scroll">University of Detroit Mercy</span><span class="school-pill-scroll">ATSU MOSDOH</span><span class="school-pill-scroll">University of Sydney</span><span class="school-pill-scroll">University of Minnesota</span>
     </div>
     <div class="pill-row r5">
-      <span class="school-pill-scroll">NYU</span><span class="school-pill-scroll">Michigan</span><span class="school-pill-scroll">UCSF</span><span class="school-pill-scroll">Penn</span><span class="school-pill-scroll">UNC Adams</span><span class="school-pill-scroll">Case Western</span><span class="school-pill-scroll">Howard</span><span class="school-pill-scroll">Loma Linda</span><span class="school-pill-scroll">Creighton</span><span class="school-pill-scroll">Marquette</span><span class="school-pill-scroll">Iowa</span><span class="school-pill-scroll">Louisville</span><span class="school-pill-scroll">Temple</span>
-      <span class="school-pill-scroll">NYU</span><span class="school-pill-scroll">Michigan</span><span class="school-pill-scroll">UCSF</span><span class="school-pill-scroll">Penn</span><span class="school-pill-scroll">UNC Adams</span><span class="school-pill-scroll">Case Western</span><span class="school-pill-scroll">Howard</span><span class="school-pill-scroll">Loma Linda</span><span class="school-pill-scroll">Creighton</span><span class="school-pill-scroll">Marquette</span><span class="school-pill-scroll">Iowa</span><span class="school-pill-scroll">Louisville</span><span class="school-pill-scroll">Temple</span>
+      <span class="school-pill-scroll">NYU</span><span class="school-pill-scroll">Michigan</span><span class="school-pill-scroll">UCSF</span><span class="school-pill-scroll">Penn</span><span class="school-pill-scroll">UNC Adams</span><span class="school-pill-scroll">Case Western</span><span class="school-pill-scroll">Howard</span><span class="school-pill-scroll">Loma Linda</span><span class="school-pill-scroll">Creighton</span><span class="school-pill-scroll">Marquette</span><span class="school-pill-scroll">Iowa</span><span class="school-pill-scroll">Louisville</span><span class="school-pill-scroll">Temple</span><span class="school-pill-scroll">Nova SE</span>
+      <span class="school-pill-scroll">NYU</span><span class="school-pill-scroll">Michigan</span><span class="school-pill-scroll">UCSF</span><span class="school-pill-scroll">Penn</span><span class="school-pill-scroll">UNC Adams</span><span class="school-pill-scroll">Case Western</span><span class="school-pill-scroll">Howard</span><span class="school-pill-scroll">Loma Linda</span><span class="school-pill-scroll">Creighton</span><span class="school-pill-scroll">Marquette</span><span class="school-pill-scroll">Iowa</span><span class="school-pill-scroll">Louisville</span><span class="school-pill-scroll">Temple</span><span class="school-pill-scroll">Nova SE</span>
     </div>
   </div>
 
-  <!-- VIGNETTES -->
+  <!-- vignettes -->
   <div class="hero-vignette"></div>
   <div class="hero-vignette-sides"></div>
   <div class="hero-vignette-top"></div>
 
-  <!-- FLOATING REVIEW CARD LEFT TOP -->
+  <!-- floating review cards -->
   <div class="hero-float-card hfc-review-1">
     <div class="hfc-stars">★★★★★</div>
     <p class="hfc-quote">"Went 5/5 on my interviews. Couldn't recommend it more."</p>
     <p class="hfc-author">Kylejosephhhh · 2025</p>
   </div>
-
-  <!-- FLOATING REVIEW CARD LEFT BOTTOM -->
   <div class="hero-float-card hfc-review-2">
     <div class="hfc-stars">★★★★★</div>
     <p class="hfc-quote">"Made a crazy difference. Did so much better after Denterview."</p>
     <p class="hfc-author">Verified Customer · 2025</p>
   </div>
 
-  <!-- FLOATING STAT RIGHT TOP -->
+  <!-- floating stat cards -->
   <div class="hero-float-card hfc-stat-1">
     <div class="hfc-num" style="color:#9b6dff;">64+</div>
     <div class="hfc-label">unique schools our<br>students got into</div>
   </div>
-
-  <!-- FLOATING STAT RIGHT BOTTOM -->
   <div class="hero-float-card hfc-stat-2">
     <div class="hfc-num" style="color:#00c2a8;">$8.99</div>
     <div class="hfc-label">vs $200+ for<br>private coaching</div>
   </div>
 
-  <!-- CENTER CONTENT -->
+  <!-- center content -->
   <div class="hero-content">
     <div class="hero-badge"><span class="hero-badge-dot"></span>Trusted by students accepted to 64+ dental schools</div>
     <h1>Your path to<br><em>dental school</em><br>starts here.</h1>
     <p class="hero-sub">From a standout personal statement to crushing interview day — without the price tag.</p>
     <p class="hero-skip"><a href="#products">See everything we offer ↓</a></p>
-  </div>
-
-  <!-- HIGHLIGHTED SCHOOLS PINNED BOTTOM -->
-  <div class="hero-school-highlights">
-    <span class="hsh-pill">NYU</span>
-    <span class="hsh-pill">Michigan</span>
-    <span class="hsh-pill">UCSF</span>
-    <span class="hsh-pill">Penn</span>
-    <span class="hsh-pill">UNC</span>
-    <span class="hsh-pill">Case Western</span>
-    <span class="hsh-pill hsh-more">+ 58 more schools</span>
+    <div class="hero-school-highlights">
+      <span class="hsh-pill">NYU</span>
+      <span class="hsh-pill">Michigan</span>
+      <span class="hsh-pill">UCSF</span>
+      <span class="hsh-pill">Penn</span>
+      <span class="hsh-pill">UNC</span>
+      <span class="hsh-pill">Case Western</span>
+      <span class="hsh-pill">Howard</span>
+      <span class="hsh-pill">Loma Linda</span>
+      <span class="hsh-pill hsh-more">+ 56 more schools</span>
+    </div>
   </div>
 
 </section>
 
-<!-- STATS -->
-<div class="stats-band">
-  <div class="stat-item"><span class="stat-num">64+</span><span class="stat-label">Schools Our Students Got Into</span></div>
-  <div class="stat-item"><span class="stat-num">$8.99</span><span class="stat-label">Starting Price</span></div>
-  <div class="stat-item"><span class="stat-num">73</span><span class="stat-label">Real Interview Questions</span></div>
-  <div class="stat-item"><span class="stat-num">3–5</span><span class="stat-label">Day Feedback Turnaround</span></div>
-</div>
-
-<!-- PROOF BAND -->
+<!-- ═══════════════════════════════════════
+     PROOF BAND
+════════════════════════════════════════ -->
 <div class="proof-band">
   <div class="proof-item">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -523,7 +496,9 @@
   </div>
 </div>
 
-<!-- PRODUCTS -->
+<!-- ═══════════════════════════════════════
+     PRODUCTS
+════════════════════════════════════════ -->
 <section id="products">
   <div class="section-inner">
     <div class="products-header reveal">
@@ -536,7 +511,7 @@
     <div class="product-grid">
 
       <!-- PERSONAL STATEMENT -->
-      <div class="product-card reveal" id="card-personal">
+      <div class="product-card reveal">
         <div class="product-accent accent-blue"></div>
         <span class="product-tag tag-gold">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -546,7 +521,7 @@
         <p>Get your personal statement reviewed by current dental students who know exactly what admissions committees want. Thorough, honest, actionable feedback — not a generic checklist.</p>
         <ul class="product-features">
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Full read-through by a dental student reviewer</li>
-          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Line-by-line written feedback</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Line-by-line written feedback with tracked changes</li>
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Returned within 3–5 business days</li>
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Re-review after edits available ($15)</li>
         </ul>
@@ -554,15 +529,15 @@
         <a href="personal-statement.html" class="btn-primary">See Review Details →</a>
       </div>
 
-      <!-- INTERVIEW GUIDES (featured) -->
-      <div class="product-card product-card-featured reveal" id="card-guides">
+      <!-- INTERVIEW GUIDES — featured -->
+      <div class="product-card product-card-featured reveal">
         <div class="product-accent accent-teal"></div>
         <span class="product-tag tag-teal">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
           Fan Favorite
         </span>
         <h3>Interview Prep Guides</h3>
-        <p>The most comprehensive dental school interview prep available. 73 real questions with expert answer frameworks, behavioral storytelling strategies, and a day-of checklist — choose the package that fits your timeline.</p>
+        <p>The most comprehensive dental school interview prep available. 73 real questions with expert answer frameworks, behavioral storytelling strategies, and a day-of checklist — pick the tier that fits your timeline.</p>
         <ul class="product-features">
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>73 real dental school interview questions</li>
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Answer frameworks & storytelling methodology</li>
@@ -574,14 +549,14 @@
       </div>
 
       <!-- MOCK INTERVIEWS -->
-      <div class="product-card reveal" id="card-ai">
+      <div class="product-card reveal">
         <div class="product-accent accent-purple"></div>
         <span class="product-tag tag-purple">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
           Live Practice
         </span>
         <h3>Mock Interviews with Instant Feedback</h3>
-        <p>Practice answering real dental school interview questions on camera and get instant feedback on your delivery — eye contact, pacing, filler words, and content. Like a practice interview, but available anytime.</p>
+        <p>Practice answering real dental school interview questions on camera and get instant feedback on your delivery — eye contact, pacing, filler words, and content. Like a practice interview, available anytime.</p>
         <ul class="product-features">
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Real interview questions, on-camera format</li>
           <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Instant feedback: eye contact, pacing & content</li>
@@ -595,7 +570,7 @@
     </div>
 
     <!-- BUNDLES -->
-    <div class="bundles-header reveal" style="margin-top:64px;padding-top:56px;border-top:1px solid var(--border);">
+    <div class="bundles-header reveal" style="margin-top:72px;padding-top:56px;border-top:1px solid var(--border);">
       <p class="section-eyebrow">Save More, Prep More</p>
       <h3 style="font-family:'Instrument Serif',serif;font-size:clamp(24px,3vw,36px);font-weight:400;margin-bottom:8px;">Bundle & save</h3>
       <p style="font-size:15px;color:var(--text-muted);margin-bottom:32px;">Combine products for a better deal — and a more complete prep experience.</p>
@@ -641,12 +616,13 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
-<!-- KIRA SECTION -->
-<section class="kira-section" id="kira">
+<!-- ═══════════════════════════════════════
+     KIRA
+════════════════════════════════════════ -->
+<section id="kira" style="padding:100px 48px;">
   <div class="kira-inner">
     <div class="kira-grid">
       <div class="kira-left reveal">
@@ -671,40 +647,20 @@
         <p class="kira-right-title">What to expect from a Kira interview</p>
         <ul class="kira-format-list">
           <li class="kira-format-item">
-            <div class="kira-format-icon kfi-teal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <div class="kira-format-text">
-              <strong>Timed responses</strong>
-              <span>Typically 1–3 minutes per question. You don't get to re-record, so preparation is everything.</span>
-            </div>
+            <div class="kira-format-icon kfi-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="kira-format-text"><strong>Timed responses</strong><span>Typically 1–3 minutes per question. You don't get to re-record, so preparation is everything.</span></div>
           </li>
           <li class="kira-format-item">
-            <div class="kira-format-icon kfi-blue">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
-            </div>
-            <div class="kira-format-text">
-              <strong>Behavioral questions</strong>
-              <span>"Tell me about a time you..." — every question. Structure and stories are your preparation strategy.</span>
-            </div>
+            <div class="kira-format-icon kfi-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="kira-format-text"><strong>Behavioral questions</strong><span>"Tell me about a time you..." — every question. Structure and stories are your preparation strategy.</span></div>
           </li>
           <li class="kira-format-item">
-            <div class="kira-format-icon kfi-purple">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <div class="kira-format-text">
-              <strong>Asynchronous — no interviewer</strong>
-              <span>You're recording solo to a camera. Presence, eye contact, and calm delivery matter more than ever.</span>
-            </div>
+            <div class="kira-format-icon kfi-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="kira-format-text"><strong>Asynchronous — no interviewer</strong><span>You're recording solo to a camera. Presence, eye contact, and calm delivery matter more than ever.</span></div>
           </li>
           <li class="kira-format-item">
-            <div class="kira-format-icon kfi-teal">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-            </div>
-            <div class="kira-format-text">
-              <strong>Reviewed by admissions committees</strong>
-              <span>Schools watch your recording when evaluating your file. First impressions count.</span>
-            </div>
+            <div class="kira-format-icon kfi-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="kira-format-text"><strong>Reviewed by admissions committees</strong><span>Schools watch your recording when evaluating your file. First impressions count.</span></div>
           </li>
         </ul>
       </div>
@@ -712,7 +668,9 @@
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- ═══════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════ -->
 <section id="how-it-works">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
@@ -728,8 +686,10 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
+<!-- ═══════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+<section id="testimonials" style="background:var(--navy-mid);">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
       <p class="section-eyebrow">Success Stories</p>
@@ -771,25 +731,32 @@
   </div>
 </section>
 
-<!-- ACCEPTED SCHOOLS -->
-<section id="schools" style="background:var(--navy);padding:80px 48px;">
+<!-- ═══════════════════════════════════════
+     ACCEPTED SCHOOLS
+════════════════════════════════════════ -->
+<section id="schools">
   <div class="section-inner">
     <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 48px;">
       <p class="section-eyebrow">Real Results</p>
       <h2 class="section-title">Students accepted into<br>64+ dental schools.</h2>
-      <p class="section-sub" style="margin:0 auto;">Our customers have been accepted into over 64 dental schools across the country — here are many of them. New schools are reported to us every cycle.</p>
+      <p class="section-sub" style="margin:0 auto;">Our customers have been accepted into over 64 unique dental schools across the country — and new ones are reported every cycle.</p>
     </div>
     <div class="schools-grid reveal">
       <div class="school-pill">A.T. Still University ASDOH</div><div class="school-pill">ATSU MOSDOH</div><div class="school-pill">Case Western Reserve</div><div class="school-pill">Creighton University</div><div class="school-pill">East Carolina University</div><div class="school-pill">Howard University CDM</div><div class="school-pill">Indiana University School of Dentistry</div><div class="school-pill">Kansas City University</div><div class="school-pill">LECOM School of Dental Medicine</div><div class="school-pill">Loma Linda University</div><div class="school-pill">Marquette University</div><div class="school-pill">Midwestern University</div><div class="school-pill">Midwestern University Arizona</div><div class="school-pill">NYU College of Dentistry</div><div class="school-pill">Nova Southeastern University</div><div class="school-pill">Roseman University</div><div class="school-pill">Temple University Kornberg</div><div class="school-pill">Texas Tech El Paso</div><div class="school-pill">Touro College of Dental Medicine</div><div class="school-pill">UCSF School of Dentistry</div><div class="school-pill">UMKC School of Dentistry</div><div class="school-pill">UNC Adams School of Dentistry</div><div class="school-pill">UT San Antonio</div><div class="school-pill">UTHealth Houston</div><div class="school-pill">University of Detroit Mercy</div><div class="school-pill">University of Illinois Chicago</div><div class="school-pill">University of Iowa</div><div class="school-pill">University of Louisville</div><div class="school-pill">University of Michigan</div><div class="school-pill">University of Pennsylvania</div><div class="school-pill">University of Sydney</div><div class="school-pill">Western University of Health Sciences</div>
-      <div class="school-pill school-pill-more">+ many more schools reported every cycle</div>
+      <div class="school-pill school-pill-more">+ many more reported every cycle</div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section id="faq">
+<!-- ═══════════════════════════════════════
+     FAQ
+════════════════════════════════════════ -->
+<section id="faq" style="background:var(--navy-mid);">
   <div class="section-inner">
-    <div class="reveal" style="max-width:600px;"><p class="section-eyebrow">FAQ</p><h2 class="section-title">Common questions</h2></div>
+    <div class="reveal" style="max-width:600px;">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">Common questions</h2>
+    </div>
     <div class="faq-grid reveal">
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who reviews my personal statement? <span class="faq-icon">+</span></button><div class="faq-a">Your personal statement is reviewed by current dental students who successfully navigated the same application process. Real, qualified feedback — not an automated tool.</div></div>
       <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does the personal statement review take? <span class="faq-icon">+</span></button><div class="faq-a">We aim to return all feedback within 3–5 business days, though it's often sooner. Need it faster? Reach out about rush availability.</div></div>
@@ -801,7 +768,9 @@
   </div>
 </section>
 
-<!-- CTA BAND -->
+<!-- ═══════════════════════════════════════
+     BOTTOM CTA
+════════════════════════════════════════ -->
 <div class="cta-band">
   <div class="cta-band-inner">
     <h2>Ready to get into<br><em style="font-style:italic;">dental school?</em></h2>
@@ -813,55 +782,67 @@
   </div>
 </div>
 
-<!-- FOOTER -->
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-top">
-      <div class="footer-brand"><a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a><p>Affordable, high-quality dental school prep — built by dental students, for dental students.</p></div>
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a>
+        <p>Affordable, high-quality dental school prep — built by dental students, for dental students.</p>
+      </div>
       <div class="footer-col"><h5>Products</h5><a href="personal-statement.html">Personal Statement Review</a><a href="interview-guides.html">Interview Prep Guides</a><a href="denterview-ai.html">Mock Interviews</a></div>
       <div class="footer-col"><h5>Company</h5><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="#testimonials">Success Stories</a></div>
       <div class="footer-col"><h5>Legal</h5><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Return Policy</a></div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Denterview™. All rights reserved.</p><div class="footer-bottom-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Returns</a></div></div>
+    <div class="footer-bottom">
+      <p>© 2026 Denterview™. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Returns</a></div>
+    </div>
   </div>
 </footer>
-
-<script>
-  // Announcement bar adjusts nav top
-  const announceBar = document.getElementById('announceBar');
-  const navbar = document.getElementById('navbar');
-  function updateNavTop() {
-    const barH = announceBar.style.display === 'none' ? 0 : announceBar.offsetHeight;
-    navbar.style.top = barH + 'px';
-  }
-  updateNavTop();
-  document.querySelector('.announce-close').addEventListener('click', () => {
-    setTimeout(updateNavTop, 50);
-  });
-
-  // FAQ
-  function toggleFaq(btn) { const item = btn.closest('.faq-item'); const open = item.classList.contains('open'); document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open')); if (!open) item.classList.add('open'); }
-
-  // Mobile nav
-  function openMobileNav() { document.getElementById('mobileNav').classList.add('open'); document.getElementById('mobileOverlay').classList.add('open'); document.body.style.overflow = 'hidden'; }
-  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.getElementById('mobileOverlay').classList.remove('open'); document.body.style.overflow = ''; }
-
-  // Scroll reveal
-  const obs = new IntersectionObserver((entries) => { entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('visible'),i*80); obs.unobserve(e.target); } }); }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-
-  // Navbar shrink on scroll
-  window.addEventListener('scroll', () => {
-    const barH = announceBar.style.display === 'none' ? 0 : announceBar.offsetHeight;
-    navbar.style.top = barH + 'px';
-  });
-</script>
 
 <!-- STICKY MOBILE CTA -->
 <div class="sticky-cta">
   <a href="interview-prep.html" class="sticky-cta-main">Interview Prep</a>
   <a href="interview-guides.html" class="sticky-cta-ghost">Ultimate Guide – $16.99</a>
 </div>
+
+<script>
+  // Announce bar + nav top
+  const announceBar = document.getElementById('announceBar');
+  const navbar = document.getElementById('navbar');
+  function updateNavTop() {
+    const h = announceBar.style.display === 'none' ? 0 : announceBar.offsetHeight;
+    navbar.style.top = h + 'px';
+  }
+  updateNavTop();
+  window.addEventListener('scroll', updateNavTop);
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Mobile nav
+  function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.getElementById('mobileOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.getElementById('mobileOverlay').classList.remove('open'); document.body.style.overflow=''; }
+
+  // Scroll reveal
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
 
 </body>
 </html>
