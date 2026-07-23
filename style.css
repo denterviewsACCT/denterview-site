@@ -70,7 +70,8 @@ body {
 }
 .mobile-overlay.open { display: block; }
 .mobile-nav {
-  position: fixed; top: 0; right: -100%; width: 280px; height: 100vh;
+  position: fixed; top: 0; right: -100%; width: 280px; height: 100vh; /* fallback */
+  height: 100dvh; /* adjusts live as Safari's toolbar shows/hides */
   background: var(--navy-mid); z-index: 200;
   padding: 80px 32px 32px;
   transition: right 0.35s ease;

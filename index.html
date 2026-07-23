@@ -84,7 +84,8 @@
 
     /* ─── HERO ─── */
     .hero {
-      min-height: 100vh;
+      min-height: 100vh; /* fallback for older browsers without svh support */
+      min-height: 100svh; /* real visible height on mobile Safari, ignoring the address bar */
       display: flex; flex-direction: column;
       justify-content: center; align-items: center; text-align: center;
       padding: 160px 24px 100px;
