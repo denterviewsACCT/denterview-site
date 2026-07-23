@@ -57,24 +57,31 @@ def file_exists_in_folder(folder_id: str, filename: str) -> bool:
     return len(resp.get("files", [])) > 0
 
 
-def download_as_docx_bytes(file_id: str, mime_type: str) -> bytes:
+PDF_MIME = "application/pdf"
+
+
+def download_source(file_id: str, mime_type: str) -> tuple[bytes, str]:
     """
-    Download a file's content as .docx bytes.
-    Native Google Docs are exported to docx; already-docx files are
-    downloaded directly.
+    Download a file's content, normalizing Google Docs to .docx via export.
+    Returns (content_bytes, effective_mime_type) so the caller can pick the
+    right text-extraction path (docx vs pdf) -- native PDFs are downloaded
+    as-is rather than forced through the docx exporter, which would corrupt
+    them.
     """
     service = _get_service()
     if mime_type == GOOGLE_DOC_MIME:
         request = service.files().export_media(fileId=file_id, mimeType=DOCX_MIME)
+        effective_mime = DOCX_MIME
     else:
         request = service.files().get_media(fileId=file_id)
+        effective_mime = mime_type
 
     buf = io.BytesIO()
     downloader = MediaIoBaseDownload(buf, request)
     done = False
     while not done:
         _, done = downloader.next_chunk()
-    return buf.getvalue()
+    return buf.getvalue(), effective_mime
 
 
 def upload_docx(folder_id: str, filename: str, content_bytes: bytes) -> str:

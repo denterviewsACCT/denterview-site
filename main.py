@@ -89,8 +89,8 @@ def _run_pipeline():
                 continue
 
             log.info("Processing %s", filename)
-            docx_bytes = drive_client.download_as_docx_bytes(file_id, mime_type)
-            paragraphs = extract_paragraphs(docx_bytes)
+            content_bytes, effective_mime = drive_client.download_source(file_id, mime_type)
+            paragraphs = extract_paragraphs(content_bytes, effective_mime)
 
             if not paragraphs:
                 results["errors"].append({"file": filename, "error": "no extractable text"})
