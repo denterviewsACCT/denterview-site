@@ -1,1730 +1,849 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Denterview AI - Mock Interview Practice</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦷</text></svg>">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
-        }
-        
-        .video-container {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16/9;
-            background: #000;
-            border-radius: 1rem;
-            overflow: hidden;
-        }
-        
-        .video-container video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transform: scaleX(-1);
-        }
-        
-        .pulse-recording {
-            animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover:not(:disabled) {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
-        }
-        
-        .btn-primary:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        
-        .fade-in {
-            animation: fadeIn 0.5s ease-in;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .screen {
-            display: none;
-        }
-        
-        .screen.active {
-            display: block;
-        }
-        
-        .tab-btn {
-            background: transparent;
-            color: #6b7280;
-        }
-        
-        .tab-btn.active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        
-        .tab-content {
-            display: none;
-        }
-        
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PJR4FSH8');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Denterview™ – Dental School Interview Prep & Application Help</title>
+  <meta name="description" content="Denterview helps pre-dental students get accepted. Personal statement review by real dental students, expert interview prep guides, and mock interviews with instant feedback. Starting at $8.99."/>
+  <meta name="keywords" content="dental school interview prep, dental school personal statement review, dental interview questions, pre-dental resources, behavioral interview prep, dental school mock interview, Kira Talent dental interview, AADSAS application help, dental school acceptance"/>
+  <meta name="author" content="Denterview"/>
+  <meta property="og:title" content="Denterview™ – Dental School Interview Prep & Application Help"/>
+  <meta property="og:description" content="Personal statement review, expert interview prep guides, and mock interviews with real-time feedback. Built by dental students who got in."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://denterview.com"/>
+  <meta property="og:image" content="https://denterview.com/logo.jpg"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Denterview™ – Dental School Interview Prep"/>
+  <meta name="twitter:description" content="Personal statement review, interview prep guides & mock interviews for dental school applicants."/>
+  <link rel="canonical" href="https://denterview.com"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"EducationalOrganization","name":"Denterview","url":"https://denterview.com","logo":"https://denterview.com/logo.jpg","description":"Dental school application and interview preparation — personal statement review, prep guides, and mock interviews","contactPoint":{"@type":"ContactPoint","email":"denterviews@gmail.com","contactType":"customer support"},"offers":[{"@type":"Offer","name":"Personal Statement Review","price":"40.00","priceCurrency":"USD"},{"@type":"Offer","name":"Essential Interview Guide","price":"8.99","priceCurrency":"USD"},{"@type":"Offer","name":"Mock Interview Starter Pack","price":"9.99","priceCurrency":"USD"}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9LH6YTLQJ"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-L9LH6YTLQJ');gtag('config','AW-17341313917');</script>
+
+  <style>
+    html, body { background: #0a1628 !important; color: #fff; }
+
+    /* ─── SHARED VARIABLES ─── */
+    :root {
+      --blue-bright: #2d7ef7;
+      --teal: #00c2a8;
+      --navy: #0a1628;
+      --navy-mid: #0d1e35;
+      --border: rgba(255,255,255,0.08);
+      --text-muted: #8aa0bc;
+      --card-bg: rgba(255,255,255,0.03);
+    }
+
+    /* ─── KEYFRAMES ─── */
+    @keyframes fadeUp   { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+    @keyframes pulse    { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:.5; transform:scale(.8); } }
+    @keyframes scrollLeft { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+
+    /* ─── EYEBROW LABEL ─── */
+    .section-eyebrow {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--teal); margin-bottom: 12px;
+    }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .announce-bar {
+      position: fixed; top:0; left:0; right:0; z-index:600;
+      background: linear-gradient(90deg,#1a3a6e,#0f2a55);
+      border-bottom: 1px solid rgba(45,126,247,.3);
+      padding: 9px 48px;
+      display:flex; align-items:center; justify-content:center; gap:14px;
+      font-size:13px; font-weight:500; color:#c8d8ee;
+    }
+    .announce-bar strong { color:#fff; }
+    .announce-bar a {
+      color:var(--teal); text-decoration:none; font-weight:600;
+      border-bottom:1px solid rgba(0,194,168,.35); transition:border-color .2s;
+    }
+    .announce-bar a:hover { border-color:var(--teal); }
+    .announce-bar-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:pulse 2s infinite; flex-shrink:0; }
+    .announce-close {
+      position:absolute; right:16px; background:none; border:none;
+      color:rgba(255,255,255,.4); cursor:pointer; font-size:18px; padding:0 8px;
+      line-height:1; transition:color .2s;
+    }
+    .announce-close:hover { color:#fff; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh; /* fallback for older browsers without svh support */
+      min-height: 100svh; /* real visible height on mobile Safari, ignoring the address bar */
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      padding: 160px 24px 100px;
+      position: relative; overflow: hidden;
+    }
+
+    /* scrolling school rows */
+    .hero-schools-bg { position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:0; }
+    .pill-row {
+      display:flex; gap:12px; position:absolute; white-space:nowrap;
+      animation: scrollLeft 30s linear infinite;
+    }
+    .pill-row.r2 { animation-direction:reverse; animation-duration:36s; top:22%; }
+    .pill-row.r3 { animation-duration:24s; top:40%; }
+    .pill-row.r4 { animation-direction:reverse; animation-duration:32s; top:58%; }
+    .pill-row.r5 { animation-duration:28s; top:76%; }
+    .school-pill-scroll {
+      font-size:11px; padding:5px 14px; border-radius:100px; flex-shrink:0;
+      border:1px solid rgba(255,255,255,.16);
+      color:rgba(255,255,255,.35); background:rgba(255,255,255,.05);
+    }
+
+    /* vignettes — clear center for headline */
+    .hero-vignette       { position:absolute; inset:0; z-index:1; pointer-events:none; background:radial-gradient(ellipse 58% 62% at 50% 50%, transparent 18%, #0a1628 72%); }
+    .hero-vignette-sides { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(90deg,#0a1628 0%,transparent 15%,transparent 85%,#0a1628 100%); }
+    .hero-vignette-top   { position:absolute; inset:0; z-index:1; pointer-events:none; background:linear-gradient(180deg,#0a1628 0%,transparent 16%,transparent 84%,#0a1628 100%); }
+
+    /* floating cards */
+    .hero-float-card {
+      position:absolute; z-index:2; pointer-events:none;
+      background:rgba(6,16,38,.92);
+      border-radius:18px; padding:20px 24px;
+      backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+      animation:fadeUp .8s ease both;
+    }
+    .hfc-review-1 { left:4%; top:26%; max-width:230px; border:1px solid rgba(45,126,247,.28); animation-delay:.35s; }
+    .hfc-review-2 { left:4%; bottom:22%; max-width:222px; border:1px solid rgba(0,194,168,.24); animation-delay:.5s; }
+    .hfc-stat-1   { right:4%; top:24%; border:1px solid rgba(155,109,255,.28); text-align:center; min-width:160px; animation-delay:.4s; }
+    .hfc-stat-2   { right:4%; bottom:22%; border:1px solid rgba(0,194,168,.26); text-align:center; min-width:168px; animation-delay:.55s; }
+    .hfc-stars  { color:#ffd966; font-size:12px; letter-spacing:2px; margin-bottom:8px; }
+    .hfc-quote  { font-size:13px; color:#cfe0f0; line-height:1.6; font-style:italic; margin:0; }
+    .hfc-author { font-size:11px; color:#7db8ff; margin-top:8px; font-weight:600; }
+    .hfc-num    { font-family:'Instrument Serif',serif; font-size:46px; font-weight:400; line-height:1; }
+    .hfc-label  { font-size:12px; color:#8aa0bc; margin-top:6px; line-height:1.5; }
+
+    /* hero text content */
+    .hero-content { position:relative; z-index:3; max-width:680px; width:100%; display:flex; flex-direction:column; align-items:center; }
+    .hero-badge {
+      display:inline-flex; align-items:center; gap:8px;
+      background:rgba(45,126,247,.12); border:1px solid rgba(45,126,247,.25);
+      border-radius:100px; padding:6px 18px; font-size:13px; font-weight:500; color:#7db8ff;
+      margin-bottom:28px; animation:fadeUp .7s ease both;
+    }
+    .hero-badge-dot { width:6px; height:6px; border-radius:50%; background:var(--teal); animation:pulse 2s infinite; }
+    .hero h1 {
+      font-family:'Instrument Serif',serif;
+      font-size:clamp(46px,7.5vw,86px);
+      font-weight:400; line-height:1.04; letter-spacing:-1.5px;
+      margin-bottom:22px; animation:fadeUp .7s ease .1s both;
+    }
+    .hero h1 em {
+      font-style:italic;
+      background:linear-gradient(135deg,var(--blue-bright),var(--teal));
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+    }
+    .hero-sub {
+      font-size:clamp(16px,2vw,19px); color:var(--text-muted); line-height:1.72;
+      max-width:520px; margin:0 auto 28px; font-weight:300;
+      animation:fadeUp .7s ease .2s both;
+    }
+    .hero-skip { font-size:13px; color:var(--text-muted); animation:fadeUp .7s ease .3s both; margin-bottom:0; }
+    .hero-skip a { color:var(--text-muted); text-decoration:underline; text-underline-offset:3px; transition:color .2s; }
+    .hero-skip a:hover { color:#fff; }
+
+    /* school highlight pills below headline */
+    .hero-school-highlights {
+      display:flex; gap:8px; flex-wrap:wrap; justify-content:center;
+      max-width:540px; margin-top:32px;
+      animation:fadeUp .7s ease .45s both;
+    }
+    .hsh-pill { font-size:12px; padding:5px 14px; border-radius:100px; white-space:nowrap; border:1px solid rgba(45,126,247,.32); color:#7db8ff; background:rgba(45,126,247,.09); }
+    .hsh-more { border-color:rgba(0,194,168,.32); color:var(--teal); background:rgba(0,194,168,.07); }
+
+    /* ─── PROOF BAND ─── */
+    .proof-band {
+      background:rgba(255,255,255,.02);
+      border-top:1px solid var(--border); border-bottom:1px solid var(--border);
+      padding:30px 48px;
+      display:flex; align-items:center; justify-content:center; gap:48px; flex-wrap:wrap;
+    }
+    .proof-item { display:flex; align-items:center; gap:10px; font-size:14px; color:#b0c4de; }
+    .proof-item svg { width:18px; height:18px; color:var(--teal); flex-shrink:0; }
+    .proof-item strong { color:#fff; }
+
+    /* ─── SECTIONS ─── */
+    section { padding:100px 48px; }
+    .section-inner { max-width:1100px; margin:0 auto; }
+    .section-title { font-family:'Instrument Serif',serif; font-size:clamp(32px,4vw,52px); font-weight:400; line-height:1.12; letter-spacing:-.5px; margin-bottom:16px; }
+    .section-sub { font-size:17px; color:var(--text-muted); line-height:1.65; max-width:520px; font-weight:300; }
+
+    /* reveal animation */
+    .reveal { opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity:1; transform:none; }
+
+    /* ─── PRODUCTS ─── */
+    #products { background:var(--navy-mid); }
+    .products-header { display:flex; justify-content:space-between; align-items:flex-end; margin-bottom:56px; flex-wrap:wrap; gap:24px; }
+    .product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .product-card {
+      background:var(--card-bg); border:1px solid var(--border); border-radius:22px;
+      padding:36px 32px; position:relative; overflow:hidden;
+      transition:transform .3s, border-color .3s, box-shadow .3s;
+      display:flex; flex-direction:column;
+    }
+    .product-card:hover { transform:translateY(-6px); border-color:rgba(45,126,247,.35); box-shadow:0 20px 60px rgba(0,0,0,.3); }
+    .product-card-featured { border-color:rgba(45,126,247,.4); background:linear-gradient(160deg,rgba(45,126,247,.08) 0%,rgba(0,194,168,.05) 100%); }
+    .product-card-featured::after {
+      content:'Most Popular'; position:absolute; top:24px; right:-32px;
+      background:linear-gradient(135deg,var(--blue-bright),var(--teal));
+      color:#fff; font-size:10px; font-weight:700; letter-spacing:1px; text-transform:uppercase;
+      padding:5px 52px; transform:rotate(35deg); pointer-events:none;
+    }
+    .product-accent { width:40px; height:3px; border-radius:2px; margin-bottom:24px; }
+    .accent-blue   { background:linear-gradient(90deg,var(--blue-bright),#5b9fff); }
+    .accent-teal   { background:linear-gradient(90deg,var(--teal),#5be8d8); }
+    .accent-purple { background:linear-gradient(90deg,#9b6dff,#c96dff); }
+    .product-tag { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:16px; }
+    .tag-blue   { background:rgba(45,126,247,.15); color:#7db8ff; }
+    .tag-teal   { background:rgba(0,194,168,.15); color:#00c2a8; }
+    .tag-purple { background:rgba(155,109,255,.15); color:#c69fff; }
+    .tag-gold   { background:rgba(255,183,0,.15); color:#ffd966; }
+    .product-tag svg { width:13px; height:13px; }
+    .product-card h3 { font-family:'Instrument Serif',serif; font-size:26px; font-weight:400; margin-bottom:12px; line-height:1.2; }
+    .product-card > p { font-size:15px; color:var(--text-muted); line-height:1.65; margin-bottom:24px; flex:1; }
+    .product-features { list-style:none; margin-bottom:28px; }
+    .product-features li { font-size:14px; color:#b0c4de; padding:8px 0; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; }
+    .product-features li:last-child { border-bottom:none; }
+    .feat-check { color:var(--teal); flex-shrink:0; }
+    .feat-check svg { width:14px; height:14px; }
+    .product-price { font-family:'Instrument Serif',serif; font-size:36px; margin-bottom:20px; }
+    .product-price span { font-size:15px; font-family:'DM Sans',sans-serif; color:var(--text-muted); font-weight:300; }
+
+    /* ─── BUNDLES ─── */
+    .bundle-cards { display:flex; flex-direction:column; gap:16px; }
+    .bundle-card {
+      background:var(--card-bg); border:1px solid var(--border); border-radius:20px;
+      padding:32px 36px; display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center;
+      transition:border-color .3s, transform .3s;
+    }
+    .bundle-card:hover { border-color:rgba(45,126,247,.35); transform:translateY(-2px); }
+    .bundle-card-featured { border-color:rgba(255,183,0,.3); background:linear-gradient(135deg,rgba(255,183,0,.05) 0%,rgba(45,126,247,.04) 100%); }
+    .bundle-tag { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:4px 12px; border-radius:100px; margin-bottom:12px; background:rgba(45,126,247,.15); color:#7db8ff; }
+    .bundle-tag-gold { background:rgba(255,183,0,.15); color:#ffd966; }
+    .bundle-card h4 { font-family:'Instrument Serif',serif; font-size:22px; font-weight:400; margin-bottom:8px; }
+    .bundle-card-left > p { font-size:14px; color:var(--text-muted); line-height:1.65; margin-bottom:14px; }
+    .bundle-includes { display:flex; flex-wrap:wrap; gap:8px; }
+    .bi { font-size:12px; color:#b0c4de; background:rgba(255,255,255,.04); border:1px solid var(--border); padding:4px 10px; border-radius:100px; }
+    .bundle-card-right { flex-shrink:0; text-align:center; min-width:180px; }
+    .bundle-price { font-family:'Instrument Serif',serif; font-size:44px; font-weight:400; line-height:1; margin-bottom:4px; }
+    .bundle-price sup { font-size:20px; vertical-align:top; margin-top:8px; font-family:'DM Sans',sans-serif; }
+    .bundle-save { font-size:12px; color:var(--teal); margin-bottom:16px; font-weight:500; }
+    .btn-bundle { display:block; width:100%; text-align:center; padding:13px 20px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; font-family:'DM Sans',sans-serif; transition:opacity .2s,transform .2s; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; box-shadow:0 5px 18px rgba(45,126,247,.25); }
+    .btn-bundle:hover { opacity:.9; transform:translateY(-1px); }
+    .btn-bundle-gold { background:linear-gradient(135deg,#f5a623,#ffd966); color:#1a1000; box-shadow:0 5px 18px rgba(245,166,35,.25); }
+
+    /* ─── KIRA ─── */
+    #kira { background:var(--navy); padding:100px 48px; }
+    .kira-inner { max-width:1100px; margin:0 auto; }
+    .kira-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center; }
+    .kira-tag { display:inline-flex; align-items:center; gap:6px; font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:5px 14px; border-radius:100px; background:rgba(0,194,168,.12); color:#00c2a8; margin-bottom:20px; }
+    .kira-tag svg { width:12px; height:12px; }
+    .kira-left h2 { font-family:'Instrument Serif',serif; font-size:clamp(28px,3.5vw,46px); font-weight:400; line-height:1.12; margin-bottom:16px; }
+    .kira-left h2 em { font-style:italic; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+    .kira-left > p { font-size:16px; color:var(--text-muted); line-height:1.72; margin-bottom:28px; font-weight:300; }
+    .kira-points { list-style:none; margin-bottom:32px; }
+    .kira-points li { font-size:14px; color:#b0c4de; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.05); display:flex; align-items:flex-start; gap:10px; }
+    .kira-points li:last-child { border-bottom:none; }
+    .kira-check { color:var(--teal); flex-shrink:0; margin-top:1px; }
+    .kira-check svg { width:14px; height:14px; }
+    .kira-cta { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; text-decoration:none; padding:14px 28px; border-radius:11px; font-size:15px; font-weight:600; transition:opacity .2s,transform .2s; box-shadow:0 6px 20px rgba(45,126,247,.3); }
+    .kira-cta:hover { opacity:.9; transform:translateY(-2px); }
+    .kira-right { border:1px solid rgba(0,194,168,.2); border-radius:24px; padding:40px 36px; background:linear-gradient(160deg,rgba(0,194,168,.06) 0%,rgba(45,126,247,.04) 100%); }
+    .kira-right-title { font-family:'Instrument Serif',serif; font-size:20px; font-weight:400; margin-bottom:20px; color:#c8d8ee; }
+    .kira-format-list { list-style:none; }
+    .kira-format-item { display:flex; gap:16px; align-items:flex-start; padding:14px 0; border-bottom:1px solid rgba(255,255,255,.05); }
+    .kira-format-item:last-child { border-bottom:none; }
+    .kira-format-icon { width:36px; height:36px; border-radius:10px; flex-shrink:0; display:flex; align-items:center; justify-content:center; }
+    .kfi-teal   { background:rgba(0,194,168,.15); color:#00c2a8; }
+    .kfi-blue   { background:rgba(45,126,247,.15); color:#7db8ff; }
+    .kfi-purple { background:rgba(155,109,255,.15); color:#c69fff; }
+    .kira-format-icon svg { width:16px; height:16px; }
+    .kira-format-text strong { font-size:14px; font-weight:600; display:block; margin-bottom:3px; }
+    .kira-format-text span { font-size:13px; color:var(--text-muted); line-height:1.55; }
+
+    /* ─── HOW IT WORKS ─── */
+    #how-it-works { background:var(--navy-mid); }
+    .steps-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:40px; margin-top:64px; position:relative; }
+    .steps-grid::before { content:''; position:absolute; top:28px; left:calc(16.66% + 20px); right:calc(16.66% + 20px); height:1px; background:linear-gradient(90deg,transparent,var(--blue-bright),var(--teal),transparent); }
+    .step { text-align:center; }
+    .step-num { width:56px; height:56px; border-radius:50%; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); display:flex; align-items:center; justify-content:center; font-family:'Instrument Serif',serif; font-size:22px; margin:0 auto 24px; position:relative; z-index:1; box-shadow:0 0 0 8px rgba(45,126,247,.1); }
+    .step h4 { font-size:18px; font-weight:600; margin-bottom:10px; }
+    .step p { font-size:14px; color:var(--text-muted); line-height:1.65; }
+
+    /* ─── TESTIMONIALS ─── */
+    #testimonials { background:var(--navy); }
+    .testimonials-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:56px; }
+    .testimonial-card { background:var(--card-bg); border:1px solid var(--border); border-radius:18px; padding:28px; transition:border-color .3s,transform .3s; }
+    .testimonial-card:hover { border-color:rgba(45,126,247,.3); transform:translateY(-4px); }
+    .testimonial-stars { color:#ffd966; font-size:13px; margin-bottom:16px; letter-spacing:3px; }
+    .testimonial-text { font-size:15px; line-height:1.72; color:#c8d8ee; margin-bottom:20px; font-style:italic; }
+    .testimonial-author { display:flex; align-items:center; gap:12px; }
+    .testimonial-avatar { width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px; flex-shrink:0; }
+    .testimonial-name { font-weight:600; font-size:14px; }
+    .testimonial-school { font-size:12px; color:var(--teal); margin-top:2px; }
+
+    /* ─── SCHOOLS ─── */
+    #schools { background:var(--navy-mid); padding:90px 48px; }
+    .schools-grid { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; }
+    .school-pill { background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:100px; padding:8px 18px; font-size:13px; color:#b0c4de; transition:all .2s; }
+    .school-pill:hover { background:rgba(45,126,247,.1); border-color:rgba(45,126,247,.3); color:#fff; }
+    .school-pill-more { background:rgba(0,194,168,.08); border-color:rgba(0,194,168,.2); color:var(--teal); font-style:italic; }
+
+    /* ─── FAQ ─── */
+    #faq { background:var(--navy); }
+    .faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:56px; }
+    .faq-item { background:var(--card-bg); border:1px solid var(--border); border-radius:14px; overflow:hidden; }
+    .faq-q { width:100%; background:none; border:none; color:#fff; text-align:left; padding:22px 24px; font-size:15px; font-weight:500; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:16px; font-family:'DM Sans',sans-serif; }
+    .faq-q:hover { background:rgba(255,255,255,.03); }
+    .faq-icon { color:var(--teal); font-size:20px; flex-shrink:0; transition:transform .3s; }
+    .faq-item.open .faq-icon { transform:rotate(45deg); }
+    .faq-a { font-size:14px; color:var(--text-muted); line-height:1.7; max-height:0; overflow:hidden; padding:0 24px; transition:max-height .35s ease,padding .35s ease; }
+    .faq-item.open .faq-a { max-height:240px; padding:0 24px 22px; }
+
+    /* ─── BOTTOM CTA ─── */
+    .cta-band { background:linear-gradient(135deg,rgba(30,95,194,.22) 0%,rgba(0,194,168,.1) 100%); border-top:1px solid rgba(45,126,247,.18); border-bottom:1px solid rgba(45,126,247,.18); padding:100px 48px; text-align:center; position:relative; overflow:hidden; }
+    .cta-band::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 50% 0%,rgba(45,126,247,.16) 0%,transparent 60%); }
+    .cta-band-inner { position:relative; z-index:1; max-width:680px; margin:0 auto; }
+    .cta-band h2 { font-family:'Instrument Serif',serif; font-size:clamp(32px,4vw,54px); font-weight:400; line-height:1.12; margin-bottom:16px; }
+    .cta-band p { font-size:17px; color:var(--text-muted); margin-bottom:40px; font-weight:300; }
+    .cta-buttons { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+    .cta-btn-main { display:inline-flex; align-items:center; gap:8px; background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; text-decoration:none; padding:16px 36px; border-radius:12px; font-size:16px; font-weight:600; transition:opacity .2s,transform .2s; box-shadow:0 8px 28px rgba(45,126,247,.35); }
+    .cta-btn-main:hover { opacity:.9; transform:translateY(-2px); }
+    .cta-btn-ghost { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; text-decoration:none; padding:16px 36px; border-radius:12px; font-size:16px; font-weight:500; transition:background .2s; }
+    .cta-btn-ghost:hover { background:rgba(255,255,255,.12); }
+
+    /* ─── STICKY MOBILE CTA ─── */
+    .sticky-cta { display:none; }
+
+    /* ─── RESPONSIVE ─── */
+    @media(max-width:900px) {
+      section { padding:70px 24px; }
+      #kira { padding:70px 24px; }
+      #schools { padding:70px 24px; }
+      .cta-band { padding:70px 24px; }
+      .hero { padding:130px 24px 90px; }
+      .product-grid { grid-template-columns:1fr; max-width:440px; margin:0 auto; }
+      .products-header { flex-direction:column; }
+      .kira-grid { grid-template-columns:1fr; gap:40px; }
+      .steps-grid { grid-template-columns:1fr; gap:32px; }
+      .steps-grid::before { display:none; }
+      .testimonials-grid { grid-template-columns:1fr; }
+      .faq-grid { grid-template-columns:1fr; }
+      .proof-band { gap:24px; padding:24px; }
+      .announce-bar { padding:9px 40px 9px 16px; font-size:12px; }
+      .hfc-review-1, .hfc-review-2, .hfc-stat-1, .hfc-stat-2 { display:none; }
+      .hero-school-highlights { max-width:340px; }
+    }
+    @media(max-width:600px) {
+      .sticky-cta { display:flex; position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(10,22,40,.97); border-top:1px solid var(--border); padding:12px 16px; gap:10px; }
+      .sticky-cta a { flex:1; text-align:center; padding:13px 16px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; font-family:'DM Sans',sans-serif; }
+      .sticky-cta-main { background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; }
+      .sticky-cta-ghost { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; }
+      .bundle-card { grid-template-columns:1fr; }
+      .bundle-card-right { min-width:unset; }
+    }
+  </style>
 </head>
-<body class="p-4 md:p-8">
-    
-    <!-- LOGIN SCREEN -->
-    <div id="login-screen" class="screen active">
-        <div class="min-h-screen flex items-center justify-center">
-            <div class="glass-card rounded-2xl p-8 max-w-md w-full mx-4 fade-in">
-                <div class="text-center mb-6">
-                    <h1 class="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent mb-2">
-                        Denterview AI
-                    </h1>
-                    <p class="text-gray-600 text-sm">Professional Interview Preparation</p>
-                </div>
-                
-                <div class="space-y-3">
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
-                        <input 
-                            type="email" 
-                            id="email-input" 
-                            placeholder="your.email@example.com"
-                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-sm"
-                        />
-                    </div>
-                    
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
-                        <input 
-                            type="password" 
-                            id="password-input" 
-                            placeholder="Enter your password"
-                            class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none text-sm"
-                        />
-                    </div>
-                    
-                    <button 
-                        id="login-btn"
-                        class="w-full btn-primary text-white font-semibold py-2.5 rounded-lg text-sm mt-4"
-                    >
-                        Sign In
-                    </button>
-                    
-                    <div class="text-center text-xs text-gray-500 mt-3">
-                        <p>Don't have an account? <a href="https://denterview.com/collection/mock-interviews" target="_blank" class="text-purple-600 hover:underline font-semibold">Purchase here</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PJR4FSH8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ANNOUNCEMENT BAR -->
+<div class="announce-bar" id="announceBar">
+  <span class="announce-bar-dot"></span>
+  <span>Interview season is here — <strong>students who prep score more offers.</strong> <a href="#products">See what's included →</a></span>
+  <button class="announce-close" onclick="document.getElementById('announceBar').style.display='none';updateNavTop();" aria-label="Close">×</button>
+</div>
+
+<!-- NAV -->
+<nav id="navbar" style="top:38px;">
+  <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview – Dental School Interview Prep"/></a>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="kira-prep.html">Kira Prep</a></li>
+    <li><a href="#testimonials">Success Stories</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="interview-prep.html" class="nav-cta">Get Started →</a></li>
+  </ul>
+  <button class="nav-mobile-btn" onclick="openMobileNav()">☰</button>
+</nav>
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+<nav class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">✕</button>
+  <a href="#products" onclick="closeMobileNav()">Products</a>
+  <a href="kira-prep.html" onclick="closeMobileNav()">Kira Prep</a>
+  <a href="#testimonials" onclick="closeMobileNav()">Success Stories</a>
+  <a href="about.html" onclick="closeMobileNav()">About</a>
+  <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+  <a href="interview-prep.html" onclick="closeMobileNav()" style="color:var(--teal);margin-top:16px;">Get Started →</a>
+</nav>
+
+<!-- ═══════════════════════════════════════
+     HERO
+════════════════════════════════════════ -->
+<section class="hero">
+
+  <!-- scrolling school pill rows -->
+  <div class="hero-schools-bg">
+    <div class="pill-row" style="top:5%;">
+      <span class="school-pill-scroll">NYU College of Dentistry</span><span class="school-pill-scroll">University of Michigan</span><span class="school-pill-scroll">UCSF School of Dentistry</span><span class="school-pill-scroll">University of Pennsylvania</span><span class="school-pill-scroll">Case Western Reserve</span><span class="school-pill-scroll">Creighton University</span><span class="school-pill-scroll">Marquette University</span><span class="school-pill-scroll">Loma Linda University</span><span class="school-pill-scroll">Temple University Kornberg</span>
+      <span class="school-pill-scroll">NYU College of Dentistry</span><span class="school-pill-scroll">University of Michigan</span><span class="school-pill-scroll">UCSF School of Dentistry</span><span class="school-pill-scroll">University of Pennsylvania</span><span class="school-pill-scroll">Case Western Reserve</span><span class="school-pill-scroll">Creighton University</span><span class="school-pill-scroll">Marquette University</span><span class="school-pill-scroll">Loma Linda University</span><span class="school-pill-scroll">Temple University Kornberg</span>
+    </div>
+    <div class="pill-row r2">
+      <span class="school-pill-scroll">UNC Adams School of Dentistry</span><span class="school-pill-scroll">Howard University CDM</span><span class="school-pill-scroll">Indiana University</span><span class="school-pill-scroll">Nova Southeastern</span><span class="school-pill-scroll">Midwestern University</span><span class="school-pill-scroll">Touro College of Dental Medicine</span><span class="school-pill-scroll">University of Iowa</span><span class="school-pill-scroll">University of Louisville</span><span class="school-pill-scroll">Roseman University</span>
+      <span class="school-pill-scroll">UNC Adams School of Dentistry</span><span class="school-pill-scroll">Howard University CDM</span><span class="school-pill-scroll">Indiana University</span><span class="school-pill-scroll">Nova Southeastern</span><span class="school-pill-scroll">Midwestern University</span><span class="school-pill-scroll">Touro College of Dental Medicine</span><span class="school-pill-scroll">University of Iowa</span><span class="school-pill-scroll">University of Louisville</span><span class="school-pill-scroll">Roseman University</span>
+    </div>
+    <div class="pill-row r3">
+      <span class="school-pill-scroll">LECOM School of Dental Medicine</span><span class="school-pill-scroll">UTHealth Houston</span><span class="school-pill-scroll">Kansas City University</span><span class="school-pill-scroll">UMKC School of Dentistry</span><span class="school-pill-scroll">East Carolina University</span><span class="school-pill-scroll">A.T. Still University</span><span class="school-pill-scroll">University of Illinois Chicago</span><span class="school-pill-scroll">Stony Brook University</span>
+      <span class="school-pill-scroll">LECOM School of Dental Medicine</span><span class="school-pill-scroll">UTHealth Houston</span><span class="school-pill-scroll">Kansas City University</span><span class="school-pill-scroll">UMKC School of Dentistry</span><span class="school-pill-scroll">East Carolina University</span><span class="school-pill-scroll">A.T. Still University</span><span class="school-pill-scroll">University of Illinois Chicago</span><span class="school-pill-scroll">Stony Brook University</span>
+    </div>
+    <div class="pill-row r4">
+      <span class="school-pill-scroll">Texas Tech El Paso</span><span class="school-pill-scroll">UT San Antonio</span><span class="school-pill-scroll">Western University of Health Sciences</span><span class="school-pill-scroll">Midwestern University Arizona</span><span class="school-pill-scroll">University of Detroit Mercy</span><span class="school-pill-scroll">ATSU MOSDOH</span><span class="school-pill-scroll">University of Sydney</span><span class="school-pill-scroll">University of Minnesota</span>
+      <span class="school-pill-scroll">Texas Tech El Paso</span><span class="school-pill-scroll">UT San Antonio</span><span class="school-pill-scroll">Western University of Health Sciences</span><span class="school-pill-scroll">Midwestern University Arizona</span><span class="school-pill-scroll">University of Detroit Mercy</span><span class="school-pill-scroll">ATSU MOSDOH</span><span class="school-pill-scroll">University of Sydney</span><span class="school-pill-scroll">University of Minnesota</span>
+    </div>
+    <div class="pill-row r5">
+      <span class="school-pill-scroll">NYU</span><span class="school-pill-scroll">Michigan</span><span class="school-pill-scroll">UCSF</span><span class="school-pill-scroll">Penn</span><span class="school-pill-scroll">UNC Adams</span><span class="school-pill-scroll">Case Western</span><span class="school-pill-scroll">Howard</span><span class="school-pill-scroll">Loma Linda</span><span class="school-pill-scroll">Creighton</span><span class="school-pill-scroll">Marquette</span><span class="school-pill-scroll">Iowa</span><span class="school-pill-scroll">Louisville</span><span class="school-pill-scroll">Temple</span><span class="school-pill-scroll">Nova SE</span>
+      <span class="school-pill-scroll">NYU</span><span class="school-pill-scroll">Michigan</span><span class="school-pill-scroll">UCSF</span><span class="school-pill-scroll">Penn</span><span class="school-pill-scroll">UNC Adams</span><span class="school-pill-scroll">Case Western</span><span class="school-pill-scroll">Howard</span><span class="school-pill-scroll">Loma Linda</span><span class="school-pill-scroll">Creighton</span><span class="school-pill-scroll">Marquette</span><span class="school-pill-scroll">Iowa</span><span class="school-pill-scroll">Louisville</span><span class="school-pill-scroll">Temple</span><span class="school-pill-scroll">Nova SE</span>
+    </div>
+  </div>
+
+  <!-- vignettes -->
+  <div class="hero-vignette"></div>
+  <div class="hero-vignette-sides"></div>
+  <div class="hero-vignette-top"></div>
+
+  <!-- floating review cards -->
+  <div class="hero-float-card hfc-review-1">
+    <div class="hfc-stars">★★★★★</div>
+    <p class="hfc-quote">"Went 5/5 on my interviews. Couldn't recommend it more."</p>
+    <p class="hfc-author">Kylejosephhhh · 2025</p>
+  </div>
+  <div class="hero-float-card hfc-review-2">
+    <div class="hfc-stars">★★★★★</div>
+    <p class="hfc-quote">"Made a crazy difference. Did so much better after Denterview."</p>
+    <p class="hfc-author">Verified Customer · 2025</p>
+  </div>
+
+  <!-- floating stat cards -->
+  <div class="hero-float-card hfc-stat-1">
+    <div class="hfc-num" style="color:#9b6dff;">64+</div>
+    <div class="hfc-label">unique schools our<br>students got into</div>
+  </div>
+  <div class="hero-float-card hfc-stat-2">
+    <div class="hfc-num" style="color:#00c2a8;">$8.99</div>
+    <div class="hfc-label">vs $200+ for<br>private coaching</div>
+  </div>
+
+  <!-- center content -->
+  <div class="hero-content">
+    <div class="hero-badge"><span class="hero-badge-dot"></span>Trusted by students accepted to 64+ dental schools</div>
+    <h1>Your path to<br><em>dental school</em><br>starts here.</h1>
+    <p class="hero-sub">From a standout personal statement to crushing interview day — without the price tag.</p>
+    <p class="hero-skip"><a href="#products">See everything we offer ↓</a></p>
+    <div class="hero-school-highlights">
+      <span class="hsh-pill">NYU</span>
+      <span class="hsh-pill">Michigan</span>
+      <span class="hsh-pill">UCSF</span>
+      <span class="hsh-pill">Penn</span>
+      <span class="hsh-pill">UNC</span>
+      <span class="hsh-pill">Case Western</span>
+      <span class="hsh-pill">Howard</span>
+      <span class="hsh-pill">Loma Linda</span>
+      <span class="hsh-pill hsh-more">+ 56 more schools</span>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════════════════════════
+     PROOF BAND
+════════════════════════════════════════ -->
+<div class="proof-band">
+  <div class="proof-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+    <span>Built by <strong>current dental students</strong> who've been through it</span>
+  </div>
+  <div class="proof-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    <span>Instant access — <strong>start prepping today</strong></span>
+  </div>
+  <div class="proof-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+    <span><strong>$8.99 entry point</strong> — fraction of the cost of coaching</span>
+  </div>
+  <div class="proof-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <span><strong>Behavioral, MMI & Kira</strong> formats covered</span>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     PRODUCTS
+════════════════════════════════════════ -->
+<section id="products">
+  <div class="section-inner">
+    <div class="products-header reveal">
+      <div>
+        <p class="section-eyebrow">Every Stage Covered</p>
+        <h2 class="section-title">Three ways to get<br>the edge you need.</h2>
+      </div>
+      <p class="section-sub">Built by dental students who've been through it — every resource is designed for real applicants facing real decisions.</p>
+    </div>
+    <div class="product-grid">
+
+      <!-- PERSONAL STATEMENT -->
+      <div class="product-card reveal">
+        <div class="product-accent accent-blue"></div>
+        <span class="product-tag tag-gold">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          New Service
+        </span>
+        <h3>Personal Statement Review</h3>
+        <p>Get your personal statement reviewed by current dental students who know exactly what admissions committees want. Thorough, honest, actionable feedback — not a generic checklist.</p>
+        <ul class="product-features">
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Full read-through by a dental student reviewer</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Line-by-line written feedback with tracked changes</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Returned within 3–5 business days</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Re-review after edits available ($15)</li>
+        </ul>
+        <div class="product-price">$40 <span>/ first review</span></div>
+        <a href="personal-statement.html" class="btn-primary">See Review Details →</a>
+      </div>
+
+      <!-- INTERVIEW GUIDES — featured -->
+      <div class="product-card product-card-featured reveal">
+        <div class="product-accent accent-teal"></div>
+        <span class="product-tag tag-teal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          Fan Favorite
+        </span>
+        <h3>Interview Prep Guides</h3>
+        <p>The most comprehensive dental school interview prep available. 73 real questions with expert answer frameworks, behavioral storytelling strategies, and a day-of checklist — pick the tier that fits your timeline.</p>
+        <ul class="product-features">
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>73 real dental school interview questions</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Answer frameworks & storytelling methodology</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Behavioral, panel, MMI & Kira formats</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Three tiers starting at just $8.99</li>
+        </ul>
+        <div class="product-price">From $8.99</div>
+        <a href="interview-guides.html" class="btn-primary">See All Packages →</a>
+      </div>
+
+      <!-- MOCK INTERVIEWS -->
+      <div class="product-card reveal">
+        <div class="product-accent accent-purple"></div>
+        <span class="product-tag tag-purple">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Live Practice
+        </span>
+        <h3>Mock Interviews with Instant Feedback</h3>
+        <p>Practice answering real dental school interview questions on camera and get instant feedback on your delivery — eye contact, pacing, filler words, and content. Like a practice interview, available anytime.</p>
+        <ul class="product-features">
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Real interview questions, on-camera format</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Instant feedback: eye contact, pacing & content</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Session-by-session progress tracking</li>
+          <li><span class="feat-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>5 packages from $9.99 to $54.99</li>
+        </ul>
+        <div class="product-price">From $9.99</div>
+        <a href="denterview-ai.html" class="btn-primary">See Mock Interview Packages →</a>
+      </div>
+
     </div>
 
-    <!-- DASHBOARD SCREEN -->
-    <div id="dashboard-screen" class="screen">
-        <div class="max-w-6xl mx-auto">
-            <div class="glass-card rounded-2xl p-6 mb-6 fade-in">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div>
-                        <h1 class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent">
-                            Denterview AI
-                        </h1>
-                        <p class="text-gray-600 text-sm mt-1">Welcome back, <span id="user-display" class="font-semibold"></span></p>
-                    </div>
-                    <div class="flex gap-3">
-                        <button id="change-password-btn" class="px-6 py-2 text-sm text-purple-600 hover:text-purple-700 border border-purple-300 rounded-lg hover:bg-purple-50 transition">
-                            Change Password
-                        </button>
-                        <button id="logout-btn" class="px-6 py-2 text-sm text-gray-600 hover:text-gray-800 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
-                            Logout
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-2 mb-6 fade-in">
-                <div class="flex gap-2">
-                    <button id="tab-overview" class="tab-btn flex-1 px-6 py-3 rounded-lg font-semibold transition active">
-                        Overview
-                    </button>
-                    <button id="tab-history" class="tab-btn flex-1 px-6 py-3 rounded-lg font-semibold transition">
-                        Interview History
-                    </button>
-                </div>
-            </div>
-
-            <div id="overview-content" class="tab-content active">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                    <div class="glass-card rounded-2xl p-6 fade-in">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-gray-600 text-sm font-medium">Total Purchased</p>
-                                <p id="total-purchased" class="text-4xl font-bold text-purple-600 mt-2">0</p>
-                            </div>
-                            <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
-                                <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card rounded-2xl p-6 fade-in" style="animation-delay: 0.1s">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-gray-600 text-sm font-medium">Completed</p>
-                                <p id="completed-count" class="text-4xl font-bold text-green-600 mt-2">0</p>
-                            </div>
-                            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                                <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass-card rounded-2xl p-6 fade-in" style="animation-delay: 0.2s">
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <p class="text-gray-600 text-sm font-medium">Remaining</p>
-                                <p id="remaining-count" class="text-4xl font-bold text-blue-600 mt-2">0</p>
-                            </div>
-                            <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center">
-                                <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl p-8 text-center fade-in" style="animation-delay: 0.3s">
-                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Ready to Practice?</h2>
-                    <p class="text-gray-600 mb-8">Start a new mock interview session. You'll be asked 6 questions from a randomly selected pool.</p>
-                    
-                    <div class="space-y-4 max-w-md mx-auto">
-                        <button id="start-interview-btn" class="w-full btn-primary text-white font-semibold py-4 text-lg rounded-lg">
-                            Start New Interview
-                        </button>
-                        
-                        <div id="no-interviews-message" class="hidden text-center p-6 bg-orange-50 rounded-lg border-2 border-orange-200">
-                            <p class="text-orange-800 font-semibold mb-2">🎯 No Interviews Remaining</p>
-                            <p class="text-sm text-orange-700 mb-4">You've used all your interview credits. Purchase more to continue practicing!</p>
-                            <a 
-                                href="https://denterview.com/mock-interviews" 
-                                target="_blank"
-                                class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-lg transition"
-                            >
-                                Buy More Interviews
-                            </a>
-                        </div>
-                        
-                        <div id="permissions-status" class="hidden text-sm text-gray-600 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
-                            <p class="font-semibold mb-2">⚠️ Camera & Microphone Access Required</p>
-                            <button id="request-permissions-btn" class="text-purple-600 hover:underline font-medium">
-                                Grant Permissions
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="mt-8 text-sm text-gray-500">
-                        <p>Each interview includes 6 questions with timed responses</p>
-                        <p class="mt-1">AI feedback provided after each question</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="history-content" class="tab-content">
-                <div id="history-empty" class="glass-card rounded-2xl p-12 text-center" style="display: none;">
-                    <svg class="w-24 h-24 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-                    </svg>
-                    <h3 class="text-xl font-bold text-gray-700 mb-2">No Interview History</h3>
-                    <p class="text-gray-500">Complete your first interview to see your results here</p>
-                </div>
-                
-                <div id="history-list" class="space-y-4"></div>
-            </div>
-        </div>
+    <!-- BUNDLES -->
+    <div class="bundles-header reveal" style="margin-top:72px;padding-top:56px;border-top:1px solid var(--border);">
+      <p class="section-eyebrow">Save More, Prep More</p>
+      <h3 style="font-family:'Instrument Serif',serif;font-size:clamp(24px,3vw,36px);font-weight:400;margin-bottom:8px;">Bundle & save</h3>
+      <p style="font-size:15px;color:var(--text-muted);margin-bottom:32px;">Combine products for a better deal — and a more complete prep experience.</p>
     </div>
-
-    <!-- INTERVIEW SCREEN -->
-    <div id="interview-screen" class="screen">
-        <div class="max-w-5xl mx-auto">
-            <div class="flex justify-end mb-4">
-                <button id="exit-interview-btn" class="px-4 py-2 text-sm text-red-600 hover:text-red-700 border-2 border-red-600 hover:border-red-700 rounded-lg hover:bg-red-50 transition font-semibold flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                    Exit Interview
-                </button>
-            </div>
-
-            <div class="glass-card rounded-2xl p-8 mb-6 fade-in">
-                <div class="flex items-start justify-between mb-4">
-                    <div>
-                        <p class="text-sm font-medium text-purple-600 mb-1">
-                            Question <span id="question-number">1</span> of <span id="total-questions">6</span>
-                        </p>
-                        <p class="text-xs text-gray-500">Pool: <span id="current-pool-display">--</span></p>
-                    </div>
-                    <div id="prep-timer" class="text-2xl font-bold text-orange-600 font-mono hidden">
-                        Prep: <span id="prep-seconds">15</span>s
-                    </div>
-                </div>
-                
-                <div id="question-text" class="text-2xl md:text-3xl font-semibold text-gray-800 leading-relaxed min-h-[100px] flex items-center">
-                    Preparing your question...
-                </div>
-            </div>
-
-            <div class="glass-card rounded-2xl p-4 mb-6 fade-in" style="animation-delay: 0.1s">
-                <div class="video-container">
-                    <video id="webcam" autoplay playsinline muted></video>
-                    
-                    <div id="countdown-timer" class="absolute top-4 right-4 bg-black bg-opacity-70 text-white px-4 py-2 rounded-lg text-2xl font-bold font-mono hidden">
-                        --:--
-                    </div>
-                    
-                    <div id="recording-indicator" class="hidden absolute top-4 left-4 flex items-center gap-2 bg-red-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        <span class="w-3 h-3 bg-white rounded-full pulse-recording"></span>
-                        RECORDING
-                    </div>
-                    
-                    <div id="video-status" class="absolute inset-0 flex items-center justify-center bg-gray-900 bg-opacity-90 text-white text-center p-4">
-                        <div>
-                            <svg class="animate-spin h-12 w-12 text-white mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                            </svg>
-                            <p>Loading camera...</p>
-                        </div>
-                    </div>
-                </div>
-                <canvas id="snapshot-canvas" style="display:none;"></canvas>
-            </div>
-
-            <div class="glass-card rounded-2xl p-6 fade-in" style="animation-delay: 0.2s">
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button id="ready-btn" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-4 rounded-lg transition disabled:opacity-50">
-                        I'm Ready - Start Recording
-                    </button>
-                    <button id="stop-recording-btn" class="hidden flex-1 bg-red-600 hover:bg-red-700 text-white font-semibold py-4 rounded-lg transition">
-                        Stop Recording
-                    </button>
-                    <button id="next-question-btn" class="hidden flex-1 btn-primary text-white font-semibold py-4 rounded-lg">
-                        Next Question
-                    </button>
-                    <button id="finish-interview-btn" class="hidden flex-1 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 rounded-lg transition">
-                        Finish Interview
-                    </button>
-                </div>
-            </div>
+    <div class="bundle-cards reveal">
+      <div class="bundle-card">
+        <div class="bundle-card-left">
+          <div class="bundle-tag">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+            Bundle Deal
+          </div>
+          <h4>Ultimate Interview Prep Bundle</h4>
+          <p>The Ultimate Guide (73 questions + full strategy) paired with 3 mock interview sessions. Study the material, then practice saying it under real on-camera conditions.</p>
+          <div class="bundle-includes">
+            <span class="bi">✓ Ultimate Guide PDF</span>
+            <span class="bi">✓ 3 Mock Interviews</span>
+          </div>
         </div>
-    </div>
-
-    <!-- FEEDBACK SCREEN -->
-    <div id="feedback-screen" class="screen">
-        <div class="max-w-4xl mx-auto">
-            <div id="feedback-loading-screen" class="glass-card rounded-2xl p-12 text-center">
-                <div class="mb-6">
-                    <svg class="animate-spin h-16 w-16 text-purple-600 mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                    </svg>
-                </div>
-                <h2 class="text-2xl font-bold text-gray-800 mb-3">Analyzing Your Interview</h2>
-                <p class="text-gray-600 mb-2" id="analysis-progress">Analyzing question 1 of 6...</p>
-                <p class="text-sm text-gray-500 mb-4">This may take 30-60 seconds</p>
-                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded text-left mt-6">
-                    <p class="text-sm text-yellow-800 font-semibold">⚠️ Please do not refresh or close this page</p>
-                    <p class="text-xs text-yellow-700 mt-1">Your analysis is in progress and cannot be recovered if interrupted</p>
-                </div>
-            </div>
-
-            <div id="feedback-content" class="hidden">
-                <div class="glass-card rounded-2xl p-8 mb-6 fade-in">
-                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Interview Complete! 🎉</h1>
-                    <p class="text-gray-600">Review your performance and feedback below</p>
-                </div>
-
-                <div class="glass-card rounded-2xl p-8 mb-6 fade-in" style="animation-delay: 0.05s">
-                    <div class="text-center">
-                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Overall Score</h2>
-                        <div class="flex justify-center items-center mb-4">
-                            <div class="relative w-48 h-48">
-                                <svg class="transform -rotate-90 w-48 h-48">
-                                    <circle cx="96" cy="96" r="88" stroke="#e5e7eb" stroke-width="12" fill="none" />
-                                    <circle id="score-circle" cx="96" cy="96" r="88" stroke="#667eea" stroke-width="12" fill="none"
-                                        stroke-dasharray="552.92" stroke-dashoffset="552.92" stroke-linecap="round"
-                                        style="transition: stroke-dashoffset 1.5s ease-in-out, stroke 0.5s ease-in-out;" />
-                                </svg>
-                                <div class="absolute inset-0 flex items-center justify-center flex-col">
-                                    <span id="overall-score-display" class="text-6xl font-bold text-purple-600">--</span>
-                                    <span class="text-gray-500 text-sm mt-1">out of 10</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="score-rating" class="text-xl font-semibold text-gray-700 mb-2">Calculating...</div>
-                        <div class="w-full max-w-md mx-auto">
-                            <div class="h-3 bg-gray-200 rounded-full overflow-hidden">
-                                <div id="score-bar" class="h-full bg-gradient-to-r from-red-500 via-yellow-500 to-green-500 rounded-full transition-all duration-1000" style="width: 0%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-2xl p-6 mb-6 fade-in" style="animation-delay: 0.1s">
-                    <h2 class="text-xl font-bold text-gray-800 mb-4">Overall Performance</h2>
-                    <div id="overall-summary" class="prose prose-purple max-w-none">
-                        <p class="text-gray-600">Generating overall feedback...</p>
-                    </div>
-                </div>
-
-                <div id="question-feedback-container" class="space-y-4 mb-6"></div>
-
-                <div class="glass-card rounded-2xl p-6 mb-6 fade-in" style="animation-delay: 0.2s">
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Email Your Results</h3>
-                    <div class="flex flex-col sm:flex-row gap-3">
-                        <input 
-                            type="email" 
-                            id="feedback-email-input" 
-                            placeholder="your.email@example.com"
-                            class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                        />
-                        <button id="send-email-btn" class="btn-primary text-white font-semibold px-6 py-3 rounded-lg whitespace-nowrap">
-                            Send Results
-                        </button>
-                    </div>
-                </div>
-
-                <div class="flex flex-col sm:flex-row gap-4 fade-in" style="animation-delay: 0.3s">
-                    <button id="new-interview-btn" class="flex-1 btn-primary text-white font-semibold py-4 rounded-lg">
-                        Start Another Interview
-                    </button>
-                    <button id="back-dashboard-btn" class="flex-1 bg-gray-600 hover:bg-gray-700 text-white font-semibold py-4 rounded-lg transition">
-                        Back to Dashboard
-                    </button>
-                </div>
-            </div>
+        <div class="bundle-card-right">
+          <div class="bundle-price"><sup>$</sup>25.99</div>
+          <div class="bundle-save">vs $33.98 separately</div>
+          <a href="https://shop.denterview.com/order?link=6Eg9p&pricing_plan=18B13mPMWZ" class="btn-bundle">Get This Bundle →</a>
         </div>
-    </div>
-
-    <!-- Toast Notification -->
-    <div id="toast" class="fixed bottom-6 right-6 glass-card rounded-lg p-4 shadow-lg transform translate-y-32 transition-transform duration-300 max-w-sm z-50">
-        <div class="flex items-start gap-3">
-            <div id="toast-icon" class="flex-shrink-0 w-6 h-6"></div>
-            <div class="flex-1">
-                <p id="toast-title" class="font-semibold text-gray-800"></p>
-                <p id="toast-message" class="text-sm text-gray-600 mt-1"></p>
-            </div>
+      </div>
+      <div class="bundle-card bundle-card-featured">
+        <div class="bundle-card-left">
+          <div class="bundle-tag bundle-tag-gold">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            Complete Package
+          </div>
+          <h4>Complete Dental School Prep Bundle</h4>
+          <p>Everything Denterview offers in one bundle — personal statement review, the Ultimate Guide, and 3 mock interview sessions. The most complete prep available at any price.</p>
+          <div class="bundle-includes">
+            <span class="bi">✓ Personal Statement Review</span>
+            <span class="bi">✓ Ultimate Guide PDF</span>
+            <span class="bi">✓ 3 Mock Interviews</span>
+          </div>
         </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="fixed bottom-0 left-0 right-0 bg-white bg-opacity-90 border-t border-gray-200 py-2 px-4 text-center text-xs text-gray-600 z-40">
-        <p><strong>Educational Tool:</strong> Denterview AI provides practice feedback powered by AI. Scores are for learning purposes and do not guarantee admission outcomes. © 2025 Denterview AI</p>
-    </footer>
-
-    <!-- Change Password Modal -->
-    <div id="change-password-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
-        <div class="glass-card rounded-2xl p-8 max-w-md w-full">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6">Change Password</h2>
-            
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Current Password</label>
-                    <input 
-                        type="password" 
-                        id="current-password-input" 
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                    />
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">New Password</label>
-                    <input 
-                        type="password" 
-                        id="new-password-input" 
-                        placeholder="At least 6 characters"
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                    />
-                </div>
-                
-                <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-2">Confirm New Password</label>
-                    <input 
-                        type="password" 
-                        id="confirm-password-input" 
-                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent outline-none"
-                    />
-                </div>
-            </div>
-
-            <div class="flex gap-4 mt-6">
-                <button id="cancel-password-change-btn" class="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition">
-                    Cancel
-                </button>
-                <button id="confirm-password-change-btn" class="flex-1 btn-primary text-white font-semibold py-3 rounded-lg">
-                    Update Password
-                </button>
-            </div>
+        <div class="bundle-card-right">
+          <div class="bundle-price"><sup>$</sup>60.99</div>
+          <div class="bundle-save">vs $73.98 separately</div>
+          <a href="https://shop.denterview.com/order?link=TMzOU" class="btn-bundle btn-bundle-gold">Get This Bundle →</a>
         </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <!-- Instructions Modal -->
-    <div id="instructions-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
-        <div class="glass-card rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-            <h2 class="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-500 bg-clip-text text-transparent mb-6">
-                📋 Before You Begin
-            </h2>
-            
-            <div class="space-y-6 text-gray-700">
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                    <h3 class="font-bold text-blue-900 mb-2">🎯 What to Expect</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>• You'll answer <strong>6 questions</strong> from a randomly selected pool</li>
-                        <li>• Each question has a <strong>15-second preparation time</strong></li>
-                        <li>• Recording starts automatically after prep time</li>
-                        <li>• Time limits are <strong>suggestions, not strict requirements</strong> - quality matters more than duration</li>
-                        <li>• You can stop recording early if you've fully answered the question</li>
-                    </ul>
-                </div>
-
-                <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded">
-                    <h3 class="font-bold text-purple-900 mb-2">🤖 Customize Your Feedback</h3>
-                    <p class="text-sm text-purple-800 mb-3"><strong>Content Quality</strong> is always graded. Toggle the optional categories below based on how you want to practice today.</p>
-                    <div class="space-y-2 text-sm">
-                        <label class="flex items-center gap-3 bg-white rounded-lg px-3 py-2 border border-purple-200 cursor-not-allowed opacity-70">
-                            <input type="checkbox" checked disabled class="w-4 h-4 accent-purple-600">
-                            <span><strong>Content Quality</strong> — Depth, specific examples, authenticity <span class="text-purple-600 font-semibold">(always on)</span></span>
-                        </label>
-                        <label class="flex items-center gap-3 bg-white rounded-lg px-3 py-2 border border-purple-200 cursor-pointer hover:bg-purple-50 transition">
-                            <input type="checkbox" id="grade-visual" checked class="w-4 h-4 accent-purple-600">
-                            <span><strong>Visual Presence</strong> — Eye contact, posture, confidence</span>
-                        </label>
-                        <label class="flex items-center gap-3 bg-white rounded-lg px-3 py-2 border border-purple-200 cursor-pointer hover:bg-purple-50 transition">
-                            <input type="checkbox" id="grade-delivery" checked class="w-4 h-4 accent-purple-600">
-                            <span><strong>Delivery</strong> — Clarity, pace, filler words</span>
-                        </label>
-                        <label class="flex items-center gap-3 bg-white rounded-lg px-3 py-2 border border-purple-200 cursor-pointer hover:bg-purple-50 transition">
-                            <input type="checkbox" id="grade-professionalism" checked class="w-4 h-4 accent-purple-600">
-                            <span><strong>Professionalism</strong> — Setting, appearance, attire</span>
-                        </label>
-                    </div>
-                    <p class="text-xs text-purple-600 mt-2">💡 Turn off categories you're not ready to focus on yet — weights redistribute to Content.</p>
-                </div>
-
-                <div class="bg-green-50 border-l-4 border-green-500 p-4 rounded">
-                    <h3 class="font-bold text-green-900 mb-2">💡 Tips for Success</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>• <strong>Be authentic</strong> - share genuine experiences and reflections</li>
-                        <li>• <strong>Look at the camera</strong> - not at yourself on screen</li>
-                        <li>• <strong>Sit upright</strong> with good posture</li>
-                        <li>• <strong>Use specific examples</strong> and personal stories</li>
-                        <li>• <strong>Professional setting</strong> - clean background, good lighting</li>
-                        <li>• <strong>Dress professionally</strong> as you would for a real interview</li>
-                    </ul>
-                </div>
-
-                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded">
-                    <h3 class="font-bold text-yellow-900 mb-2">⚠️ Important Notes</h3>
-                    <ul class="space-y-2 text-sm">
-                        <li>• Analysis takes 30-60 seconds after completing all questions</li>
-                        <li>• <strong>Answer length is flexible</strong> - a concise 1-minute answer can score as highly as a detailed 3-minute response</li>
-                        <li>• You cannot pause or restart once you begin</li>
-                        <li>• Exiting early will not save progress or return your credit</li>
-                        <li>• <strong>Make sure you have a stable internet connection</strong> before starting - your videos need to upload for analysis</li>
-                        <li>• <strong>Do not refresh or close this page</strong> during the interview - this will end your session early</li>
-                        <li>• Feedback is constructive and designed to help you improve</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="flex gap-4 mt-8">
-                <button id="cancel-interview-btn" class="flex-1 px-6 py-3 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:bg-gray-50 transition">
-                    Cancel
-                </button>
-                <button id="confirm-start-btn" class="flex-1 btn-primary text-white font-semibold py-3 rounded-lg">
-                    I'm Ready - Let's Start! 🚀
-                </button>
-            </div>
-            
-            <div class="mt-6 text-xs text-gray-500 text-center border-t pt-4">
-                <p><strong>Disclaimer:</strong> Denterview AI is an educational practice tool. Scores and feedback are generated by AI and are meant for practice purposes only.</p>
-            </div>
+<!-- ═══════════════════════════════════════
+     KIRA
+════════════════════════════════════════ -->
+<section id="kira" style="padding:100px 48px;">
+  <div class="kira-inner">
+    <div class="kira-grid">
+      <div class="kira-left reveal">
+        <div class="kira-tag">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Kira Talent Prep
         </div>
+        <h2>Getting a <em>Kira interview?</em><br>We've got you covered.</h2>
+        <p>More dental schools are using Kira Talent for asynchronous video interviews — and most students have no idea what to expect. Kira is entirely behavioral: you record yourself answering questions on a timer with no second chances. The good news is that behavioral answers are exactly what we train.</p>
+        <ul class="kira-points">
+          <li><span class="kira-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Kira questions are almost entirely behavioral — our 73-question guide covers them directly</li>
+          <li><span class="kira-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Our mock interview platform simulates timed, on-camera recording — identical to the Kira format</li>
+          <li><span class="kira-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Get instant feedback on eye contact and pacing — both critical for async video interviews</li>
+          <li><span class="kira-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Learn STAR-format storytelling to nail any behavioral prompt under time pressure</li>
+        </ul>
+        <a href="kira-prep.html" class="kira-cta">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          Prep for Kira →
+        </a>
+      </div>
+      <div class="kira-right reveal">
+        <p class="kira-right-title">What to expect from a Kira interview</p>
+        <ul class="kira-format-list">
+          <li class="kira-format-item">
+            <div class="kira-format-icon kfi-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <div class="kira-format-text"><strong>Timed responses</strong><span>Typically 1–3 minutes per question. You don't get to re-record, so preparation is everything.</span></div>
+          </li>
+          <li class="kira-format-item">
+            <div class="kira-format-icon kfi-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div>
+            <div class="kira-format-text"><strong>Behavioral questions</strong><span>"Tell me about a time you..." — every question. Structure and stories are your preparation strategy.</span></div>
+          </li>
+          <li class="kira-format-item">
+            <div class="kira-format-icon kfi-purple"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="kira-format-text"><strong>Asynchronous — no interviewer</strong><span>You're recording solo to a camera. Presence, eye contact, and calm delivery matter more than ever.</span></div>
+          </li>
+          <li class="kira-format-item">
+            <div class="kira-format-icon kfi-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+            <div class="kira-format-text"><strong>Reviewed by admissions committees</strong><span>Schools watch your recording when evaluating your file. First impressions count.</span></div>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     HOW IT WORKS
+════════════════════════════════════════ -->
+<section id="how-it-works">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <p class="section-eyebrow">The Process</p>
+      <h2 class="section-title">Simple. Affordable.<br>Actually effective.</h2>
+      <p class="section-sub" style="margin:0 auto;">Three steps between you and walking into interview day with complete confidence.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal"><div class="step-num">1</div><h4>Choose Your Stage</h4><p>Select the product that matches where you are in the application cycle — or stack them all for complete coverage.</p></div>
+      <div class="step reveal"><div class="step-num">2</div><h4>Get the Resources</h4><p>Instant access to guides, human feedback on your personal statement within days, or jump straight into mock interviews.</p></div>
+      <div class="step reveal"><div class="step-num">3</div><h4>Walk In Confident</h4><p>Study your guides, refine your statement, and practice until you're genuinely ready — not just hoping for the best.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     TESTIMONIALS
+════════════════════════════════════════ -->
+<section id="testimonials" style="background:var(--navy-mid);">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto;">
+      <p class="section-eyebrow">Success Stories</p>
+      <h2 class="section-title">Students who got in.</h2>
+      <p class="section-sub" style="margin:0 auto;">Real results from real applicants — many of whom are now in dental school.</p>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"I went 5/5 on my interviews. Denterview was a huge part of my prep and I couldn't recommend it more."</p>
+        <div class="testimonial-author"><div class="testimonial-avatar">K</div><div><div class="testimonial-name">Kylejosephhhh</div><div class="testimonial-school">2025 Application Cycle</div></div></div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Used it after my first interview and it made a crazy difference. I did a lot better after using Denterview."</p>
+        <div class="testimonial-author"><div class="testimonial-avatar">V</div><div><div class="testimonial-name">Verified Customer</div><div class="testimonial-school">2025 Application Cycle</div></div></div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Denterview saved me for both interviews. Couldn't have done it without this resource."</p>
+        <div class="testimonial-author"><div class="testimonial-avatar">P</div><div><div class="testimonial-name">Professionalask22</div><div class="testimonial-school">2025 Application Cycle</div></div></div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Considering how affordable it is, I am shocked at how well prepared I feel for my interviews!"</p>
+        <div class="testimonial-author"><div class="testimonial-avatar">C</div><div><div class="testimonial-name">Chris L.</div><div class="testimonial-school">2025 Application Cycle</div></div></div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Totally worth it! Teaches you very well how to approach a ton of behaviorals. There were a lot of questions I hadn't seen online or thought about before."</p>
+        <div class="testimonial-author"><div class="testimonial-avatar">F</div><div><div class="testimonial-name">Francis J.</div><div class="testimonial-school">2025 Application Cycle</div></div></div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"It's very comprehensive. There were a lot of questions I didn't think about. Well worth the money — only $16 bucks for a thorough guide!"</p>
+        <div class="testimonial-author"><div class="testimonial-avatar">V</div><div><div class="testimonial-name">Virginia S.</div><div class="testimonial-school">2025 Application Cycle</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     ACCEPTED SCHOOLS
+════════════════════════════════════════ -->
+<section id="schools">
+  <div class="section-inner">
+    <div class="reveal" style="text-align:center;max-width:640px;margin:0 auto 48px;">
+      <p class="section-eyebrow">Real Results</p>
+      <h2 class="section-title">Students accepted into<br>64+ dental schools.</h2>
+      <p class="section-sub" style="margin:0 auto;">Our customers have been accepted into over 64 unique dental schools across the country — and new ones are reported every cycle.</p>
+    </div>
+    <div class="schools-grid reveal">
+      <div class="school-pill">A.T. Still University ASDOH</div><div class="school-pill">ATSU MOSDOH</div><div class="school-pill">Case Western Reserve</div><div class="school-pill">Creighton University</div><div class="school-pill">East Carolina University</div><div class="school-pill">Howard University CDM</div><div class="school-pill">Indiana University School of Dentistry</div><div class="school-pill">Kansas City University</div><div class="school-pill">LECOM School of Dental Medicine</div><div class="school-pill">Loma Linda University</div><div class="school-pill">Marquette University</div><div class="school-pill">Midwestern University</div><div class="school-pill">Midwestern University Arizona</div><div class="school-pill">NYU College of Dentistry</div><div class="school-pill">Nova Southeastern University</div><div class="school-pill">Roseman University</div><div class="school-pill">Temple University Kornberg</div><div class="school-pill">Texas Tech El Paso</div><div class="school-pill">Touro College of Dental Medicine</div><div class="school-pill">UCSF School of Dentistry</div><div class="school-pill">UMKC School of Dentistry</div><div class="school-pill">UNC Adams School of Dentistry</div><div class="school-pill">UT San Antonio</div><div class="school-pill">UTHealth Houston</div><div class="school-pill">University of Detroit Mercy</div><div class="school-pill">University of Illinois Chicago</div><div class="school-pill">University of Iowa</div><div class="school-pill">University of Louisville</div><div class="school-pill">University of Michigan</div><div class="school-pill">University of Pennsylvania</div><div class="school-pill">University of Sydney</div><div class="school-pill">Western University of Health Sciences</div>
+      <div class="school-pill school-pill-more">+ many more reported every cycle</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     FAQ
+════════════════════════════════════════ -->
+<section id="faq" style="background:var(--navy-mid);">
+  <div class="section-inner">
+    <div class="reveal" style="max-width:600px;">
+      <p class="section-eyebrow">FAQ</p>
+      <h2 class="section-title">Common questions</h2>
+    </div>
+    <div class="faq-grid reveal">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Who reviews my personal statement? <span class="faq-icon">+</span></button><div class="faq-a">Your personal statement is reviewed by current dental students who successfully navigated the same application process. Real, qualified feedback — not an automated tool.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How long does the personal statement review take? <span class="faq-icon">+</span></button><div class="faq-a">We aim to return all feedback within 3–5 business days, though it's often sooner. Need it faster? Reach out about rush availability.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Does this prep work for Kira Talent interviews? <span class="faq-icon">+</span></button><div class="faq-a">Yes — Kira interviews are almost entirely behavioral, which is exactly what our 73-question guide and mock interview platform train. The on-camera, timed mock interview format directly simulates the Kira experience.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What's included in the interview prep guides? <span class="faq-icon">+</span></button><div class="faq-a">Depending on the tier, guides include 73 real dental school interview questions, sample answer frameworks, behavioral & situational prep, panel interview strategy, and full technique walkthroughs.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">How do the mock interview sessions work? <span class="faq-icon">+</span></button><div class="faq-a">After purchase you'll receive access to our mock interview platform. You answer real dental school interview questions on camera and receive instant feedback on your verbal content, eye contact, pacing, and filler words. Each session gives you data to improve on the next.</div></div>
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I combine products? <span class="faq-icon">+</span></button><div class="faq-a">Absolutely — and most students do. The prep guides help you know what to say, the mock interviews train you to say it well, and the personal statement review strengthens your written application. Together they cover the full process.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     BOTTOM CTA
+════════════════════════════════════════ -->
+<div class="cta-band">
+  <div class="cta-band-inner">
+    <h2>Ready to get into<br><em style="font-style:italic;">dental school?</em></h2>
+    <p>Join hundreds of students who used Denterview to walk into interview season prepared, polished, and confident.</p>
+    <div class="cta-buttons">
+      <a href="interview-prep.html" class="cta-btn-main">See Interview Prep →</a>
+      <a href="denterview-ai.html" class="cta-btn-ghost">Try a Mock Interview</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     FOOTER
+════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="Denterview"/></a>
+        <p>Affordable, high-quality dental school prep — built by dental students, for dental students.</p>
+      </div>
+      <div class="footer-col"><h5>Products</h5><a href="personal-statement.html">Personal Statement Review</a><a href="interview-guides.html">Interview Prep Guides</a><a href="denterview-ai.html">Mock Interviews</a><a href="kira-prep.html">Kira Prep</a></div>
+      <div class="footer-col"><h5>Company</h5><a href="about.html">About Us</a><a href="contact.html">Contact</a><a href="#testimonials">Success Stories</a></div>
+      <div class="footer-col"><h5>Legal</h5><a href="terms.html">Terms of Use</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Return Policy</a></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Denterview™. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="terms.html">Terms</a><a href="privacy.html">Privacy</a><a href="disclaimer.html">Disclaimer</a><a href="return-policy.html">Returns</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="interview-prep.html" class="sticky-cta-main">Interview Prep</a>
+  <a href="interview-guides.html" class="sticky-cta-ghost">Ultimate Guide – $16.99</a>
+</div>
+
+<script>
+  // Announce bar + nav top
+  const announceBar = document.getElementById('announceBar');
+  const navbar = document.getElementById('navbar');
+  function updateNavTop() {
+    const h = announceBar.style.display === 'none' ? 0 : announceBar.offsetHeight;
+    navbar.style.top = h + 'px';
+  }
+  updateNavTop();
+  window.addEventListener('scroll', updateNavTop);
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Mobile nav
+  function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.getElementById('mobileOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.getElementById('mobileOverlay').classList.remove('open'); document.body.style.overflow=''; }
+
+  // Scroll reveal
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+</script>
 
-    <script type="module">
-        const FIREBASE_CONFIG = {
-            apiKey: "AIzaSyAXcGaNISP_PIy9HJwdk2i6RQ4H7vIEkqw",
-            authDomain: "mock-interview-ai-68ed7.firebaseapp.com",
-            databaseURL: "https://mock-interview-ai-68ed7-default-rtdb.firebaseio.com",
-            projectId: "mock-interview-ai-68ed7",
-            storageBucket: "mock-interview-ai-68ed7.firebasestorage.app",
-            messagingSenderId: "74265957401",
-            appId: "1:74265957401:web:78cddd915846a3afd34688",
-            measurementId: "G-7TKQS312YV"
-        };
-
-        const SUPABASE_URL = 'https://yyqxlzkbqojstkzmgybf.supabase.co';
-        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl5cXhsemticW9qc3Rrem1neWJmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTkyNjcwOTIsImV4cCI6MjA3NDg0MzA5Mn0.1-qfECVDUz_emkZZFPDotKDyuuRclSe3_hsoJpm_vZg';
-
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-        import { getFirestore, doc, getDoc, updateDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-        import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut, updatePassword, EmailAuthProvider, reauthenticateWithCredential } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-
-        const app = initializeApp(FIREBASE_CONFIG);
-        const db = getFirestore(app);
-        const auth = getAuth(app);
-
-        let currentUser = null;
-        let questionPools = {};
-        let currentPool = null;
-        let currentQuestions = [];
-        let currentQuestionIndex = 0;
-        let mediaRecorder = null;
-        let recordedChunks = [];
-        let recordingMimeType = 'video/webm';
-        let mediaStream = null;
-        let timerInterval = null;
-        let prepTimerInterval = null;
-        let autoAdvanceInterval = null;
-        let timeRemaining = 0;
-        let prepTimeRemaining = 15;
-        let autoAdvanceSeconds = 20;
-        let allQuestionFeedback = [];
-        let hasPermissions = false;
-
-        function showScreen(screenId) {
-            console.log('🔄 Switching to screen:', screenId);
-            document.querySelectorAll('.screen').forEach(s => {
-                s.classList.remove('active');
-                s.style.display = 'none';
-            });
-            const targetScreen = document.getElementById(screenId);
-            if (targetScreen) {
-                targetScreen.classList.add('active');
-                targetScreen.style.display = 'block';
-                console.log('✅ Screen switched to:', screenId);
-            }
-            window.scrollTo(0, 0);
-        }
-
-        function showToast(title, message, type = 'info') {
-            const toast = document.getElementById('toast');
-            const icon = document.getElementById('toast-icon');
-            const titleEl = document.getElementById('toast-title');
-            const messageEl = document.getElementById('toast-message');
-            const icons = {
-                success: '<svg fill="currentColor" viewBox="0 0 20 20" class="text-green-500"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>',
-                error: '<svg fill="currentColor" viewBox="0 0 20 20" class="text-red-500"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>',
-                warning: '<svg fill="currentColor" viewBox="0 0 20 20" class="text-yellow-500"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/></svg>',
-                info: '<svg fill="currentColor" viewBox="0 0 20 20" class="text-blue-500"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/></svg>'
-            };
-            icon.innerHTML = icons[type];
-            titleEl.textContent = title;
-            messageEl.textContent = message;
-            toast.style.transform = 'translateY(0)';
-            setTimeout(() => { toast.style.transform = 'translateY(8rem)'; }, 4000);
-        }
-
-        async function loadQuestionPools() {
-            try {
-                console.log('📚 Loading question pools...');
-                const poolsRef = collection(db, 'artifacts', 'default-app-id', 'public', 'data', 'question_pools');
-                const snapshot = await getDocs(poolsRef);
-                if (snapshot.empty) {
-                    console.error('❌ No question pools found');
-                    return;
-                }
-                snapshot.forEach(docSnap => {
-                    const poolId = docSnap.id;
-                    const data = docSnap.data();
-                    if (data.questions && Array.isArray(data.questions)) {
-                        questionPools[poolId] = { questions: data.questions };
-                    } else if (typeof data === 'object') {
-                        const questionsArray = [];
-                        const keys = Object.keys(data).filter(key => !isNaN(parseInt(key)));
-                        keys.sort((a, b) => parseInt(a) - parseInt(b)).forEach(key => {
-                            if (data[key] && data[key].question) {
-                                questionsArray.push(data[key]);
-                            }
-                        });
-                        if (questionsArray.length > 0) {
-                            questionPools[poolId] = { questions: questionsArray };
-                        }
-                    }
-                });
-                console.log('✅ Loaded', Object.keys(questionPools).length, 'pools');
-            } catch (error) {
-                console.error('❌ Error loading pools:', error);
-            }
-        }
-
-        async function loadUserData(userId) {
-            try {
-                console.log('🔍 Loading user:', userId);
-                const userRef = doc(db, 'artifacts', 'default-app-id', 'public', 'data', 'users', userId);
-                const userSnap = await getDoc(userRef);
-                if (userSnap.exists()) {
-                    const data = userSnap.data();
-                    currentUser = { 
-                        id: userId, 
-                        ...data,
-                        completedPools: data.completedPools?.filter(p => p) || []
-                    };
-                    if (Object.keys(questionPools).length === 0) {
-                        await loadQuestionPools();
-                    }
-                    return true;
-                } else {
-                    showToast('Error', 'Account not found', 'error');
-                    return false;
-                }
-            } catch (error) {
-                console.error('❌ Load user error:', error);
-                return false;
-            }
-        }
-
-        async function updateUserData(updates) {
-            try {
-                const userRef = doc(db, 'artifacts', 'default-app-id', 'public', 'data', 'users', currentUser.id);
-                await updateDoc(userRef, updates);
-                const userSnap = await getDoc(userRef);
-                if (userSnap.exists()) {
-                    const data = userSnap.data();
-                    currentUser = { 
-                        id: currentUser.id, 
-                        ...data,
-                        completedPools: data.completedPools?.filter(p => p) || []
-                    };
-                }
-                updateDashboard();
-            } catch (error) {
-                console.error('❌ Update error:', error);
-            }
-        }
-
-        function updateDashboard() {
-            document.getElementById('user-display').textContent = currentUser.email || currentUser.id;
-            document.getElementById('total-purchased').textContent = currentUser.totalInterviews || 0;
-            document.getElementById('completed-count').textContent = (currentUser.completedPools || []).length;
-            document.getElementById('remaining-count').textContent = currentUser.interviewsRemaining || 0;
-            const startBtn = document.getElementById('start-interview-btn');
-            const noMsg = document.getElementById('no-interviews-message');
-            if (currentUser.interviewsRemaining <= 0) {
-                startBtn.classList.add('hidden');
-                noMsg.classList.remove('hidden');
-            } else {
-                startBtn.classList.remove('hidden');
-                noMsg.classList.add('hidden');
-            }
-        }
-
-        async function requestPermissions() {
-            try {
-                if (mediaStream) {
-                    mediaStream.getTracks().forEach(track => track.stop());
-                }
-                mediaStream = await navigator.mediaDevices.getUserMedia({ 
-                    video: { width: { ideal: 1280 }, height: { ideal: 720 }, facingMode: 'user' }, 
-                    audio: { echoCancellation: true, noiseSuppression: true }
-                });
-                hasPermissions = true;
-                document.getElementById('permissions-status').classList.add('hidden');
-                showToast('Success', 'Permissions granted', 'success');
-                return true;
-            } catch (error) {
-                hasPermissions = false;
-                mediaStream = null;
-                document.getElementById('permissions-status').classList.remove('hidden');
-                showToast('Permission Denied', 'Please allow camera access', 'error');
-                return false;
-            }
-        }
-
-        async function startNewInterview() {
-            document.getElementById('instructions-modal').classList.remove('hidden');
-        }
-
-        async function confirmStartInterview() {
-            document.getElementById('instructions-modal').classList.add('hidden');
-            try {
-                if (!hasPermissions || !mediaStream) {
-                    const granted = await requestPermissions();
-                    if (!granted) return;
-                }
-                if (currentUser.interviewsRemaining <= 0) {
-                    showToast('No Credits', 'No interviews remaining', 'error');
-                    return;
-                }
-                if (Object.keys(questionPools).length === 0) {
-                    await loadQuestionPools();
-                }
-                if (Object.keys(questionPools).length === 0) {
-                    showToast('Error', 'Could not load interview questions. Please refresh and try again.', 'error');
-                    return;
-                }
-                const completedPools = currentUser.completedPools || [];
-                let selectedPool;
-                if (!completedPools.includes('pool_2')) {
-                    selectedPool = 'pool_2';
-                } else if (!completedPools.includes('pool_1')) {
-                    selectedPool = 'pool_1';
-                } else {
-                    const available = Object.keys(questionPools).filter(p => !completedPools.includes(p));
-                    if (available.length === 0) {
-                        showToast('Complete', 'All pools completed', 'warning');
-                        return;
-                    }
-                    selectedPool = available[Math.floor(Math.random() * available.length)];
-                }
-                currentPool = selectedPool;
-                const poolData = questionPools[selectedPool];
-                if (!poolData || !poolData.questions || poolData.questions.length === 0) {
-                    showToast('Error', 'Pool not found', 'error');
-                    return;
-                }
-                currentQuestions = poolData.questions;
-                currentQuestionIndex = 0;
-                allQuestionFeedback = [];
-                await updateUserData({ currentPoolId: selectedPool });
-                showScreen('interview-screen');
-                document.getElementById('webcam').srcObject = mediaStream;
-                document.getElementById('video-status').style.display = 'none';
-                setTimeout(() => displayCurrentQuestion(), 500);
-            } catch (error) {
-                console.error('❌ confirmStartInterview error:', error);
-                showToast('Error', 'Something went wrong starting the interview. Please refresh and try again.', 'error');
-            }
-        }
-
-        function displayCurrentQuestion() {
-            if (autoAdvanceInterval) clearInterval(autoAdvanceInterval);
-            const question = currentQuestions && currentQuestions[currentQuestionIndex];
-            if (!question) {
-                console.error('❌ No question available at index', currentQuestionIndex, currentQuestions);
-                showToast('Error', 'Could not load interview questions. Please exit and try again.', 'error');
-                return;
-            }
-            const timeLimit = Math.min(question.timeLimitSeconds || question.timeLimit || 180, 180);
-            document.getElementById('question-number').textContent = currentQuestionIndex + 1;
-            document.getElementById('total-questions').textContent = currentQuestions.length;
-            document.getElementById('current-pool-display').textContent = currentPool.replace(/_/g, ' ');
-            document.getElementById('question-text').textContent = question.question;
-            timeRemaining = timeLimit;
-            updateTimerDisplay();
-            document.getElementById('countdown-timer').classList.add('hidden');
-            document.getElementById('ready-btn').classList.remove('hidden');
-            document.getElementById('stop-recording-btn').classList.add('hidden');
-            document.getElementById('next-question-btn').classList.add('hidden');
-            document.getElementById('finish-interview-btn').classList.add('hidden');
-            if (prepTimerInterval) clearInterval(prepTimerInterval);
-            prepTimeRemaining = 15;
-            document.getElementById('prep-timer').classList.remove('hidden');
-            document.getElementById('prep-seconds').textContent = prepTimeRemaining;
-            prepTimerInterval = setInterval(() => {
-                prepTimeRemaining--;
-                document.getElementById('prep-seconds').textContent = prepTimeRemaining;
-                if (prepTimeRemaining <= 0) {
-                    clearInterval(prepTimerInterval);
-                    document.getElementById('prep-timer').classList.add('hidden');
-                    startRecording();
-                }
-            }, 1000);
-        }
-
-        function updateTimerDisplay() {
-            const mins = Math.floor(timeRemaining / 60);
-            const secs = timeRemaining % 60;
-            document.getElementById('countdown-timer').textContent = 
-                `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
-        }
-
-        function startRecording() {
-            if (!mediaStream) return;
-            if (prepTimerInterval) {
-                clearInterval(prepTimerInterval);
-                document.getElementById('prep-timer').classList.add('hidden');
-            }
-            recordedChunks = [];
-            try {
-                // Pick the first mimeType this browser actually supports.
-                // Hardcoding 'video/webm;codecs=vp9' throws on Safari/iOS and
-                // some Android browsers, which used to fail silently here.
-                const candidateMimeTypes = [
-                    'video/webm;codecs=vp9',
-                    'video/webm;codecs=vp8',
-                    'video/webm',
-                    'video/mp4'
-                ];
-                const supportedMimeType = candidateMimeTypes.find(
-                    type => window.MediaRecorder && MediaRecorder.isTypeSupported && MediaRecorder.isTypeSupported(type)
-                );
-                mediaRecorder = supportedMimeType
-                    ? new MediaRecorder(mediaStream, { mimeType: supportedMimeType })
-                    : new MediaRecorder(mediaStream);
-                // Remember what actually got picked (mediaRecorder.mimeType is the
-                // authoritative source — browsers can add codec params of their own).
-                // Everything downstream (blob, filename, upload, Gemini request) must
-                // use this instead of assuming webm, or Safari/iOS recordings (which
-                // fall back to mp4) get mislabeled and Gemini fails to parse them.
-                recordingMimeType = mediaRecorder.mimeType || supportedMimeType || 'video/webm';
-                mediaRecorder.ondataavailable = (event) => {
-                    if (event.data.size > 0) recordedChunks.push(event.data);
-                };
-                mediaRecorder.onstop = handleRecordingComplete;
-                mediaRecorder.onerror = (event) => {
-                    console.error('MediaRecorder error:', event.error);
-                    showToast('Recording Error', 'Recording stopped unexpectedly. Please try again.', 'error');
-                };
-                mediaRecorder.start();
-                document.getElementById('recording-indicator').classList.remove('hidden');
-                document.getElementById('countdown-timer').classList.remove('hidden');
-                document.getElementById('ready-btn').classList.add('hidden');
-                document.getElementById('stop-recording-btn').classList.remove('hidden');
-                const question = currentQuestions[currentQuestionIndex];
-                timeRemaining = Math.min(question.timeLimitSeconds || question.timeLimit || 180, 180);
-                timerInterval = setInterval(() => {
-                    timeRemaining--;
-                    updateTimerDisplay();
-                    if (timeRemaining <= 0) stopRecording();
-                }, 1000);
-            } catch (error) {
-                console.error('Recording error:', error);
-                showToast('Recording Error', 'Your browser could not start recording. Please try Chrome or a recent Safari, or contact support.', 'error');
-                document.getElementById('prep-timer').classList.add('hidden');
-            }
-        }
-
-        function stopRecording() {
-            if (mediaRecorder && mediaRecorder.state !== 'inactive') {
-                mediaRecorder.stop();
-                clearInterval(timerInterval);
-                document.getElementById('recording-indicator').classList.add('hidden');
-                document.getElementById('countdown-timer').classList.add('hidden');
-                document.getElementById('stop-recording-btn').classList.add('hidden');
-            }
-        }
-
-        async function handleRecordingComplete() {
-            document.getElementById('ready-btn').classList.add('hidden');
-            document.getElementById('stop-recording-btn').classList.add('hidden');
-            const processing = document.createElement('div');
-            processing.id = 'processing-overlay';
-            processing.className = 'glass-card rounded-2xl p-6 text-center mt-4';
-            processing.innerHTML = `
-                <div class="flex items-center justify-center gap-3 mb-3">
-                    <svg class="animate-spin h-8 w-8 text-purple-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
-                    </svg>
-                    <h3 class="text-xl font-bold text-gray-800">Processing</h3>
-                </div>
-            `;
-            document.querySelector('#interview-screen .glass-card:last-child').appendChild(processing);
-            try {
-                const videoBlob = new Blob(recordedChunks, { type: recordingMimeType });
-                const fileName = await uploadToSupabase(videoBlob, recordingMimeType);
-                const imageBase64 = await captureSnapshot();
-                const videoBase64 = await blobToBase64(videoBlob);
-                allQuestionFeedback.push({
-                    questionNumber: currentQuestionIndex + 1,
-                    question: currentQuestions[currentQuestionIndex].question,
-                    videoBase64,
-                    videoMimeType: recordingMimeType,
-                    imageBase64,
-                    fileName,
-                    feedback: null
-                });
-                processing.remove();
-                currentQuestionIndex++;
-                if (currentQuestionIndex < currentQuestions.length) {
-                    document.getElementById('next-question-btn').classList.remove('hidden');
-                    autoAdvanceSeconds = 20;
-                    updateAutoAdvanceDisplay();
-                    autoAdvanceInterval = setInterval(() => {
-                        autoAdvanceSeconds--;
-                        updateAutoAdvanceDisplay();
-                        if (autoAdvanceSeconds <= 0) {
-                            clearInterval(autoAdvanceInterval);
-                            displayCurrentQuestion();
-                        }
-                    }, 1000);
-                } else {
-                    document.getElementById('finish-interview-btn').classList.remove('hidden');
-                }
-            } catch (error) {
-                console.error('Processing error:', error);
-                document.getElementById('processing-overlay')?.remove();
-            }
-        }
-
-        async function uploadToSupabase(videoBlob, mimeType) {
-            const contentType = mimeType || 'video/webm';
-            const baseType = contentType.split(';')[0].trim().toLowerCase();
-            // Match the extension to the real container — mislabeling mp4 bytes
-            // as .webm (or vice versa) is what caused Gemini's "0 Frames found" /
-            // blockReason:OTHER failures on Safari/iOS recordings.
-            const extension = baseType === 'video/mp4' ? 'mp4' : 'webm';
-            const fileName = `${currentUser.id}/${Date.now()}_${currentPool}_q${currentQuestionIndex + 1}.${extension}`;
-            const attemptUpload = async () => {
-                const uploadResp = await fetch(`${SUPABASE_URL}/storage/v1/object/videos/${fileName}`, {
-                    method: 'POST',
-                    headers: { 'Authorization': `Bearer ${SUPABASE_ANON_KEY}`, 'Content-Type': contentType },
-                    body: videoBlob
-                });
-                return uploadResp;
-            };
-
-            for (let attempt = 1; attempt <= 3; attempt++) {
-                try {
-                    const uploadResp = await attemptUpload();
-                    if (uploadResp.ok) return fileName;
-
-                    const errText = await uploadResp.text().catch(() => '');
-                    if (attempt === 3) {
-                        console.error(`Supabase upload failed (${uploadResp.status}) for ${fileName}: ${errText}`);
-                        fetch('/api/log-upload-failure', {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify({ fileName, status: uploadResp.status, errText })
-                        }).catch(() => {});
-                        return null; // don't hand back a fileName that doesn't actually exist in the bucket
-                    }
-                } catch (error) {
-                    if (attempt === 3) {
-                        console.error('Supabase upload network error:', error);
-                        return null;
-                    }
-                }
-                await new Promise(r => setTimeout(r, attempt * 500)); // 500ms, then 1000ms backoff
-            }
-        }
-
-        async function deleteFromSupabase(fileName) {
-            if (!fileName) return;
-            try {
-                await fetch('/api/delete-video', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ fileName })
-                });
-            } catch (error) {
-                console.error('Delete error:', error);
-            }
-        }
-
-        function blobToBase64(blob) {
-            return new Promise((resolve, reject) => {
-                const reader = new FileReader();
-                reader.onloadend = () => resolve(reader.result.split(',')[1]);
-                reader.onerror = reject;
-                reader.readAsDataURL(blob);
-            });
-        }
-
-        function updateAutoAdvanceDisplay() {
-            const btn = document.getElementById('next-question-btn');
-            if (btn && !btn.classList.contains('hidden')) {
-                btn.textContent = `Next Question (${autoAdvanceSeconds}s)`;
-            }
-        }
-
-        async function captureSnapshot() {
-            const canvas = document.getElementById('snapshot-canvas');
-            const webcam = document.getElementById('webcam');
-            canvas.width = webcam.videoWidth;
-            canvas.height = webcam.videoHeight;
-            const ctx = canvas.getContext('2d');
-            ctx.save();
-            ctx.scale(-1, 1);
-            ctx.drawImage(webcam, -canvas.width, 0, canvas.width, canvas.height);
-            ctx.restore();
-            return new Promise(resolve => {
-                canvas.toBlob(blob => {
-                    const reader = new FileReader();
-                    reader.onloadend = () => resolve(reader.result.split(',')[1]);
-                    reader.readAsDataURL(blob);
-                }, 'image/jpeg', 0.8);
-            });
-        }
-
-        async function analyzeResponse(question, videoBase64, imageBase64, videoMimeType) {
-            // Read grading preferences
-            const gradeVisual = document.getElementById('grade-visual')?.checked ?? true;
-            const gradeDelivery = document.getElementById('grade-delivery')?.checked ?? true;
-            const gradeProfessionalism = document.getElementById('grade-professionalism')?.checked ?? true;
-
-            // Calculate dynamic weights
-            const optionalWeight = (gradeVisual ? 25 : 0) + (gradeDelivery ? 15 : 0) + (gradeProfessionalism ? 10 : 0);
-            const contentWeight = 100 - optionalWeight;
-
-            // Build active categories string for prompt
-            const activeCategories = [`- Content Quality (${contentWeight}%): Specific examples, personal stories, depth, authenticity. "I like helping people" = generic. "When I shadowed Dr. X and saw a patient terrified of the dentist leave smiling..." = specific.`];
-            if (gradeVisual) activeCategories.push(`- Visual Presence (25%): Eye contact with camera, upright posture, confident and engaged demeanor.`);
-            if (gradeDelivery) activeCategories.push(`- Delivery (15%): Clear speech, natural pace, minimal filler words (um/uh/like).`);
-            if (gradeProfessionalism) activeCategories.push(`- Professionalism (10%): Clean background, appropriate attire, professional setting.`);
-
-            const systemPrompt = `You are an expert dental school interview coach — direct, encouraging, honest, and deeply invested in each candidate's growth. You give feedback that motivates candidates to improve. You are NOT harsh or discouraging. You tell the truth the way a great mentor does: clearly, kindly, and with a genuine belief in the person's potential.
-
-═══════════════════════════════════════
-CORE COACHING PHILOSOPHY
-═══════════════════════════════════════
-The most effective dental school interview strategy is building 7–8 personal stories that can be adapted to many different questions. Great answers are not memorized scripts — they are genuine experiences told with clarity and detail. Your job is to coach candidates toward that standard.
-
-The #1 thing that separates strong answers from weak ones is STORYTELLING with SPECIFICITY. Not "I like helping people" but "When I was shadowing Dr. X and watched her calm a terrified patient with just her tone and body language, I realized I wanted that relationship with patients." Generic platitudes fail. Specific, personal, vivid stories win.
-
-Interviewers want to know: (1) who you really are, (2) that you can handle dental school's demands, (3) that you've genuinely thought about why dentistry specifically, and (4) that you'd be a good fit for their class. Every answer should quietly speak to one or more of these.
-
-═══════════════════════════════════════
-SCORING — USE THE FULL RANGE (critical)
-═══════════════════════════════════════
-1.0–2.5 → Clearly a test/joke/blank/off-topic response
-3.0–4.5 → No specific examples; purely vague or generic statements
-4.5–5.5 → One weak or surface-level attempt at an example; lacks depth
-5.5–6.5 → One solid specific example with some personal detail
-6.5–7.5 → One strong example with good depth and reflection, OR two decent ones
-7.5–8.5 → Two or more strong specific examples; natural delivery; clear insight
-8.5–10.0 → Exceptional storytelling, compelling detail, polished delivery, genuine connection
-
-DO NOT cluster scores around 6–7. Genuinely weak answers score 3–5. Genuinely strong answers score 8+. Differentiate honestly — a 6.8 should mean something different from a 5.2.
-
-═══════════════════════════════════════
-QUESTION-SPECIFIC COACHING INTELLIGENCE
-═══════════════════════════════════════
-Use this to give smarter, targeted feedback based on what question was actually asked:
-
-WHY DENTISTRY?
-- Must avoid the generic "I want to help people" trap — that applies to every healthcare field
-- Strong answers include something UNIQUE to dentistry: hands-on/manual work, artistry, the blend of science and craft, the long-term patient relationships, proactive vs reactive care vs medicine
-- Best answers tie to personal hobbies, shadowing moments, or specific patient interactions that couldn't happen in any other field
-- Should feel personal and specific to THEM, not a dentistry brochure
-
-STRENGTHS / WHAT DIFFERENTIATES YOU
-- Must be backed by a short story or example — even one sentence like "I have strong attention to detail, which comes from years of oil painting where a millimeter off changes the whole piece"
-- Avoid cliché strengths with no evidence (empathy, hardworking, perfectionist)
-- Best answers connect the strength to dentistry naturally without being forced
-- For weaknesses: must show genuine self-awareness + active steps to improve — never a humble-brag ("I work too hard")
-
-WHY DENTISTRY OVER MEDICINE / SOCIAL WORK / OTHER?
-- Needs something specific to the craft of dentistry — manual dexterity, the artistic/technical blend, immediate patient impact, the mix of business and clinical work, preventative care focus
-- Generic "I want to help people" is insufficient here
-
-ADVERSITY / FAILURE / MISTAKE / DISAPPOINTMENT
-- Key is not what happened but HOW THEY RESPONDED — resilience, problem-solving, growth
-- Should follow: situation → specific challenge → what they did → what they learned
-- Academic AND personal examples are both valid; having one of each is ideal
-- Avoid blaming others; own the experience
-
-CONFLICT WITH A PEER
-- Doesn't need to be dramatic — a roommate disagreement, lab partner issue, team conflict all work
-- What matters: how they handled it, what their conflict resolution skills look like
-- Should demonstrate: empathy, communication, willingness to see another perspective
-
-STRESS / WORKLOAD MANAGEMENT
-- Must show they can handle dental school's intensity — this is a real concern for admissions
-- Specific strategies are better than vague ones ("I use time-blocking and dedicated study blocks" beats "I manage my time well")
-- Bonus if they tie in a hobby that builds mindfulness or manual skill (working out, art, woodworking)
-- A concrete example of a high-stress period they navigated well is ideal
-
-WHERE DO YOU SEE YOURSELF IN 10 YEARS?
-- Should NOT commit to a specialty (they haven't learned general dentistry yet — interviewers notice this)
-- Best to express openness while showing clear values: community service, research, access to care, etc.
-- Aligning answer with the school's mission statement (if known) is a strong move
-
-TELL ME ABOUT YOURSELF
-- This is NOT the time to recite a dental resume — talk about who you ARE: hometown, family, hobbies, what you do for fun, what makes you interesting
-- Round it out lightly with dental interest at the end
-- Dexterity-based hobbies (woodworking, painting, pottery, music) are gold here
-
-MOST INFLUENTIAL PERSON
-- Make it heartfelt and specific — a mentor, family member, professor, or even a patient
-- Needs a real story, not just "they worked hard and inspired me"
-- Should connect to values relevant to dentistry: empathy, service, resilience, craft
-
-ETHICAL DILEMMA
-- Think small — doesn't need to be dramatic. A classmate cheating, a work situation, a moment of moral conflict all work
-- Key elements: what the dilemma was, how they thought through it, what they decided, what they learned
-
-ACTIVE GRADING CATEGORIES:
-${activeCategories.join('\n')}`;
-
-            const categoryBlocks = [];
-            categoryBlocks.push(`**Content Analysis (${contentWeight}%):**\n[Did they give SPECIFIC personal examples with real detail? Name the example and explain what made it strong or where it fell short. Be specific — reference what they actually said.]`);
-            if (gradeVisual) categoryBlocks.push(`**Visual Presence (25%):**\n[Describe their eye contact, posture, and confidence specifically. What did you notice?]`);
-            if (gradeDelivery) categoryBlocks.push(`**Delivery (15%):**\n[How was their pace, clarity, and use of filler words? Be specific about what you heard.]`);
-            if (gradeProfessionalism) categoryBlocks.push(`**Professionalism (10%):**\n[Setting, background, attire — what worked and what would immediately improve their professional image?]`);
-
-            const userPrompt = `Interview Question: "${question}"
-
-Analyze this VIDEO response as a supportive but honest dental school interview coach. Use your question-specific coaching knowledge to give targeted, intelligent feedback — not just generic "add more examples" advice. Reference what they actually said. Name the specific story or detail they gave (or didn't give). Tell them exactly what a stronger version would look like for THIS question.
-
-FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
-
-**Score: X.X/10**
-
-**What You Said:**
-[1–2 sentence summary of their actual response — accurate and neutral]
-
-${categoryBlocks.join('\n\n')}
-
-**What's Working:**
-[Genuine, specific strengths. Name exactly what they did well and why it helps. Every response has something worth acknowledging — find it. If they told a real story, name it. If their delivery was natural, say so specifically.]
-
-**Your Growth Edge:**
-[1–3 specific, actionable coaching tips tailored to THIS question. Don't just say "add examples" — tell them WHAT kind of example would work here. E.g. for Why Dentistry: "Try connecting your answer to something hands-on or artistic you love — a hobby, a craft, a specific moment in shadowing that couldn't have happened in any other field." For adversity: "Walk us through the specific moment things got hard — what did it feel like, what did you actually do, and what changed in you because of it?" Make the tip something they can act on immediately.]
-
-**Coach's Take:**
-[2–3 sentences. Honest, warm, mentor-voiced. Where is this answer in their journey? What's the ONE most important thing to work on for this specific question? End with something that motivates them to keep going.]
-
-IMPORTANT: If the response was clearly a test/joke/blank, score 1.0–2.5, note it briefly, and still offer one real coaching tip they can use next time.`;
-            
-            try {
-                const response = await fetch('/api/analyze', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ systemInstruction: systemPrompt, userPrompt, videoBase64, videoMimeType, imageBase64 })
-                });
-                const result = await response.json();
-                if (result.success && result.data?.candidates?.[0]?.content?.parts?.[0]?.text) {
-                    return result.data.candidates[0].content.parts[0].text;
-                }
-                return '**Score: 5.0/10**\n\n**Analysis Error**\nCould not analyze this response fully.';
-            } catch (error) {
-                console.error('Analysis error:', error);
-                return '**Score: 5.0/10**\n\n**Analysis Error**\nCould not analyze this response fully.';
-            }
-        }
-
-        async function finishInterview() {
-            if (mediaStream) {
-                mediaStream.getTracks().forEach(track => track.stop());
-                mediaStream = null;
-                document.getElementById('webcam').srcObject = null;
-            }
-            hasPermissions = false;
-            showScreen('feedback-screen');
-            document.getElementById('feedback-loading-screen').classList.remove('hidden');
-            document.getElementById('feedback-content').classList.add('hidden');
-            for (let i = 0; i < allQuestionFeedback.length; i++) {
-                const item = allQuestionFeedback[i];
-                document.getElementById('analysis-progress').textContent = `Analyzing question ${i + 1} of ${allQuestionFeedback.length}...`;
-                const feedback = await analyzeResponse(item.question, item.videoBase64, item.imageBase64, item.videoMimeType);
-                allQuestionFeedback[i].feedback = feedback;
-                if (item.fileName) await deleteFromSupabase(item.fileName);
-            }
-            const completedPools = currentUser.completedPools || [];
-            if (!completedPools.includes(currentPool)) completedPools.push(currentPool);
-            document.getElementById('analysis-progress').textContent = 'Generating overall summary...';
-            const overallSummary = await generateOverallSummary();
-            const historyEntry = {
-                poolId: currentPool,
-                poolName: currentPool.replace(/_/g, ' '),
-                date: new Date().toISOString(),
-                overallScore: extractScoreFromText(overallSummary),
-                overallSummary,
-                feedback: allQuestionFeedback.map(f => ({
-                    questionNumber: f.questionNumber,
-                    question: f.question,
-                    feedback: f.feedback
-                }))
-            };
-            const interviewHistory = currentUser.interviewHistory || [];
-            interviewHistory.push(historyEntry);
-            await updateUserData({
-                interviewsRemaining: Math.max(0, currentUser.interviewsRemaining - 1),
-                completedPools,
-                currentPoolId: null,
-                lastCompletedDate: new Date().toISOString(),
-                interviewHistory
-            });
-            displayAllFeedback();
-            document.getElementById('feedback-loading-screen').classList.add('hidden');
-            document.getElementById('feedback-content').classList.remove('hidden');
-        }
-
-        async function generateOverallSummary() {
-            const prompt = `You are an expert dental school interview coach giving a warm, direct, growth-focused end-of-session debrief. You've just reviewed all of a candidate's responses. Give them an honest overall picture that motivates continued improvement — not a verdict that deflates them.
-
-CORE COACHING PHILOSOPHY:
-The most effective interview strategy is building 7–8 personal stories that flex across many questions. The #1 differentiator is STORYTELLING WITH SPECIFICITY — not "I want to help people" but a vivid, personal moment that only they could tell. Interviewers want to know: who this person really is, that they can handle dental school, why dentistry specifically, and that they'd fit the class.
-
-SCORE INTERPRETATION (be accurate — do not soften the math):
-- 1–3: Significant preparation needed; foundational work required
-- 3–5: Some effort visible but content is consistently vague or missing examples
-- 5–6.5: Developing — good instincts, clear areas to build on
-- 6.5–7.5: Solid foundation — refinement will make a real difference
-- 7.5–8.5: Strong — ready with some polish
-- 8.5–10: Exceptional — interview-ready
-
-FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
-
-**Overall Score: [honest average of the individual scores]**
-
-**Session Snapshot:**
-[2–3 sentences on the overall feel. Were they consistent? Did genuine moments of strength emerge? Was there a clear pattern in what was missing? Mentor voice — real but kind.]
-
-**Where You Shone:**
-[1–3 genuine strengths with specific references to actual answers. Name the story or moment. Be specific — don't invent positives, but look hard for them in every session.]
-
-**Patterns to Work On:**
-[2–4 specific, actionable coaching observations framed as patterns. "Across several answers, the stories were starting points — they had the right instinct but stopped just before the detail that would have made them memorable." Give concrete next steps. Reference actual questions by name.]
-
-**The Single Biggest Move:**
-[The one change that would most improve their next session. Be specific — e.g. "Before your next practice, write out 3 personal stories in full: the situation, what you actually did, and what changed in you. Then practice answering every question using one of those stories."]
-
-**What's Next:**
-[Warm, honest close. Where are they in their journey? Recommend the 7–8 stories framework if they don't seem to have it yet. Sound like someone who genuinely believes in their potential and is honest about the work ahead. Never say "NOT interview-ready" as a standalone verdict — describe the specific path forward instead.]`;
-
-            try {
-                const response = await fetch('/api/analyze', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        systemInstruction: 'You are an expert dental school interview coach — direct, encouraging, honest, and growth-focused. You have deep knowledge of what dental school interviewers look for: genuine storytelling, specificity, unique personal connection to dentistry, and self-awareness. You give feedback that motivates candidates to improve, not feedback that makes them feel defeated.',
-                        userPrompt: prompt + '\n\nHere are the scores and feedback from each question:\n\n' + 
-                            allQuestionFeedback.map((f, idx) => {
-                                const scoreMatch = f.feedback.match(/Score[:\s]*(\d+\.?\d*)\/10/i);
-                                const score = scoreMatch ? scoreMatch[1] : 'N/A';
-                                return `Q${f.questionNumber} (Score: ${score}/10): "${f.question}"\nFeedback: ${f.feedback.substring(0, 400)}...\n`;
-                            }).join('\n'),
-                        imageBase64: null,
-                        videoBase64: null
-                    })
-                });
-                const result = await response.json();
-                if (result.success && result.data?.candidates?.[0]?.content?.parts?.[0]?.text) {
-                    const summary = result.data.candidates[0].content.parts[0].text;
-                    document.getElementById('overall-summary').innerHTML = marked.parse(summary);
-                    return summary;
-                }
-                return '**Overall Score: 5.0/10**\n\nUnable to generate detailed summary.';
-            } catch (error) {
-                console.error('Summary generation error:', error);
-                return '**Overall Score: 5.0/10**\n\nUnable to generate detailed summary.';
-            }
-        }
-
-        function extractScoreFromText(text) {
-            const patterns = [/Overall Score[:\s]*(\d+\.?\d*)\/10/i, /Score[:\s]*(\d+\.?\d*)\/10/i];
-            let score = null;
-            for (const pattern of patterns) {
-                const match = text.match(pattern);
-                if (match) {
-                    score = parseFloat(match[1]);
-                    break;
-                }
-            }
-            if (!score || isNaN(score)) {
-                const scores = allQuestionFeedback.map(f => {
-                    if (!f.feedback) return 5;
-                    const match = f.feedback.match(/Score[:\s]*(\d+\.?\d*)\/10/i);
-                    return match ? parseFloat(match[1]) : 5;
-                });
-                score = scores.reduce((a, b) => a + b, 0) / scores.length;
-            }
-            animateScore(score);
-            return score;
-        }
-
-        function animateScore(score) {
-            const scoreDisplay = document.getElementById('overall-score-display');
-            const scoreCircle = document.getElementById('score-circle');
-            const scoreBar = document.getElementById('score-bar');
-            const scoreRating = document.getElementById('score-rating');
-            let current = 0;
-            const increment = score / 50;
-            const interval = setInterval(() => {
-                current += increment;
-                if (current >= score) {
-                    current = score;
-                    clearInterval(interval);
-                }
-                scoreDisplay.textContent = current.toFixed(1);
-            }, 30);
-            const circumference = 552.92;
-            const offset = circumference - (score / 10) * circumference;
-            setTimeout(() => {
-                scoreCircle.style.strokeDashoffset = offset;
-                if (score >= 8) scoreCircle.style.stroke = '#10b981';
-                else if (score >= 6) scoreCircle.style.stroke = '#f59e0b';
-                else scoreCircle.style.stroke = '#ef4444';
-            }, 100);
-            setTimeout(() => { scoreBar.style.width = (score * 10) + '%'; }, 200);
-            setTimeout(() => {
-                if (score >= 9) {
-                    scoreRating.textContent = '🌟 Exceptional - Interview Ready!';
-                    scoreRating.className = 'text-xl font-semibold text-green-600 mb-2';
-                } else if (score >= 7) {
-                    scoreRating.textContent = '✨ Strong Performance!';
-                    scoreRating.className = 'text-xl font-semibold text-blue-600 mb-2';
-                } else if (score >= 5) {
-                    scoreRating.textContent = '📚 Good Start!';
-                    scoreRating.className = 'text-xl font-semibold text-orange-600 mb-2';
-                } else {
-                    scoreRating.textContent = '💪 Room to Grow!';
-                    scoreRating.className = 'text-xl font-semibold text-red-600 mb-2';
-                }
-            }, 1500);
-        }
-
-        function displayAllFeedback() {
-            const container = document.getElementById('question-feedback-container');
-            container.innerHTML = '';
-            allQuestionFeedback.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = 'glass-card rounded-2xl p-6 fade-in';
-                card.style.animationDelay = `${0.1 * index}s`;
-                card.innerHTML = `
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-bold text-gray-800">Question ${item.questionNumber}</h3>
-                        <span class="text-sm text-purple-600 font-semibold">${currentPool.replace(/_/g, ' ')}</span>
-                    </div>
-                    <p class="text-gray-700 italic mb-4">"${item.question}"</p>
-                    <div class="prose prose-purple max-w-none">${marked.parse(item.feedback)}</div>
-                `;
-                container.appendChild(card);
-            });
-        }
-
-        async function sendEmailResults() {
-            const email = document.getElementById('feedback-email-input').value.trim();
-            if (!email || !email.includes('@')) {
-                showToast('Invalid Email', 'Please enter valid email', 'error');
-                return;
-            }
-            const btn = document.getElementById('send-email-btn');
-            btn.disabled = true;
-            btn.textContent = 'Sending...';
-            let content = `DENTERVIEW AI - INTERVIEW RESULTS\n`;
-            content += `Pool: ${currentPool.replace(/_/g, ' ')}\n`;
-            content += `Date: ${new Date().toLocaleDateString()}\n\n`;
-            content += `OVERALL SUMMARY\n${document.getElementById('overall-summary').innerText}\n\n`;
-            allQuestionFeedback.forEach(item => {
-                content += `\nQUESTION ${item.questionNumber}\n${item.question}\n\nFEEDBACK:\n${item.feedback}\n`;
-            });
-            try {
-                const response = await fetch('/api/send-email', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ email, content })
-                });
-                const result = await response.json();
-                if (result.success) {
-                    showToast('Email Sent!', 'Check your inbox', 'success');
-                    document.getElementById('feedback-email-input').value = '';
-                } else {
-                    throw new Error('Failed');
-                }
-            } catch (error) {
-                showToast('Email Failed', 'Could not send', 'error');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Send Results';
-            }
-        }
-
-        function loadInterviewHistory() {
-            const history = currentUser.interviewHistory || [];
-            const list = document.getElementById('history-list');
-            const empty = document.getElementById('history-empty');
-            if (history.length === 0) {
-                empty.style.display = 'block';
-                list.innerHTML = '';
-                list.style.display = 'none';
-                return;
-            }
-            empty.style.display = 'none';
-            list.style.display = 'block';
-            list.innerHTML = '';
-            const sorted = [...history].sort((a, b) => new Date(b.date) - new Date(a.date));
-            sorted.forEach((interview, index) => {
-                const date = new Date(interview.date);
-                const scoreColor = interview.overallScore >= 8 ? 'text-green-600' : 
-                                   interview.overallScore >= 6 ? 'text-orange-600' : 'text-red-600';
-                const card = document.createElement('div');
-                card.className = 'glass-card rounded-2xl p-6 fade-in';
-                card.style.animationDelay = `${0.05 * index}s`;
-                card.innerHTML = `
-                    <div class="flex items-start justify-between mb-4">
-                        <div>
-                            <h3 class="text-xl font-bold text-gray-800">${interview.poolName}</h3>
-                            <p class="text-sm text-gray-500 mt-1">${date.toLocaleDateString()} at ${date.toLocaleTimeString()}</p>
-                        </div>
-                        <div class="text-right">
-                            <p class="text-3xl font-bold ${scoreColor}">${interview.overallScore ? interview.overallScore.toFixed(1) : 'N/A'}</p>
-                            <p class="text-sm text-gray-500">out of 10</p>
-                        </div>
-                    </div>
-                    <div class="border-t pt-4 mt-4">
-                        <button class="view-details-btn w-full btn-primary text-white font-semibold py-3 rounded-lg" data-index="${index}">
-                            View Full Results
-                        </button>
-                    </div>
-                `;
-                list.appendChild(card);
-            });
-            document.querySelectorAll('.view-details-btn').forEach(btn => {
-                btn.addEventListener('click', (e) => {
-                    const index = parseInt(e.target.dataset.index);
-                    viewHistoryDetails(sorted[index]);
-                });
-            });
-        }
-
-        function viewHistoryDetails(interview) {
-            showScreen('feedback-screen');
-            document.getElementById('feedback-loading-screen').classList.add('hidden');
-            document.getElementById('feedback-content').classList.remove('hidden');
-            const date = new Date(interview.date);
-            document.querySelector('#feedback-content h1').textContent = `${interview.poolName} - ${date.toLocaleDateString()}`;
-            if (interview.overallScore) animateScore(interview.overallScore);
-            if (interview.overallSummary) {
-                document.getElementById('overall-summary').innerHTML = marked.parse(interview.overallSummary);
-            }
-            const container = document.getElementById('question-feedback-container');
-            container.innerHTML = '';
-            interview.feedback.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = 'glass-card rounded-2xl p-6 fade-in';
-                card.style.animationDelay = `${0.1 * index}s`;
-                card.innerHTML = `
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-bold text-gray-800">Question ${item.questionNumber}</h3>
-                        <span class="text-sm text-purple-600 font-semibold">${interview.poolName}</span>
-                    </div>
-                    <p class="text-gray-700 italic mb-4">"${item.question}"</p>
-                    <div class="prose prose-purple max-w-none">${marked.parse(item.feedback)}</div>
-                `;
-                container.appendChild(card);
-            });
-            const backBtn = document.getElementById('back-dashboard-btn');
-            backBtn.textContent = 'Back to History';
-            backBtn.onclick = () => {
-                backBtn.textContent = 'Back to Dashboard';
-                backBtn.onclick = () => {
-                    showScreen('dashboard-screen');
-                    updateDashboard();
-                };
-                showScreen('dashboard-screen');
-                document.getElementById('tab-history').click();
-            };
-        }
-
-        // Event Listeners
-        document.getElementById('login-btn').addEventListener('click', async () => {
-            const email = document.getElementById('email-input').value.trim();
-            const password = document.getElementById('password-input').value;
-            if (!email || !password) {
-                showToast('Error', 'Please enter email and password', 'error');
-                return;
-            }
-            const btn = document.getElementById('login-btn');
-            btn.disabled = true;
-            btn.textContent = 'Signing in...';
-            try {
-                const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                const user = userCredential.user;
-                const success = await loadUserData(user.uid);
-                if (success) {
-                    showScreen('dashboard-screen');
-                    updateDashboard();
-                    showToast('Welcome!', 'Successfully signed in', 'success');
-                } else {
-                    await signOut(auth);
-                }
-            } catch (error) {
-                let msg = 'Invalid email or password';
-                if (error.code === 'auth/user-not-found') msg = 'No account found';
-                else if (error.code === 'auth/wrong-password') msg = 'Incorrect password';
-                else if (error.code === 'auth/invalid-email') msg = 'Invalid email';
-                else if (error.code === 'auth/too-many-requests') msg = 'Too many attempts';
-                else if (error.code === 'auth/invalid-credential') msg = 'Invalid credentials';
-                showToast('Login Failed', msg, 'error');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Sign In';
-            }
-        });
-
-        document.getElementById('email-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') document.getElementById('password-input').focus();
-        });
-
-        document.getElementById('password-input').addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') document.getElementById('login-btn').click();
-        });
-
-        document.getElementById('logout-btn').addEventListener('click', async () => {
-            if (mediaStream) {
-                mediaStream.getTracks().forEach(track => track.stop());
-                mediaStream = null;
-            }
-            try { await signOut(auth); } catch (error) { }
-            currentUser = null;
-            hasPermissions = false;
-            showScreen('login-screen');
-            document.getElementById('email-input').value = '';
-            document.getElementById('password-input').value = '';
-            showToast('Logged Out', 'Signed out successfully', 'info');
-        });
-
-        document.getElementById('change-password-btn').addEventListener('click', () => {
-            document.getElementById('change-password-modal').classList.remove('hidden');
-            document.getElementById('current-password-input').value = '';
-            document.getElementById('new-password-input').value = '';
-            document.getElementById('confirm-password-input').value = '';
-        });
-
-        document.getElementById('cancel-password-change-btn').addEventListener('click', () => {
-            document.getElementById('change-password-modal').classList.add('hidden');
-        });
-
-        document.getElementById('confirm-password-change-btn').addEventListener('click', async () => {
-            const current = document.getElementById('current-password-input').value;
-            const newPass = document.getElementById('new-password-input').value;
-            const confirm = document.getElementById('confirm-password-input').value;
-            if (!current || !newPass || !confirm) {
-                showToast('Error', 'Fill in all fields', 'error');
-                return;
-            }
-            if (newPass.length < 6) {
-                showToast('Error', 'Password must be 6+ characters', 'error');
-                return;
-            }
-            if (newPass !== confirm) {
-                showToast('Error', 'Passwords do not match', 'error');
-                return;
-            }
-            const btn = document.getElementById('confirm-password-change-btn');
-            btn.disabled = true;
-            btn.textContent = 'Updating...';
-            try {
-                const user = auth.currentUser;
-                const credential = EmailAuthProvider.credential(user.email, current);
-                await reauthenticateWithCredential(user, credential);
-                await updatePassword(user, newPass);
-                showToast('Success!', 'Password updated', 'success');
-                document.getElementById('change-password-modal').classList.add('hidden');
-            } catch (error) {
-                let msg = 'Failed to update';
-                if (error.code === 'auth/wrong-password') msg = 'Current password incorrect';
-                else if (error.code === 'auth/weak-password') msg = 'Password too weak';
-                else if (error.code === 'auth/requires-recent-login') msg = 'Please re-login first';
-                showToast('Error', msg, 'error');
-            } finally {
-                btn.disabled = false;
-                btn.textContent = 'Update Password';
-            }
-        });
-
-        document.getElementById('request-permissions-btn').addEventListener('click', requestPermissions);
-        document.getElementById('start-interview-btn').addEventListener('click', startNewInterview);
-        document.getElementById('cancel-interview-btn').addEventListener('click', () => {
-            document.getElementById('instructions-modal').classList.add('hidden');
-        });
-        document.getElementById('confirm-start-btn').addEventListener('click', confirmStartInterview);
-        document.getElementById('ready-btn').addEventListener('click', () => {
-            if (prepTimerInterval) {
-                clearInterval(prepTimerInterval);
-                document.getElementById('prep-timer').classList.add('hidden');
-            }
-            startRecording();
-        });
-        document.getElementById('stop-recording-btn').addEventListener('click', stopRecording);
-        document.getElementById('next-question-btn').addEventListener('click', () => {
-            if (autoAdvanceInterval) clearInterval(autoAdvanceInterval);
-            displayCurrentQuestion();
-        });
-        document.getElementById('finish-interview-btn').addEventListener('click', finishInterview);
-        document.getElementById('exit-interview-btn').addEventListener('click', () => {
-            if (mediaRecorder && mediaRecorder.state === 'recording') stopRecording();
-            if (prepTimerInterval) clearInterval(prepTimerInterval);
-            if (autoAdvanceInterval) clearInterval(autoAdvanceInterval);
-            const confirmed = confirm('Exit interview? Progress will not be saved.');
-            if (confirmed) {
-                if (mediaStream) {
-                    mediaStream.getTracks().forEach(track => track.stop());
-                    mediaStream = null;
-                }
-                hasPermissions = false;
-                showScreen('dashboard-screen');
-                currentPool = null;
-                currentQuestions = [];
-                allQuestionFeedback = [];
-            }
-        });
-
-        document.getElementById('send-email-btn').addEventListener('click', sendEmailResults);
-        document.getElementById('new-interview-btn').addEventListener('click', () => {
-            allQuestionFeedback = [];
-            startNewInterview();
-        });
-        document.getElementById('back-dashboard-btn').addEventListener('click', () => {
-            showScreen('dashboard-screen');
-            updateDashboard();
-        });
-
-        document.getElementById('tab-overview').addEventListener('click', () => {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('tab-overview').classList.add('active');
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.getElementById('overview-content').classList.add('active');
-        });
-
-        document.getElementById('tab-history').addEventListener('click', () => {
-            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById('tab-history').classList.add('active');
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.getElementById('history-content').classList.add('active');
-            loadInterviewHistory();
-        });
-
-        onAuthStateChanged(auth, async (user) => {
-            if (user && !currentUser) {
-                console.log('🔍 User authenticated:', user.uid);
-                const success = await loadUserData(user.uid);
-                if (success) {
-                    showScreen('dashboard-screen');
-                    updateDashboard();
-                }
-            }
-        });
-
-        loadQuestionPools().catch(err => console.error('Pool load error:', err));
-        console.log('🦷 Denterview AI initialized!');
-    </script>
 </body>
 </html>
