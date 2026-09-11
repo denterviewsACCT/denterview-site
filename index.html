@@ -98,6 +98,7 @@
       display:flex; gap:12px; position:absolute; white-space:nowrap;
       animation: scrollLeft 30s linear infinite;
     }
+    .pill-row.r1 { top:5%; }
     .pill-row.r2 { animation-direction:reverse; animation-duration:36s; top:22%; }
     .pill-row.r3 { animation-duration:24s; top:40%; }
     .pill-row.r4 { animation-direction:reverse; animation-duration:32s; top:58%; }
@@ -167,6 +168,19 @@
       animation:fadeUp .7s ease .45s both;
     }
     .hsh-pill { font-size:12px; padding:5px 14px; border-radius:100px; white-space:nowrap; border:1px solid rgba(45,126,247,.32); color:#7db8ff; background:rgba(45,126,247,.09); }
+    .hsh-more { cursor:pointer; font:inherit; transition:background .2s,border-color .2s; }
+    .hsh-more:hover { background:rgba(45,126,247,.18); border-color:rgba(45,126,247,.5); }
+
+    /* schools modal */
+    .schools-modal-overlay { display:none; position:fixed; inset:0; z-index:300; background:rgba(5,12,24,.72); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:24px; }
+    .schools-modal-overlay.open { display:flex; }
+    .schools-modal { background:#0d1c34; border:1px solid var(--border); border-radius:20px; max-width:640px; width:100%; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
+    .schools-modal-header { display:flex; align-items:center; justify-content:space-between; padding:22px 26px; border-bottom:1px solid var(--border); }
+    .schools-modal-header h3 { font-family:'Instrument Serif',serif; font-weight:400; font-size:22px; }
+    .schools-modal-close { background:none; border:none; color:rgba(255,255,255,.6); font-size:26px; line-height:1; cursor:pointer; padding:0 4px; }
+    .schools-modal-close:hover { color:#fff; }
+    .schools-modal-grid { padding:20px 26px 28px; overflow-y:auto; display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; font-size:14px; color:#cfe0f0; }
+    @media(max-width:600px) { .schools-modal-grid { grid-template-columns:1fr; } }
     .hsh-more { border-color:rgba(0,194,168,.32); color:var(--teal); background:rgba(0,194,168,.07); }
 
     /* ─── PROOF BAND ─── */
@@ -354,12 +368,25 @@
       .hero-school-highlights { max-width:340px; }
     }
     @media(max-width:600px) {
-      .sticky-cta { display:flex; position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(10,22,40,.97); border-top:1px solid var(--border); padding:12px 16px; gap:10px; }
+      .sticky-cta { display:flex; position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(10,22,40,.97); border-top:1px solid var(--border); padding:12px 16px calc(12px + env(safe-area-inset-bottom)); gap:10px; }
       .sticky-cta a { flex:1; text-align:center; padding:13px 16px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; font-family:'DM Sans',sans-serif; }
       .sticky-cta-main { background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; }
       .sticky-cta-ghost { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; }
       .bundle-card { grid-template-columns:1fr; }
       .bundle-card-right { min-width:unset; }
+      footer { padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
+
+      /* mobile-only redesign of the scrolling school background — desktop is untouched.
+         Instead of 5 overlapping rows crossing the headline, mobile gets 2 larger,
+         more legible rows framing the top and bottom of the hero, clear of the text. */
+      .school-pill-scroll { font-size:14px; padding:8px 18px; border-color:rgba(255,255,255,.3); color:rgba(255,255,255,.62); background:rgba(255,255,255,.08); }
+      .pill-row.r2 { top:auto; bottom:13%; animation-duration:34s; }
+      .pill-row.r3, .pill-row.r4, .pill-row.r5 { display:none; }
+      .hero-vignette-top { background:linear-gradient(180deg,#0a1628 0%,transparent 7%,transparent 93%,#0a1628 100%); }
+      .hero-vignette { background:radial-gradient(ellipse 62% 58% at 50% 50%, transparent 20%, #0a1628 68%); }
+    }
+    @media(max-width:600px) {
+      .pill-row.r1 { top:16%; }
     }
   </style>
 </head>
@@ -405,7 +432,7 @@
 
   <!-- scrolling school pill rows -->
   <div class="hero-schools-bg">
-    <div class="pill-row" style="top:5%;">
+    <div class="pill-row r1">
       <span class="school-pill-scroll">NYU College of Dentistry</span><span class="school-pill-scroll">University of Michigan</span><span class="school-pill-scroll">UCSF School of Dentistry</span><span class="school-pill-scroll">University of Pennsylvania</span><span class="school-pill-scroll">Case Western Reserve</span><span class="school-pill-scroll">Creighton University</span><span class="school-pill-scroll">Marquette University</span><span class="school-pill-scroll">Loma Linda University</span><span class="school-pill-scroll">Temple University Kornberg</span>
       <span class="school-pill-scroll">NYU College of Dentistry</span><span class="school-pill-scroll">University of Michigan</span><span class="school-pill-scroll">UCSF School of Dentistry</span><span class="school-pill-scroll">University of Pennsylvania</span><span class="school-pill-scroll">Case Western Reserve</span><span class="school-pill-scroll">Creighton University</span><span class="school-pill-scroll">Marquette University</span><span class="school-pill-scroll">Loma Linda University</span><span class="school-pill-scroll">Temple University Kornberg</span>
     </div>
@@ -461,19 +488,65 @@
     <p class="hero-sub">From a standout personal statement to crushing interview day — without the price tag.</p>
     <p class="hero-skip"><a href="#products">See everything we offer ↓</a></p>
     <div class="hero-school-highlights">
-      <span class="hsh-pill">NYU</span>
       <span class="hsh-pill">Michigan</span>
       <span class="hsh-pill">UCSF</span>
-      <span class="hsh-pill">Penn</span>
       <span class="hsh-pill">UNC</span>
+      <span class="hsh-pill">Penn</span>
+      <span class="hsh-pill">NYU</span>
       <span class="hsh-pill">Case Western</span>
       <span class="hsh-pill">Howard</span>
       <span class="hsh-pill">Loma Linda</span>
-      <span class="hsh-pill hsh-more">+ 56 more schools</span>
+      <button type="button" class="hsh-pill hsh-more" onclick="openSchoolsModal()">+ more schools</button>
     </div>
   </div>
 
 </section>
+
+<!-- SCHOOLS MODAL -->
+<div class="schools-modal-overlay" id="schoolsModalOverlay" onclick="if(event.target===this)closeSchoolsModal()">
+  <div class="schools-modal">
+    <div class="schools-modal-header">
+      <h3>Schools our students have gotten into</h3>
+      <button type="button" class="schools-modal-close" onclick="closeSchoolsModal()" aria-label="Close">×</button>
+    </div>
+    <div class="schools-modal-grid">
+      <span>NYU College of Dentistry</span>
+      <span>University of Michigan</span>
+      <span>UCSF School of Dentistry</span>
+      <span>University of Pennsylvania</span>
+      <span>UNC Adams School of Dentistry</span>
+      <span>Case Western Reserve</span>
+      <span>Howard University CDM</span>
+      <span>Loma Linda University</span>
+      <span>Creighton University</span>
+      <span>Marquette University</span>
+      <span>Temple University Kornberg</span>
+      <span>Indiana University</span>
+      <span>Nova Southeastern</span>
+      <span>Midwestern University</span>
+      <span>Touro College of Dental Medicine</span>
+      <span>University of Iowa</span>
+      <span>University of Louisville</span>
+      <span>Roseman University</span>
+      <span>LECOM School of Dental Medicine</span>
+      <span>UTHealth Houston</span>
+      <span>Kansas City University</span>
+      <span>UMKC School of Dentistry</span>
+      <span>East Carolina University</span>
+      <span>A.T. Still University</span>
+      <span>University of Illinois Chicago</span>
+      <span>Stony Brook University</span>
+      <span>Texas Tech El Paso</span>
+      <span>UT San Antonio</span>
+      <span>Western University of Health Sciences</span>
+      <span>Midwestern University Arizona</span>
+      <span>University of Detroit Mercy</span>
+      <span>ATSU MOSDOH</span>
+      <span>University of Sydney</span>
+      <span>University of Minnesota</span>
+    </div>
+  </div>
+</div>
 
 <!-- ═══════════════════════════════════════
      PROOF BAND
@@ -832,6 +905,10 @@
   // Mobile nav
   function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.getElementById('mobileOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.getElementById('mobileOverlay').classList.remove('open'); document.body.style.overflow=''; }
+
+  // Schools modal
+  function openSchoolsModal() { document.getElementById('schoolsModalOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeSchoolsModal() { document.getElementById('schoolsModalOverlay').classList.remove('open'); document.body.style.overflow=''; }
 
   // Scroll reveal
   const revealObs = new IntersectionObserver((entries) => {
