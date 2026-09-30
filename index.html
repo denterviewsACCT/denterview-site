@@ -98,7 +98,6 @@
       display:flex; gap:12px; position:absolute; white-space:nowrap;
       animation: scrollLeft 30s linear infinite;
     }
-    .pill-row.r1 { top:5%; }
     .pill-row.r2 { animation-direction:reverse; animation-duration:36s; top:22%; }
     .pill-row.r3 { animation-duration:24s; top:40%; }
     .pill-row.r4 { animation-direction:reverse; animation-duration:32s; top:58%; }
@@ -168,19 +167,6 @@
       animation:fadeUp .7s ease .45s both;
     }
     .hsh-pill { font-size:12px; padding:5px 14px; border-radius:100px; white-space:nowrap; border:1px solid rgba(45,126,247,.32); color:#7db8ff; background:rgba(45,126,247,.09); }
-    .hsh-more { cursor:pointer; font:inherit; transition:background .2s,border-color .2s; }
-    .hsh-more:hover { background:rgba(45,126,247,.18); border-color:rgba(45,126,247,.5); }
-
-    /* schools modal */
-    .schools-modal-overlay { display:none; position:fixed; inset:0; z-index:300; background:rgba(5,12,24,.72); backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:24px; }
-    .schools-modal-overlay.open { display:flex; }
-    .schools-modal { background:#0d1c34; border:1px solid var(--border); border-radius:20px; max-width:640px; width:100%; max-height:80vh; display:flex; flex-direction:column; overflow:hidden; }
-    .schools-modal-header { display:flex; align-items:center; justify-content:space-between; padding:22px 26px; border-bottom:1px solid var(--border); }
-    .schools-modal-header h3 { font-family:'Instrument Serif',serif; font-weight:400; font-size:22px; }
-    .schools-modal-close { background:none; border:none; color:rgba(255,255,255,.6); font-size:26px; line-height:1; cursor:pointer; padding:0 4px; }
-    .schools-modal-close:hover { color:#fff; }
-    .schools-modal-grid { padding:20px 26px 28px; overflow-y:auto; display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; font-size:14px; color:#cfe0f0; }
-    @media(max-width:600px) { .schools-modal-grid { grid-template-columns:1fr; } }
     .hsh-more { border-color:rgba(0,194,168,.32); color:var(--teal); background:rgba(0,194,168,.07); }
 
     /* ─── PROOF BAND ─── */
@@ -368,26 +354,31 @@
       .hero-school-highlights { max-width:340px; }
     }
     @media(max-width:600px) {
-      .sticky-cta { display:flex; position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(10,22,40,.97); border-top:1px solid var(--border); padding:12px 16px calc(12px + env(safe-area-inset-bottom)); gap:10px; }
+      .sticky-cta { display:flex; position:fixed; bottom:0; left:0; right:0; z-index:90; background:rgba(10,22,40,.97); border-top:1px solid var(--border); padding:12px 16px; gap:10px; }
       .sticky-cta a { flex:1; text-align:center; padding:13px 16px; border-radius:10px; font-size:14px; font-weight:600; text-decoration:none; font-family:'DM Sans',sans-serif; }
       .sticky-cta-main { background:linear-gradient(135deg,var(--blue-bright),var(--teal)); color:#fff; }
       .sticky-cta-ghost { background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.15); color:#fff; }
       .bundle-card { grid-template-columns:1fr; }
       .bundle-card-right { min-width:unset; }
-      footer { padding-bottom: calc(90px + env(safe-area-inset-bottom)); }
-
-      /* mobile-only redesign of the scrolling school background — desktop is untouched.
-         Instead of 5 overlapping rows crossing the headline, mobile gets 2 larger,
-         more legible rows framing the top and bottom of the hero, clear of the text. */
-      .school-pill-scroll { font-size:14px; padding:8px 18px; border-color:rgba(255,255,255,.3); color:rgba(255,255,255,.62); background:rgba(255,255,255,.08); }
-      .pill-row.r2 { top:auto; bottom:13%; animation-duration:34s; }
-      .pill-row.r3, .pill-row.r4, .pill-row.r5 { display:none; }
-      .hero-vignette-top { background:linear-gradient(180deg,#0a1628 0%,transparent 7%,transparent 93%,#0a1628 100%); }
-      .hero-vignette { background:radial-gradient(ellipse 62% 58% at 50% 50%, transparent 20%, #0a1628 68%); }
     }
-    @media(max-width:600px) {
-      .pill-row.r1 { top:16%; }
-    }
+  
+    /* ─── REVIEW SUBMIT FORM ─── */
+    .review-cta { text-align:center; margin-top:40px; }
+    .review-btn { background:transparent; color:#fff; border:1px solid rgba(255,255,255,.25); border-radius:10px; padding:12px 24px; font-size:15px; font-weight:600; cursor:pointer; font-family:inherit; transition:border-color .2s,background .2s; }
+    .review-btn:hover { border-color:var(--teal); background:rgba(0,194,168,.08); }
+    .review-form { display:none; max-width:520px; margin:24px auto 0; background:var(--card-bg); border:1px solid var(--border); border-radius:18px; padding:24px; text-align:left; }
+    .review-form.open { display:block; }
+    .review-form label { display:block; font-size:13px; font-weight:600; color:#c8d8ee; margin:14px 0 6px; }
+    .review-form label:first-child { margin-top:0; }
+    .review-form input, .review-form select, .review-form textarea { width:100%; padding:12px 14px; border-radius:10px; border:1px solid var(--border); background:rgba(255,255,255,.05); color:#fff; font-size:16px; font-family:inherit; }
+    .review-form textarea { min-height:110px; resize:vertical; }
+    .review-form select option { color:#000; }
+    .review-form input:focus, .review-form select:focus, .review-form textarea:focus { outline:none; border-color:var(--teal); }
+    .review-form .rf-hp { position:absolute; left:-9999px; height:0; width:0; opacity:0; }
+    .review-form .rf-submit { width:100%; margin-top:18px; background:var(--blue-bright); color:#fff; border:none; border-radius:10px; padding:14px; font-size:16px; font-weight:600; cursor:pointer; font-family:inherit; }
+    .review-form .rf-submit:disabled { opacity:.6; cursor:default; }
+    .review-msg { margin-top:12px; font-size:14px; text-align:center; }
+    .review-msg.ok { color:var(--teal); } .review-msg.err { color:#ff8a8a; }
   </style>
 </head>
 <body>
@@ -432,7 +423,7 @@
 
   <!-- scrolling school pill rows -->
   <div class="hero-schools-bg">
-    <div class="pill-row r1">
+    <div class="pill-row" style="top:5%;">
       <span class="school-pill-scroll">NYU College of Dentistry</span><span class="school-pill-scroll">University of Michigan</span><span class="school-pill-scroll">UCSF School of Dentistry</span><span class="school-pill-scroll">University of Pennsylvania</span><span class="school-pill-scroll">Case Western Reserve</span><span class="school-pill-scroll">Creighton University</span><span class="school-pill-scroll">Marquette University</span><span class="school-pill-scroll">Loma Linda University</span><span class="school-pill-scroll">Temple University Kornberg</span>
       <span class="school-pill-scroll">NYU College of Dentistry</span><span class="school-pill-scroll">University of Michigan</span><span class="school-pill-scroll">UCSF School of Dentistry</span><span class="school-pill-scroll">University of Pennsylvania</span><span class="school-pill-scroll">Case Western Reserve</span><span class="school-pill-scroll">Creighton University</span><span class="school-pill-scroll">Marquette University</span><span class="school-pill-scroll">Loma Linda University</span><span class="school-pill-scroll">Temple University Kornberg</span>
     </div>
@@ -488,65 +479,19 @@
     <p class="hero-sub">From a standout personal statement to crushing interview day — without the price tag.</p>
     <p class="hero-skip"><a href="#products">See everything we offer ↓</a></p>
     <div class="hero-school-highlights">
+      <span class="hsh-pill">NYU</span>
       <span class="hsh-pill">Michigan</span>
       <span class="hsh-pill">UCSF</span>
-      <span class="hsh-pill">UNC</span>
       <span class="hsh-pill">Penn</span>
-      <span class="hsh-pill">NYU</span>
+      <span class="hsh-pill">UNC</span>
       <span class="hsh-pill">Case Western</span>
       <span class="hsh-pill">Howard</span>
       <span class="hsh-pill">Loma Linda</span>
-      <button type="button" class="hsh-pill hsh-more" onclick="openSchoolsModal()">+ more schools</button>
+      <span class="hsh-pill hsh-more">+ 56 more schools</span>
     </div>
   </div>
 
 </section>
-
-<!-- SCHOOLS MODAL -->
-<div class="schools-modal-overlay" id="schoolsModalOverlay" onclick="if(event.target===this)closeSchoolsModal()">
-  <div class="schools-modal">
-    <div class="schools-modal-header">
-      <h3>Schools our students have gotten into</h3>
-      <button type="button" class="schools-modal-close" onclick="closeSchoolsModal()" aria-label="Close">×</button>
-    </div>
-    <div class="schools-modal-grid">
-      <span>NYU College of Dentistry</span>
-      <span>University of Michigan</span>
-      <span>UCSF School of Dentistry</span>
-      <span>University of Pennsylvania</span>
-      <span>UNC Adams School of Dentistry</span>
-      <span>Case Western Reserve</span>
-      <span>Howard University CDM</span>
-      <span>Loma Linda University</span>
-      <span>Creighton University</span>
-      <span>Marquette University</span>
-      <span>Temple University Kornberg</span>
-      <span>Indiana University</span>
-      <span>Nova Southeastern</span>
-      <span>Midwestern University</span>
-      <span>Touro College of Dental Medicine</span>
-      <span>University of Iowa</span>
-      <span>University of Louisville</span>
-      <span>Roseman University</span>
-      <span>LECOM School of Dental Medicine</span>
-      <span>UTHealth Houston</span>
-      <span>Kansas City University</span>
-      <span>UMKC School of Dentistry</span>
-      <span>East Carolina University</span>
-      <span>A.T. Still University</span>
-      <span>University of Illinois Chicago</span>
-      <span>Stony Brook University</span>
-      <span>Texas Tech El Paso</span>
-      <span>UT San Antonio</span>
-      <span>Western University of Health Sciences</span>
-      <span>Midwestern University Arizona</span>
-      <span>University of Detroit Mercy</span>
-      <span>ATSU MOSDOH</span>
-      <span>University of Sydney</span>
-      <span>University of Minnesota</span>
-    </div>
-  </div>
-</div>
 
 <!-- ═══════════════════════════════════════
      PROOF BAND
@@ -802,6 +747,22 @@
         <div class="testimonial-author"><div class="testimonial-avatar">V</div><div><div class="testimonial-name">Virginia S.</div><div class="testimonial-school">2025 Application Cycle</div></div></div>
       </div>
     </div>
+    <div class="review-cta">
+      <button type="button" class="review-btn" id="review-toggle">Leave a review</button>
+    </div>
+    <form class="review-form" id="review-form" novalidate>
+      <label for="rf-name">Name (shown publicly, first name or initials is fine)</label>
+      <input id="rf-name" name="name" maxlength="40" required>
+      <label for="rf-cycle">Application cycle or school (optional)</label>
+      <input id="rf-cycle" name="cycle" maxlength="40" placeholder="e.g. 2026 Application Cycle">
+      <label for="rf-rating">Rating</label>
+      <select id="rf-rating" name="rating"><option value="5">★★★★★</option><option value="4">★★★★☆</option><option value="3">★★★☆☆</option><option value="2">★★☆☆☆</option><option value="1">★☆☆☆☆</option></select>
+      <label for="rf-text">Your review</label>
+      <textarea id="rf-text" name="text" maxlength="1000" required></textarea>
+      <input class="rf-hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <button class="rf-submit" type="submit">Submit review</button>
+      <p class="review-msg" id="review-msg"></p>
+    </form>
   </div>
 </section>
 
@@ -906,10 +867,6 @@
   function openMobileNav()  { document.getElementById('mobileNav').classList.add('open'); document.getElementById('mobileOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
   function closeMobileNav() { document.getElementById('mobileNav').classList.remove('open'); document.getElementById('mobileOverlay').classList.remove('open'); document.body.style.overflow=''; }
 
-  // Schools modal
-  function openSchoolsModal() { document.getElementById('schoolsModalOverlay').classList.add('open'); document.body.style.overflow='hidden'; }
-  function closeSchoolsModal() { document.getElementById('schoolsModalOverlay').classList.remove('open'); document.body.style.overflow=''; }
-
   // Scroll reveal
   const revealObs = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
@@ -922,5 +879,60 @@
   document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
 </script>
 
+<script>
+// Reviews: load approved ones, handle submit form. Set API_BASE to your Railway backend URL.
+(function () {
+  var API_BASE = 'https://denterview-ai-production.up.railway.app';
+  var grid = document.querySelector('.testimonials-grid');
+
+  function card(r) {
+    var d = document.createElement('div'); d.className = 'testimonial-card';
+    var st = document.createElement('div'); st.className = 'testimonial-stars';
+    var n = Math.max(1, Math.min(5, parseInt(r.rating, 10) || 5));
+    st.textContent = '★'.repeat(n) + '☆'.repeat(5 - n);
+    var t = document.createElement('p'); t.className = 'testimonial-text'; t.textContent = '"' + r.text + '"';
+    var a = document.createElement('div'); a.className = 'testimonial-author';
+    var av = document.createElement('div'); av.className = 'testimonial-avatar'; av.textContent = (r.name || '?').charAt(0).toUpperCase();
+    var w = document.createElement('div');
+    var nm = document.createElement('div'); nm.className = 'testimonial-name'; nm.textContent = r.name;
+    w.appendChild(nm);
+    if (r.cycle) { var sc = document.createElement('div'); sc.className = 'testimonial-school'; sc.textContent = r.cycle; w.appendChild(sc); }
+    a.appendChild(av); a.appendChild(w);
+    d.appendChild(st); d.appendChild(t); d.appendChild(a);
+    return d;
+  }
+
+  if (grid) {
+    fetch(API_BASE + '/api/reviews').then(function (r) { return r.json(); }).then(function (data) {
+      if (data && data.success) data.reviews.forEach(function (r) { grid.appendChild(card(r)); });
+    }).catch(function () {});
+  }
+
+  var form = document.getElementById('review-form');
+  var toggle = document.getElementById('review-toggle');
+  if (!form || !toggle) return;
+  var msg = document.getElementById('review-msg');
+  toggle.addEventListener('click', function () { form.classList.toggle('open'); });
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('.rf-submit');
+    msg.className = 'review-msg'; msg.textContent = '';
+    btn.disabled = true; btn.textContent = 'Submitting...';
+    var body = {};
+    new FormData(form).forEach(function (v, k) { body[k] = v; });
+    fetch(API_BASE + '/api/reviews', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        if (data.success) {
+          form.reset();
+          msg.className = 'review-msg ok'; msg.textContent = 'Thanks! Your review will appear after a quick check.';
+        } else { msg.className = 'review-msg err'; msg.textContent = data.message || 'Something went wrong.'; }
+      })
+      .catch(function () { msg.className = 'review-msg err'; msg.textContent = 'Network error. Please try again.'; })
+      .finally(function () { btn.disabled = false; btn.textContent = 'Submit review'; });
+  });
+})();
+</script>
 </body>
 </html>
